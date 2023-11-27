@@ -11,6 +11,6 @@ package com.mycompany.pointofsales;
 public class PointOfSales {
 
     public static void main(String[] args) {
-        System.out.println("Hello Dita Ruth!");
+        System.out.println("Ace of Spade");
     }
 }
