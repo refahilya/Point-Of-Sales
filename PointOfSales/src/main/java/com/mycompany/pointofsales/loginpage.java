@@ -5,6 +5,9 @@
 package com.mycompany.pointofsales;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  *
@@ -15,10 +18,16 @@ public class loginpage extends javax.swing.JFrame {
     /**
      * Creates new form loginpage
      */
+    public static final String ICON_PATH = "src\\main\\java\\com\\mycompany\\pointofsales\\ilus1 (1).png";
+    
     public loginpage() {
         initComponents();
         getContentPane().setBackground(Color.decode("0xF5F5DC"));
+       
+        ImageIcon icon = new ImageIcon(getClass().getResource(loginpage.ICON_PATH));
     }
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,7 +41,7 @@ public class loginpage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        icon1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -62,8 +71,8 @@ public class loginpage extends javax.swing.JFrame {
         jLabel2.setText("Toko alat tulis pilihan");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\com\\mycompany\\pointofsales\\ilus1 (1).png")); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+        icon1.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\Aset\\ilus1 (1).png")); // NOI18N
+        jPanel1.add(icon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 500));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, -1, -1));
@@ -172,18 +181,19 @@ public class loginpage extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new loginpage().setVisible(true);
+             
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel icon1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
