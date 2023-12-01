@@ -87,6 +87,8 @@ public class loginpage extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(245, 245, 220));
         jLabel2.setText("Toko alat tulis pilihan");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
+
+        icon1.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\ilus1.png")); // NOI18N
         jPanel1.add(icon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 500));
@@ -125,6 +127,8 @@ public class loginpage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 210, -1));
+
+        icon3.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\ilus3.png")); // NOI18N
         getContentPane().add(icon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, 30, 30));
 
         lupaPW.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
@@ -144,7 +148,11 @@ public class loginpage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 380, 120, 40));
+
+        icon4.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\ilus4.png")); // NOI18N
         getContentPane().add(icon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 270, 30, 30));
+
+        icon2.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\ilus2.png")); // NOI18N
         getContentPane().add(icon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 120, 100));
 
         pack();
