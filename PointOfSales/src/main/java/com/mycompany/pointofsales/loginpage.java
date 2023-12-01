@@ -18,13 +18,25 @@ public class loginpage extends javax.swing.JFrame {
     /**
      * Creates new form loginpage
      */
-    public static final String ICON_PATH = "src\\main\\java\\com\\mycompany\\pointofsales\\ilus1 (1).png";
+    
+    /*public static final String ICON_PATH = "resources/com/mycompany/pointofsales/resources/ilus1.png";
+    
+    public static final String ICON_PATH2 = "D:/Netbeans/Point-Of-Sales/PointOfSales/src/main/java/com/mycompany/pointofsales/resources/ilus1.png";
+*/
+
     
     public loginpage() {
         initComponents();
         getContentPane().setBackground(Color.decode("0xF5F5DC"));
        
-        ImageIcon icon = new ImageIcon(getClass().getResource(loginpage.ICON_PATH));
+        /*ImageIcon icon = new ImageIcon(getClass().getResource(ICON_PATH));
+        icon1.setIcon(icon); // Menetapkan ImageIcon ke JLabel*/
+        
+        icon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/ilus1.png")));
+
+
+        
+
     }
 
 
@@ -70,8 +82,6 @@ public class loginpage extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(245, 245, 220));
         jLabel2.setText("Toko alat tulis pilihan");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
-
-        icon1.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\Aset\\ilus1 (1).png")); // NOI18N
         jPanel1.add(icon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 500));
