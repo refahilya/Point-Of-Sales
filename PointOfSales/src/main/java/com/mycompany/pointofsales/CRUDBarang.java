@@ -6,44 +6,39 @@ package com.mycompany.pointofsales;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author refah
  */
-public class CRUDMember {
+public class CRUDBarang {
     
-    public void create(String id_member, String nama_member, String tanggal_lahir, int no_telp, String email){
+    public void create(String id_barang, String nama_barang, int harga, int stok){
         try {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
-            String query = "INSERT INTO member (id_member, nama_member, tanggal_lahir, no_telp, email, poin, created_at) VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)";
+            String query = "INSERT INTO inventori (id_barang, nama_barang, harga, stok, created_at) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)";
             PreparedStatement ps = koneksi.prepareStatement(query);
             
-            ps.setString(1, id_member);
-            ps.setString(2, nama_member);
-            ps.setString(3, tanggal_lahir);
-            ps.setInt(4, no_telp);
-            ps.setString(5, email);
-            ps.setInt(6, 0);
+            ps.setString(1, id_barang);
+            ps.setString(2, nama_barang);
+            ps.setInt(3, harga);
+            ps.setInt(4, stok);
 
             int rowsAffected = ps.executeUpdate();
 
             if (rowsAffected > 0) {
-                System.out.println("Data anggota berhasil dimasukkan.");
+                System.out.println("Data barang berhasil dimasukkan.");
             } else {
-                System.out.println("Gagal memasukkan data member baru.");
+                System.out.println("Gagal memasukkan data barang baru.");
             }
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());  
         }
     }
-    
+    /*
     public DefaultTableModel read(){
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.addColumn("ID Member");
@@ -129,50 +124,6 @@ public class CRUDMember {
             deleteStatement.close();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());  
-        }
-    }
-    
-    /*
-    public boolean ida(int id_anggota) throws SQLException {
-        Koneksi konek = new Koneksi();
-        Connection koneksi = konek.buka();
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-
-        try {
-            String query = "SELECT * FROM anggota WHERE id_anggota = ?";
-            preparedStatement = koneksi.prepareStatement(query);
-            preparedStatement.setInt(1, id_anggota);
-
-            resultSet = preparedStatement.executeQuery();
-
-            return resultSet.next();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-    
-    public boolean ida2(int id_anggota) throws SQLException {
-        Koneksi konek = new Koneksi();
-        Connection koneksi = konek.buka();
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-
-        try {
-            String query = "SELECT * FROM anggota WHERE id_anggota = ?";
-            preparedStatement = koneksi.prepareStatement(query);
-            preparedStatement.setInt(1, id_anggota);
-
-            resultSet = preparedStatement.executeQuery();
-
-            return resultSet.next();
-            
-            //belum disuruh delete
-            
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
         }
     }
     */
