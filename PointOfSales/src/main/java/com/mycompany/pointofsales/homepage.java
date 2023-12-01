@@ -41,6 +41,7 @@ public class homepage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        transaksi = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -107,6 +108,7 @@ public class homepage extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 66, 37));
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("LOGOUT");
@@ -131,28 +133,37 @@ public class homepage extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 210, 30));
 
-        jButton1.setBackground(new java.awt.Color(228, 228, 223));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 66, 37));
-        jButton1.setText("Transaksi");
+        transaksi.setBackground(new java.awt.Color(228, 228, 223));
+        transaksi.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        transaksi.setForeground(new java.awt.Color(0, 66, 37));
+        transaksi.setText("Transaksi");
+        transaksi.setBorder(null);
+        transaksi.setBorderPainted(false);
+        transaksi.setContentAreaFilled(false);
+        transaksi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        transaksi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transaksiActionPerformed(evt);
+            }
+        });
+        getContentPane().add(transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
+
+        jButton1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("jButton1");
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksiActionPerformed
         // TODO add your handling code here:
         new transaksipage().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_transaksiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,5 +213,6 @@ public class homepage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel relasijy;
+    private javax.swing.JButton transaksi;
     // End of variables declaration//GEN-END:variables
 }
