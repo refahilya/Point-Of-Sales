@@ -33,6 +33,9 @@ public class loginpage extends javax.swing.JFrame {
         icon1.setIcon(icon); // Menetapkan ImageIcon ke JLabel*/
         
         icon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/ilus1.png")));
+        icon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/ilus2.png")));
+        icon3.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/ilus3.png")));
+        icon4.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/ilus4.png")));
 
 
         
@@ -61,9 +64,11 @@ public class loginpage extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        icon3 = new javax.swing.JLabel();
         lupaPW = new javax.swing.JLabel();
         login = new javax.swing.JButton();
+        icon4 = new javax.swing.JLabel();
+        icon2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(245, 245, 220));
@@ -112,7 +117,6 @@ public class loginpage extends javax.swing.JFrame {
 
         jTextField2.setBackground(new java.awt.Color(245, 245, 220));
         jTextField2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        jTextField2.setText("Masukkan Username");
         jTextField2.setToolTipText("");
         jTextField2.setBorder(null);
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -121,9 +125,7 @@ public class loginpage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 210, -1));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\com\\mycompany\\pointofsales\\ilus4 (1).png")); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 270, 30, 30));
+        getContentPane().add(icon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, 30, 30));
 
         lupaPW.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         lupaPW.setText("Forgot Password?");
@@ -142,6 +144,8 @@ public class loginpage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 380, 120, 40));
+        getContentPane().add(icon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 270, 30, 30));
+        getContentPane().add(icon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 120, 100));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -198,12 +202,14 @@ public class loginpage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel icon1;
+    private javax.swing.JLabel icon2;
+    private javax.swing.JLabel icon3;
+    private javax.swing.JLabel icon4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
