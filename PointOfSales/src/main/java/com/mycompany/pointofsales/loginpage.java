@@ -46,7 +46,6 @@ public class loginpage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(245, 245, 220));
-        setMaximumSize(new java.awt.Dimension(900, 493));
         setMinimumSize(new java.awt.Dimension(900, 493));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -63,12 +62,10 @@ public class loginpage extends javax.swing.JFrame {
         jLabel2.setText("Toko alat tulis pilihan");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/pointofsales/ilus1 (1).png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\com\\mycompany\\pointofsales\\ilus1 (1).png")); // NOI18N
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 500));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\com\\mycompany\\pointofsales\\ilus2 (1).png")); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Black", 0, 30)); // NOI18N
@@ -81,8 +78,6 @@ public class loginpage extends javax.swing.JFrame {
 
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 240, 240, -1));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\com\\mycompany\\pointofsales\\ilus3 (1).png")); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, -1, 30));
 
         jTextField1.setBackground(new java.awt.Color(245, 245, 220));
