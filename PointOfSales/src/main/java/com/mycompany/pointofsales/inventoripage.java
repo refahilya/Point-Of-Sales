@@ -49,7 +49,6 @@ public class inventoripage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel5 = new javax.swing.JLabel();
         inventori = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -89,21 +88,16 @@ public class inventoripage extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         transaksi = new javax.swing.JButton();
-        beranda1 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
+        riwayat = new javax.swing.JButton();
         relasijy = new javax.swing.JLabel();
+        beranda = new javax.swing.JButton();
+        member = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(245, 245, 220));
         setMaximumSize(new java.awt.Dimension(1274, 698));
         setMinimumSize(new java.awt.Dimension(1274, 698));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 66, 37));
-        jLabel5.setText("Member");
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 590, -1, 30));
 
         inventori.setBackground(new java.awt.Color(245, 245, 220));
         inventori.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -193,49 +187,49 @@ public class inventoripage extends javax.swing.JFrame {
         no5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         no5.setForeground(new java.awt.Color(0, 66, 37));
         no5.setText("5");
-        no5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        no5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.add(no5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, 30));
 
         namabarang1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         namabarang1.setForeground(new java.awt.Color(0, 66, 37));
         namabarang1.setText("NAMA BARANG");
-        namabarang1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        namabarang1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.add(namabarang1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, 40));
 
         harga.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         harga.setForeground(new java.awt.Color(0, 66, 37));
         harga.setText("HARGA");
-        harga.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        harga.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.add(harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 40, -1, 40));
 
         stok.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         stok.setForeground(new java.awt.Color(0, 66, 37));
         stok.setText("STOK");
-        stok.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        stok.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.add(stok, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 40, -1, 40));
 
         no1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         no1.setForeground(new java.awt.Color(0, 66, 37));
         no1.setText("1");
-        no1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        no1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.add(no1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, 30));
 
         no2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         no2.setForeground(new java.awt.Color(0, 66, 37));
         no2.setText("2");
-        no2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        no2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.add(no2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, 30));
 
         no3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         no3.setForeground(new java.awt.Color(0, 66, 37));
         no3.setText("3");
-        no3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        no3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.add(no3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 241, -1, -1));
 
         no4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         no4.setForeground(new java.awt.Color(0, 66, 37));
         no4.setText("4");
-        no4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        no4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.add(no4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, 30));
 
         jPanel6.setBackground(new java.awt.Color(245, 245, 220));
@@ -445,29 +439,53 @@ public class inventoripage extends javax.swing.JFrame {
         });
         getContentPane().add(transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 590, -1, 30));
 
-        beranda1.setBackground(new java.awt.Color(228, 228, 223));
-        beranda1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        beranda1.setForeground(new java.awt.Color(0, 66, 37));
-        beranda1.setText("Beranda");
-        beranda1.setBorder(null);
-        beranda1.setBorderPainted(false);
-        beranda1.setContentAreaFilled(false);
-        beranda1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        beranda1.addActionListener(new java.awt.event.ActionListener() {
+        riwayat.setBackground(new java.awt.Color(228, 228, 223));
+        riwayat.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        riwayat.setForeground(new java.awt.Color(0, 66, 37));
+        riwayat.setText("Riwayat");
+        riwayat.setBorder(null);
+        riwayat.setBorderPainted(false);
+        riwayat.setContentAreaFilled(false);
+        riwayat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        riwayat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                beranda1ActionPerformed(evt);
+                riwayatActionPerformed(evt);
             }
         });
-        getContentPane().add(beranda1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 590, -1, 30));
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 66, 37));
-        jLabel7.setText("Riwayat");
-        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 590, -1, 30));
+        getContentPane().add(riwayat, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 590, -1, 30));
 
         relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy.png")); // NOI18N
         getContentPane().add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, -1, -1));
+
+        beranda.setBackground(new java.awt.Color(228, 228, 223));
+        beranda.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        beranda.setForeground(new java.awt.Color(0, 66, 37));
+        beranda.setText("Beranda");
+        beranda.setBorder(null);
+        beranda.setBorderPainted(false);
+        beranda.setContentAreaFilled(false);
+        beranda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        beranda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                berandaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(beranda, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 590, -1, 30));
+
+        member.setBackground(new java.awt.Color(228, 228, 223));
+        member.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        member.setForeground(new java.awt.Color(0, 66, 37));
+        member.setText("Member");
+        member.setBorder(null);
+        member.setBorderPainted(false);
+        member.setContentAreaFilled(false);
+        member.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        member.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                memberActionPerformed(evt);
+            }
+        });
+        getContentPane().add(member, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 590, -1, 30));
 
         pack();
         setLocationRelativeTo(null);
@@ -490,9 +508,12 @@ public class inventoripage extends javax.swing.JFrame {
         new transaksipage().setVisible(true);
     }//GEN-LAST:event_transaksiActionPerformed
 
-    private void beranda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beranda1ActionPerformed
+    private void riwayatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_riwayatActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_beranda1ActionPerformed
+        dispose();
+        new riwayatpage().setVisible(true);
+        
+    }//GEN-LAST:event_riwayatActionPerformed
 
     private void inputBarang5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputBarang5ActionPerformed
         // TODO add your handling code here:
@@ -554,6 +575,18 @@ public class inventoripage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputStok4ActionPerformed
 
+    private void berandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_berandaActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new homepage().setVisible(true);
+    }//GEN-LAST:event_berandaActionPerformed
+
+    private void memberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new memberpage().setVisible(true);
+    }//GEN-LAST:event_memberActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -590,7 +623,7 @@ public class inventoripage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton beranda1;
+    private javax.swing.JButton beranda;
     private javax.swing.JLabel harga;
     private javax.swing.JTextField inputBarang1;
     private javax.swing.JTextField inputBarang2;
@@ -608,8 +641,6 @@ public class inventoripage extends javax.swing.JFrame {
     private javax.swing.JTextField inputStok4;
     private javax.swing.JTextField inputStok5;
     private javax.swing.JButton inventori;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -624,6 +655,7 @@ public class inventoripage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton lanjut;
+    private javax.swing.JButton member;
     private javax.swing.JLabel namabarang1;
     private javax.swing.JLabel no1;
     private javax.swing.JLabel no2;
@@ -631,6 +663,7 @@ public class inventoripage extends javax.swing.JFrame {
     private javax.swing.JLabel no4;
     private javax.swing.JLabel no5;
     private javax.swing.JLabel relasijy;
+    private javax.swing.JButton riwayat;
     private javax.swing.JLabel stok;
     private javax.swing.JButton transaksi;
     // End of variables declaration//GEN-END:variables
