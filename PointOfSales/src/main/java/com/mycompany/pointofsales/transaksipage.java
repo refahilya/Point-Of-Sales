@@ -25,8 +25,8 @@ public class transaksipage extends javax.swing.JFrame {
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
         relasijy.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/relasijy.png")));
         search.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/search1.png")));
-        iconadd.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/add1.png")));
-        refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/refresh1.png")));
+        iconadd.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/add2.png")));
+        refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/refresh2.png")));
     }
 
     /**
@@ -40,33 +40,48 @@ public class transaksipage extends javax.swing.JFrame {
 
         hasil1 = new javax.swing.JDialog();
         jLabel14 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        beranda = new javax.swing.JButton();
+        tambah = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         kembali = new javax.swing.JButton();
         lanjut = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        refresh = new javax.swing.JLabel();
+        iconadd = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jTextField10 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        iconadd = new javax.swing.JLabel();
-        refresh = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jTextField12 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         relasijy = new javax.swing.JLabel();
@@ -74,24 +89,43 @@ public class transaksipage extends javax.swing.JFrame {
         search = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
 
-        jLabel14.setText("HALO!");
+        hasil1.setBackground(new java.awt.Color(245, 245, 220));
+        hasil1.setMaximumSize(new java.awt.Dimension(683, 416));
+        hasil1.setMinimumSize(new java.awt.Dimension(683, 416));
+        hasil1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout hasil1Layout = new javax.swing.GroupLayout(hasil1.getContentPane());
-        hasil1.getContentPane().setLayout(hasil1Layout);
-        hasil1Layout.setHorizontalGroup(
-            hasil1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(hasil1Layout.createSequentialGroup()
-                .addGap(370, 370, 370)
-                .addComponent(jLabel14)
-                .addContainerGap(397, Short.MAX_VALUE))
-        );
-        hasil1Layout.setVerticalGroup(
-            hasil1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(hasil1Layout.createSequentialGroup()
-                .addGap(210, 210, 210)
-                .addComponent(jLabel14)
-                .addContainerGap(270, Short.MAX_VALUE))
-        );
+        jLabel14.setText("dd/mm/yy");
+        hasil1.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, 80, -1));
+
+        jLabel18.setText("TRANSAKSI BERHASIL");
+        hasil1.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, -1, -1));
+
+        jLabel20.setText("Kembalian :");
+        hasil1.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, -1, -1));
+
+        jLabel24.setText("-");
+        hasil1.getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 30, -1));
+
+        jLabel25.setText("Poin :");
+        hasil1.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, -1, -1));
+
+        jLabel26.setText("-");
+        hasil1.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 30, -1));
+
+        jLabel27.setText("Diskon :");
+        hasil1.getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, -1, -1));
+
+        jLabel28.setText("Harga");
+        hasil1.getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 60, -1));
+
+        jLabel29.setText("icon relasijy");
+        hasil1.getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, -1));
+
+        beranda.setText("beranda");
+        hasil1.getContentPane().add(beranda, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
+
+        tambah.setText("tambah");
+        hasil1.getContentPane().add(tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1274, 702));
@@ -131,137 +165,157 @@ public class transaksipage extends javax.swing.JFrame {
         });
         jPanel1.add(lanjut, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 610, 160, 40));
 
-        jTextField3.setBackground(new java.awt.Color(245, 245, 220));
-        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField3.setBorder(null);
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 70, 20));
-
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Jumlah");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 50, 20));
+        jLabel2.setText("Jumlah :");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 60, 20));
 
         jTextField4.setBackground(new java.awt.Color(245, 245, 220));
         jTextField4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTextField4.setText("Barang Pertama");
         jTextField4.setToolTipText("");
         jTextField4.setBorder(null);
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 270, -1));
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 270, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setText("Jumlah");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 50, 20));
+        jLabel4.setText("Jumlah :");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 60, 20));
 
         jTextField5.setBackground(new java.awt.Color(245, 245, 220));
         jTextField5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField5.setText("Berapa");
         jTextField5.setBorder(null);
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 70, 20));
+        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 403, 70, -1));
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
-        jLabel5.setText("Tampilan Harga");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, -1, -1));
+        jLabel5.setText("Rp");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 360, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 176, 0));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setBackground(new java.awt.Color(255, 176, 0));
-        jLabel7.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
-        jLabel7.setText("Total     :");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, 40));
+        jLabel9.setBackground(new java.awt.Color(255, 176, 0));
+        jLabel9.setFont(new java.awt.Font("SansSerif", 2, 18)); // NOI18N
+        jLabel9.setText("Non Member");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 110, 40));
 
-        jLabel8.setBackground(new java.awt.Color(255, 176, 0));
-        jLabel8.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
-        jLabel8.setText("Tampilan Total");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 210, 40));
+        refresh.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\refresh2.png")); // NOI18N
+        refresh.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel3.add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, 420, 40));
+        iconadd.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\add2.png")); // NOI18N
+        iconadd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel3.add(iconadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 30, 40));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 420, 40));
 
         jTextField6.setBackground(new java.awt.Color(245, 245, 220));
         jTextField6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTextField6.setToolTipText("");
         jTextField6.setBorder(null);
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 270, -1));
-
-        jLabel6.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
-        jLabel6.setText("Tampilan Harga");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, -1, -1));
+        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 270, -1));
 
         jLabel3.setBackground(new java.awt.Color(255, 176, 0));
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 20)); // NOI18N
         jLabel3.setText("Bayar        :");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, 100, 30));
-
-        jLabel9.setBackground(new java.awt.Color(255, 176, 0));
-        jLabel9.setFont(new java.awt.Font("SansSerif", 0, 20)); // NOI18N
-        jLabel9.setText("Tampilan Bayar");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(329, 520, 200, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 540, 110, 30));
 
         jTextField7.setBackground(new java.awt.Color(245, 245, 220));
         jTextField7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTextField7.setToolTipText("");
         jTextField7.setBorder(null);
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 270, -1));
+        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 270, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel10.setText("Jumlah");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 50, 20));
-
-        jTextField8.setBackground(new java.awt.Color(245, 245, 220));
-        jTextField8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField8.setText("Berapa");
-        jTextField8.setBorder(null);
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 70, 20));
-
-        jLabel11.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
-        jLabel11.setText("Tampilan Harga");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, -1, -1));
+        jLabel10.setText("Jumlah :");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 60, 20));
 
         jTextField9.setBackground(new java.awt.Color(245, 245, 220));
         jTextField9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTextField9.setToolTipText("");
         jTextField9.setBorder(null);
-        jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 270, -1));
+        jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 270, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel12.setText("Jumlah");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 50, 20));
+        jLabel12.setText("Jumlah :");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 60, 20));
+
+        jLabel8.setBackground(new java.awt.Color(255, 176, 0));
+        jLabel8.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel8.setText("Harga");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 500, 210, 40));
+
+        jLabel7.setBackground(new java.awt.Color(255, 176, 0));
+        jLabel7.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel7.setText("Total     :");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, -1, 40));
 
         jTextField10.setBackground(new java.awt.Color(245, 245, 220));
         jTextField10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextField10.setText("Berapa");
         jTextField10.setBorder(null);
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField10ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 70, 20));
+        jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 163, 70, -1));
 
-        jLabel13.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
-        jLabel13.setText("Tampilan Harga");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, -1, -1));
+        jTextField11.setBackground(new java.awt.Color(245, 245, 220));
+        jTextField11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextField11.setBorder(null);
+        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField11ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 243, 70, -1));
 
-        iconadd.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\add1.png")); // NOI18N
-        iconadd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(iconadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, -1, -1));
+        jTextField12.setBackground(new java.awt.Color(245, 245, 220));
+        jTextField12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextField12.setBorder(null);
+        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField12ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 323, 70, -1));
 
-        refresh.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\refresh1.png")); // NOI18N
-        refresh.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 520, -1, -1));
+        jLabel16.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel16.setText("Rp");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel15.setText("Harga");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 100, -1));
+
+        jLabel17.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel17.setText("Rp");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel19.setText("Rp");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel21.setText("Harga");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 100, -1));
+
+        jLabel22.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel22.setText("Harga");
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 100, -1));
+
+        jLabel23.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel23.setText("Harga");
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 100, -1));
+
+        jLabel11.setBackground(new java.awt.Color(255, 176, 0));
+        jLabel11.setFont(new java.awt.Font("SansSerif", 0, 20)); // NOI18N
+        jLabel11.setText("Harga");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 540, 200, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 590, 700));
 
@@ -316,26 +370,29 @@ public class transaksipage extends javax.swing.JFrame {
         new homepage().setVisible(true);
     }//GEN-LAST:event_kembaliActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void lanjutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanjutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+        dispose();
+        hasil1.setSize(683, 416);
+        hasil1.getContentPane().setBackground(Color.decode("0xF5F5DC"));
+        hasil1.setVisible(true);
+    }//GEN-LAST:event_lanjutActionPerformed
 
     private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField10ActionPerformed
 
-    private void lanjutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanjutActionPerformed
+    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
         // TODO add your handling code here:
-        hasil1.setVisible(true);
-    }//GEN-LAST:event_lanjutActionPerformed
+    }//GEN-LAST:event_jTextField11ActionPerformed
+
+    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -386,19 +443,33 @@ public class transaksipage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton beranda;
     private javax.swing.JDialog hasil1;
     private javax.swing.JLabel iconadd;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -409,17 +480,18 @@ public class transaksipage extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JButton kembali;
     private javax.swing.JButton lanjut;
     private javax.swing.JLabel refresh;
     private javax.swing.JLabel relasijy;
     private javax.swing.JLabel search;
+    private javax.swing.JButton tambah;
     // End of variables declaration//GEN-END:variables
 }
