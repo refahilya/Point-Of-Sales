@@ -32,12 +32,16 @@ public class inventoripage extends javax.swing.JFrame {
         inputHarga2.setHorizontalAlignment(JTextField.CENTER);
         inputHarga3.setHorizontalAlignment(JTextField.CENTER);
         inputHarga4.setHorizontalAlignment(JTextField.CENTER);
+        inputHarga5.setHorizontalAlignment(JTextField.CENTER);
 
         inputStok1.setHorizontalAlignment(JTextField.CENTER);
         inputStok2.setHorizontalAlignment(JTextField.CENTER);
         inputStok3.setHorizontalAlignment(JTextField.CENTER);
         inputStok4.setHorizontalAlignment(JTextField.CENTER);
         inputStok5.setHorizontalAlignment(JTextField.CENTER);
+        
+        inputidb1.setHorizontalAlignment(JTextField.CENTER);
+        inputidb2.setHorizontalAlignment(JTextField.CENTER);
     }
 
     /**
@@ -83,10 +87,14 @@ public class inventoripage extends javax.swing.JFrame {
         inputStok4 = new javax.swing.JTextField();
         jPanel10 = new javax.swing.JPanel();
         inputBarang5 = new javax.swing.JTextField();
-        inputHarga = new javax.swing.JTextField();
+        inputHarga5 = new javax.swing.JTextField();
         inputStok5 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        inputidb1 = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        inputidb2 = new javax.swing.JTextField();
         transaksi = new javax.swing.JButton();
         riwayat = new javax.swing.JButton();
         relasijy = new javax.swing.JLabel();
@@ -159,10 +167,10 @@ public class inventoripage extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(lanjut)
-                .addContainerGap(52, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lanjut, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -388,15 +396,15 @@ public class inventoripage extends javax.swing.JFrame {
         });
         jPanel10.add(inputBarang5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 470, 30));
 
-        inputHarga.setBackground(new java.awt.Color(245, 245, 220));
-        inputHarga.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputHarga.setBorder(null);
-        inputHarga.addActionListener(new java.awt.event.ActionListener() {
+        inputHarga5.setBackground(new java.awt.Color(245, 245, 220));
+        inputHarga5.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inputHarga5.setBorder(null);
+        inputHarga5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputHargaActionPerformed(evt);
+                inputHarga5ActionPerformed(evt);
             }
         });
-        jPanel10.add(inputHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 190, 30));
+        jPanel10.add(inputHarga5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 190, 30));
 
         inputStok5.setBackground(new java.awt.Color(245, 245, 220));
         inputStok5.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
@@ -415,11 +423,37 @@ public class inventoripage extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 66, 37));
+        jLabel1.setText("Masukkan ID Barang :");
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, -1));
+
+        inputidb1.setBackground(new java.awt.Color(245, 245, 220));
+        inputidb1.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        inputidb1.setToolTipText("");
+        inputidb1.setBorder(null);
+        jPanel4.add(inputidb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 430, 40));
+
         jTabbedPane1.addTab("Update Data", jPanel4);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 66, 37));
+        jLabel2.setText("Masukkan ID Barang :");
+        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, -1));
+
+        inputidb2.setBackground(new java.awt.Color(245, 245, 220));
+        inputidb2.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        inputidb2.setToolTipText("");
+        inputidb2.setBorder(null);
+        jPanel5.add(inputidb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 430, 40));
+
         jTabbedPane1.addTab("Hapus Data", jPanel5);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 1200, 520));
@@ -519,9 +553,9 @@ public class inventoripage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputBarang5ActionPerformed
 
-    private void inputHargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputHargaActionPerformed
+    private void inputHarga5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputHarga5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputHargaActionPerformed
+    }//GEN-LAST:event_inputHarga5ActionPerformed
 
     private void inputBarang2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputBarang2ActionPerformed
         // TODO add your handling code here:
@@ -630,17 +664,21 @@ public class inventoripage extends javax.swing.JFrame {
     private javax.swing.JTextField inputBarang3;
     private javax.swing.JTextField inputBarang4;
     private javax.swing.JTextField inputBarang5;
-    private javax.swing.JTextField inputHarga;
     private javax.swing.JTextField inputHarga1;
     private javax.swing.JTextField inputHarga2;
     private javax.swing.JTextField inputHarga3;
     private javax.swing.JTextField inputHarga4;
+    private javax.swing.JTextField inputHarga5;
     private javax.swing.JTextField inputStok1;
     private javax.swing.JTextField inputStok2;
     private javax.swing.JTextField inputStok3;
     private javax.swing.JTextField inputStok4;
     private javax.swing.JTextField inputStok5;
+    private javax.swing.JTextField inputidb1;
+    private javax.swing.JTextField inputidb2;
     private javax.swing.JButton inventori;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
