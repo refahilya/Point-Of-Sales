@@ -6,7 +6,10 @@ package com.mycompany.pointofsales;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -38,15 +41,13 @@ public class CRUDBarang {
             System.out.println(ex.getMessage());  
         }
     }
-    /*
+    
     public DefaultTableModel read(){
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel.addColumn("ID Member");
-        tableModel.addColumn("Nama");
-        tableModel.addColumn("Tanggal Lahir");
-        tableModel.addColumn("No Telepon");
-        tableModel.addColumn("Email");
-        tableModel.addColumn("Poin");
+        tableModel.addColumn("ID Barang");
+        tableModel.addColumn("Nama Barang");
+        tableModel.addColumn("Harga");
+        tableModel.addColumn("Stok");
         tableModel.addColumn("Updated at");
         tableModel.addColumn("Created at");
 
@@ -54,19 +55,17 @@ public class CRUDBarang {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
 
-            String query = "SELECT * FROM member";
+            String query = "SELECT * FROM inventori";
 
             Statement statement = koneksi.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
                 Object[] rowData = {
-                        resultSet.getInt("id_member"),
-                        resultSet.getString("nama_member"),
-                        resultSet.getString("tanggal_lahir"),
-                        resultSet.getInt("no_telp"),
-                        resultSet.getString("email"),
-                        resultSet.getInt("poin"),
+                        resultSet.getInt("id_barang"),
+                        resultSet.getString("nama_barang"),
+                        resultSet.getString("harga"),
+                        resultSet.getInt("stok"),
                         resultSet.getString("created_at"),
                         resultSet.getString("updated_at")
                 };
@@ -80,23 +79,22 @@ public class CRUDBarang {
         return tableModel;
     }
     
-    public void update(String id_member, String nama_member, String tanggal_lahir, int no_telp, String email) {
+    public void update(String id_barang, String nama_barang, int harga, int stok) {
         try {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
             
-            String updateQuery = "UPDATE member SET nama_member = ?, tanggal_lahir = ?, no_telp = ?, email = ? WHERE id_member = ?";
+            String updateQuery = "UPDATE inventori SET nama_barang = ?, harga = ?, stok = ?, updated_at = CURRENT_TIMESTAMP WHERE id_member = ?";
             PreparedStatement updateStatement = koneksi.prepareStatement(updateQuery);
-            updateStatement.setString(1, nama_member);
-            updateStatement.setString(2, tanggal_lahir);
-            updateStatement.setInt(3, no_telp);
-            updateStatement.setString(4, email);
-            updateStatement.setString(5, id_member);
+            updateStatement.setString(1, nama_barang);
+            updateStatement.setInt(2, harga);
+            updateStatement.setInt(3, stok);
+            updateStatement.setString(4, id_barang);
             int rowsAffected = updateStatement.executeUpdate();
             if (rowsAffected > 0) {
-                System.out.println("Data member berhasil diupdate.");
+                System.out.println("Data barang berhasil diupdate.");
             } else {
-                System.out.println("Gagal mengupdate data member.");
+                System.out.println("Gagal mengupdate data barang.");
             }   updateStatement.close();
          
         } catch (SQLException ex) {
@@ -104,21 +102,21 @@ public class CRUDBarang {
         }
     }
     
-    public void delete(String id_member) {
+    public void delete(String id_barang) {
         try {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
             
-            String deleteQuery = "DELETE FROM member WHERE id_member = ?";
+            String deleteQuery = "DELETE FROM inventori WHERE id_barang = ?";
             PreparedStatement deleteStatement = koneksi.prepareStatement(deleteQuery);
-            deleteStatement.setString(1, id_member);
+            deleteStatement.setString(1, id_barang);
 
             int rowsAffected = deleteStatement.executeUpdate();
 
             if (rowsAffected > 0) {
-                System.out.println("Data anggota berhasil dihapus.");
+                System.out.println("Data barang berhasil dihapus.");
             } else {
-                System.out.println("Gagal menghapus data anggota.");
+                System.out.println("Gagal menghapus data barang.");
             }
 
             deleteStatement.close();
@@ -126,5 +124,5 @@ public class CRUDBarang {
             System.out.println(ex.getMessage());  
         }
     }
-    */
+    
 }

@@ -90,7 +90,7 @@ public class CRUDMember {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
             
-            String updateQuery = "UPDATE member SET nama_member = ?, tanggal_lahir = ?, no_telp = ?, email = ? WHERE id_member = ?";
+            String updateQuery = "UPDATE member SET nama_member = ?, tanggal_lahir = ?, no_telp = ?, email = ?, updated_at = CURRENT_TIMESTAMP WHERE id_member = ?";
             PreparedStatement updateStatement = koneksi.prepareStatement(updateQuery);
             updateStatement.setString(1, nama_member);
             updateStatement.setString(2, tanggal_lahir);
@@ -132,48 +132,4 @@ public class CRUDMember {
         }
     }
     
-    /*
-    public boolean ida(int id_anggota) throws SQLException {
-        Koneksi konek = new Koneksi();
-        Connection koneksi = konek.buka();
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-
-        try {
-            String query = "SELECT * FROM anggota WHERE id_anggota = ?";
-            preparedStatement = koneksi.prepareStatement(query);
-            preparedStatement.setInt(1, id_anggota);
-
-            resultSet = preparedStatement.executeQuery();
-
-            return resultSet.next();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-    
-    public boolean ida2(int id_anggota) throws SQLException {
-        Koneksi konek = new Koneksi();
-        Connection koneksi = konek.buka();
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-
-        try {
-            String query = "SELECT * FROM anggota WHERE id_anggota = ?";
-            preparedStatement = koneksi.prepareStatement(query);
-            preparedStatement.setInt(1, id_anggota);
-
-            resultSet = preparedStatement.executeQuery();
-
-            return resultSet.next();
-            
-            //belum disuruh delete
-            
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-    */
 }
