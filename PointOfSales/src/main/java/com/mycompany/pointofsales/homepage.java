@@ -40,8 +40,8 @@ public class homepage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         logout = new javax.swing.JButton();
-        inventori = new javax.swing.JButton();
         transaksi1 = new javax.swing.JButton();
+        inventori = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1274, 698));
@@ -56,7 +56,7 @@ public class homepage extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 66, 37));
         jLabel5.setText("Member");
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 66, 37));
@@ -135,21 +135,6 @@ public class homepage extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 210, 30));
 
-        inventori.setBackground(new java.awt.Color(228, 228, 223));
-        inventori.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        inventori.setForeground(new java.awt.Color(0, 66, 37));
-        inventori.setText("Inventori");
-        inventori.setBorder(null);
-        inventori.setBorderPainted(false);
-        inventori.setContentAreaFilled(false);
-        inventori.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        inventori.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inventoriActionPerformed(evt);
-            }
-        });
-        getContentPane().add(inventori, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
-
         transaksi1.setBackground(new java.awt.Color(228, 228, 223));
         transaksi1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         transaksi1.setForeground(new java.awt.Color(0, 66, 37));
@@ -165,7 +150,23 @@ public class homepage extends javax.swing.JFrame {
         });
         getContentPane().add(transaksi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
 
+        inventori.setBackground(new java.awt.Color(228, 228, 223));
+        inventori.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        inventori.setForeground(new java.awt.Color(0, 66, 37));
+        inventori.setText("Inventori");
+        inventori.setBorder(null);
+        inventori.setBorderPainted(false);
+        inventori.setContentAreaFilled(false);
+        inventori.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        inventori.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inventoriActionPerformed(evt);
+            }
+        });
+        getContentPane().add(inventori, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void inventoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventoriActionPerformed

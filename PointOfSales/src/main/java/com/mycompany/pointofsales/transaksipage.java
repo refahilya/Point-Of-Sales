@@ -23,7 +23,7 @@ public class transaksipage extends javax.swing.JFrame {
     public transaksipage() {
         initComponents();
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
-        relasijy.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/relasijy.png")));
+        relasijy.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/relasijy3.png")));
         search.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/search1.png")));
         iconadd.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/add2.png")));
         refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/refresh2.png")));
@@ -90,7 +90,6 @@ public class transaksipage extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
 
         hasil1.setBackground(new java.awt.Color(245, 245, 220));
-        hasil1.setMaximumSize(new java.awt.Dimension(683, 416));
         hasil1.setMinimumSize(new java.awt.Dimension(683, 416));
         hasil1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -336,7 +335,7 @@ public class transaksipage extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 670, 630));
 
-        relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy.png")); // NOI18N
+        relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy3.png")); // NOI18N
         getContentPane().add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(246, 246, 246));
@@ -360,6 +359,7 @@ public class transaksipage extends javax.swing.JFrame {
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, 250, 20));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
