@@ -95,37 +95,39 @@ public class transaksipage extends javax.swing.JFrame {
         hasil1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel14.setText("dd/mm/yy");
-        hasil1.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, 80, -1));
+        hasil1.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 80, -1));
 
         jLabel18.setText("TRANSAKSI BERHASIL");
-        hasil1.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, -1, -1));
+        hasil1.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, -1));
 
         jLabel20.setText("Kembalian :");
-        hasil1.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, -1, -1));
+        hasil1.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, -1, -1));
 
         jLabel24.setText("-");
-        hasil1.getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 30, -1));
+        hasil1.getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 30, -1));
 
         jLabel25.setText("Poin :");
-        hasil1.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, -1, -1));
+        hasil1.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, -1, -1));
 
         jLabel26.setText("-");
-        hasil1.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 30, -1));
+        hasil1.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 30, -1));
 
         jLabel27.setText("Diskon :");
-        hasil1.getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, -1, -1));
+        hasil1.getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, -1, -1));
 
         jLabel28.setText("Harga");
-        hasil1.getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 60, -1));
+        hasil1.getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 60, -1));
 
         jLabel29.setText("icon relasijy");
         hasil1.getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, -1));
 
         beranda.setText("beranda");
-        hasil1.getContentPane().add(beranda, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
+        beranda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        hasil1.getContentPane().add(beranda, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, -1, -1));
 
         tambah.setText("tambah");
-        hasil1.getContentPane().add(tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, -1, -1));
+        tambah.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        hasil1.getContentPane().add(tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1274, 702));

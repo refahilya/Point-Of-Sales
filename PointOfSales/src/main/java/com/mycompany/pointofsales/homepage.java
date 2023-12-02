@@ -32,7 +32,6 @@ public class homepage extends javax.swing.JFrame {
 
         relasijy = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -41,10 +40,13 @@ public class homepage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         logout = new javax.swing.JButton();
-        transaksi = new javax.swing.JButton();
+        inventori = new javax.swing.JButton();
+        transaksi1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1274, 698));
         setMinimumSize(new java.awt.Dimension(1274, 698));
+        setPreferredSize(new java.awt.Dimension(1274, 698));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy.png")); // NOI18N
@@ -55,12 +57,6 @@ public class homepage extends javax.swing.JFrame {
         jLabel5.setText("Member");
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 66, 37));
-        jLabel4.setText("Inventori");
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 66, 37));
@@ -139,35 +135,54 @@ public class homepage extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 210, 30));
 
-        transaksi.setBackground(new java.awt.Color(228, 228, 223));
-        transaksi.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        transaksi.setForeground(new java.awt.Color(0, 66, 37));
-        transaksi.setText("Transaksi");
-        transaksi.setBorder(null);
-        transaksi.setBorderPainted(false);
-        transaksi.setContentAreaFilled(false);
-        transaksi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        transaksi.addActionListener(new java.awt.event.ActionListener() {
+        inventori.setBackground(new java.awt.Color(228, 228, 223));
+        inventori.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        inventori.setForeground(new java.awt.Color(0, 66, 37));
+        inventori.setText("Inventori");
+        inventori.setBorder(null);
+        inventori.setBorderPainted(false);
+        inventori.setContentAreaFilled(false);
+        inventori.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        inventori.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                transaksiActionPerformed(evt);
+                inventoriActionPerformed(evt);
             }
         });
-        getContentPane().add(transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
+        getContentPane().add(inventori, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
+
+        transaksi1.setBackground(new java.awt.Color(228, 228, 223));
+        transaksi1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        transaksi1.setForeground(new java.awt.Color(0, 66, 37));
+        transaksi1.setText("Transaksi");
+        transaksi1.setBorder(null);
+        transaksi1.setBorderPainted(false);
+        transaksi1.setContentAreaFilled(false);
+        transaksi1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        transaksi1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transaksi1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(transaksi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksiActionPerformed
+    private void inventoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventoriActionPerformed
         // TODO add your handling code here:
         dispose();
-        new transaksipage().setVisible(true);
-    }//GEN-LAST:event_transaksiActionPerformed
+        new inventoripage().setVisible(true);
+    }//GEN-LAST:event_inventoriActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
         dispose();
         new loginpage().setVisible(true);
     }//GEN-LAST:event_logoutActionPerformed
+
+    private void transaksi1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksi1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_transaksi1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,7 +220,7 @@ public class homepage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton inventori;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -216,6 +231,6 @@ public class homepage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JButton logout;
     private javax.swing.JLabel relasijy;
-    private javax.swing.JButton transaksi;
+    private javax.swing.JButton transaksi1;
     // End of variables declaration//GEN-END:variables
 }
