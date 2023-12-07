@@ -201,6 +201,8 @@ public class homepage extends javax.swing.JFrame {
 
     private void transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksiActionPerformed
         // TODO add your handling code here:
+        dispose();
+        new transaksipage().setVisible(true);
     }//GEN-LAST:event_transaksiActionPerformed
 
     private void inventoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventoriActionPerformed
