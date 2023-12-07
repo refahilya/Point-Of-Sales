@@ -181,7 +181,7 @@ public class inventoripage extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 66, 37));
-        jLabel2.setText("ID Barang");
+        jLabel2.setText("Stok");
         jPanel11.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -191,12 +191,12 @@ public class inventoripage extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 66, 37));
-        jLabel4.setText("ID Barang");
+        jLabel4.setText("Nama Barang");
         jPanel11.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 66, 37));
-        jLabel5.setText("ID Barang");
+        jLabel5.setText("Harga");
         jPanel11.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
 
         inputidb2.setBackground(new java.awt.Color(245, 245, 220));
@@ -385,7 +385,6 @@ public class inventoripage extends javax.swing.JFrame {
 
     private void lanjutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanjutActionPerformed
         // TODO add your handling code here:
-        dispose();
     }//GEN-LAST:event_lanjutActionPerformed
 
     private void lanjut2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanjut2ActionPerformed

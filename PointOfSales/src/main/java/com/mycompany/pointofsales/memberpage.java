@@ -19,36 +19,7 @@ public class memberpage extends javax.swing.JFrame {
     public memberpage() {
         initComponents();
         getContentPane().setBackground(Color.decode("0xE4E4DF"));
-        
-        inputMember1.setHorizontalAlignment(JTextField.CENTER);
-        inputMember2.setHorizontalAlignment(JTextField.CENTER);
-        inputMember3.setHorizontalAlignment(JTextField.CENTER);
-        inputMember4.setHorizontalAlignment(JTextField.CENTER);
-        inputMember5.setHorizontalAlignment(JTextField.CENTER);
-        
-        inputTanggal1.setHorizontalAlignment(JTextField.CENTER);
-        inputTanggal2.setHorizontalAlignment(JTextField.CENTER);
-        inputTanggal3.setHorizontalAlignment(JTextField.CENTER);
-        inputTanggal4.setHorizontalAlignment(JTextField.CENTER);
-        inputTanggal5.setHorizontalAlignment(JTextField.CENTER);
-        
-        inputNotelp1.setHorizontalAlignment(JTextField.CENTER);
-        inputNotelp2.setHorizontalAlignment(JTextField.CENTER);
-        inputNotelp3.setHorizontalAlignment(JTextField.CENTER);
-        inputNotelp4.setHorizontalAlignment(JTextField.CENTER);
-        inputNotelp5.setHorizontalAlignment(JTextField.CENTER);
-        
-        inputEmail1.setHorizontalAlignment(JTextField.CENTER);
-        inputEmail2.setHorizontalAlignment(JTextField.CENTER);
-        inputEmail3.setHorizontalAlignment(JTextField.CENTER);
-        inputEmail4.setHorizontalAlignment(JTextField.CENTER);
-        inputEmail5.setHorizontalAlignment(JTextField.CENTER);
-        
-        inputPoin1.setHorizontalAlignment(JTextField.CENTER);
-        inputPoin2.setHorizontalAlignment(JTextField.CENTER);
-        inputPoin3.setHorizontalAlignment(JTextField.CENTER);
-        inputPoin4.setHorizontalAlignment(JTextField.CENTER);
-        inputPoin5.setHorizontalAlignment(JTextField.CENTER);
+
     }
 
     /**
@@ -60,521 +31,44 @@ public class memberpage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        inventori = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        lanjut = new javax.swing.JButton();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
-        no5 = new javax.swing.JLabel();
-        namaMember = new javax.swing.JLabel();
-        tanggalLahir = new javax.swing.JLabel();
-        poin = new javax.swing.JLabel();
-        no1 = new javax.swing.JLabel();
-        no2 = new javax.swing.JLabel();
-        no3 = new javax.swing.JLabel();
-        no4 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        inputMember1 = new javax.swing.JTextField();
-        inputTanggal1 = new javax.swing.JTextField();
-        inputEmail1 = new javax.swing.JTextField();
-        inputNotelp1 = new javax.swing.JTextField();
-        inputPoin1 = new javax.swing.JTextField();
-        jPanel7 = new javax.swing.JPanel();
-        inputMember2 = new javax.swing.JTextField();
-        inputTanggal2 = new javax.swing.JTextField();
-        inputNotelp2 = new javax.swing.JTextField();
-        inputEmail2 = new javax.swing.JTextField();
-        inputPoin2 = new javax.swing.JTextField();
-        jPanel8 = new javax.swing.JPanel();
-        inputMember3 = new javax.swing.JTextField();
-        inputTanggal3 = new javax.swing.JTextField();
-        inputNotelp3 = new javax.swing.JTextField();
-        inputEmail3 = new javax.swing.JTextField();
-        inputPoin3 = new javax.swing.JTextField();
-        jPanel9 = new javax.swing.JPanel();
-        inputMember4 = new javax.swing.JTextField();
-        inputTanggal4 = new javax.swing.JTextField();
-        inputNotelp4 = new javax.swing.JTextField();
-        inputEmail4 = new javax.swing.JTextField();
-        inputPoin4 = new javax.swing.JTextField();
-        jPanel10 = new javax.swing.JPanel();
-        inputMember5 = new javax.swing.JTextField();
-        inputTanggal5 = new javax.swing.JTextField();
-        inputNotelp5 = new javax.swing.JTextField();
-        inputEmail5 = new javax.swing.JTextField();
-        inputPoin5 = new javax.swing.JTextField();
-        notelp = new javax.swing.JLabel();
-        email = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        inputidm1 = new javax.swing.JTextField();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        inputidm2 = new javax.swing.JTextField();
         transaksi = new javax.swing.JButton();
         riwayat = new javax.swing.JButton();
-        relasijy = new javax.swing.JLabel();
-        beranda = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        inventori = new javax.swing.JButton();
         member = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        relasijy = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        inputidb1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        inputidb2 = new javax.swing.JTextField();
+        inputidb3 = new javax.swing.JTextField();
+        inputidb4 = new javax.swing.JTextField();
+        jPanel6 = new javax.swing.JPanel();
+        add = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        lanjut2 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        lanjut = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        inputidb5 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        inputidb6 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        search = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        beranda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1274, 689));
         setMinimumSize(new java.awt.Dimension(1274, 689));
+        setPreferredSize(new java.awt.Dimension(1274, 698));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        inventori.setBackground(new java.awt.Color(228, 228, 223));
-        inventori.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        inventori.setForeground(new java.awt.Color(0, 66, 37));
-        inventori.setText("Inventori");
-        inventori.setBorder(null);
-        inventori.setBorderPainted(false);
-        inventori.setContentAreaFilled(false);
-        inventori.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        inventori.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inventoriActionPerformed(evt);
-            }
-        });
-        getContentPane().add(inventori, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 590, -1, 30));
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 176, 0));
-        jLabel8.setText("REFA");
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 30, 40, -1));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 66, 37));
-        jLabel9.setText("Welcome, ");
-        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, -1, -1));
-
-        jPanel3.setBackground(new java.awt.Color(0, 66, 37));
-
-        lanjut.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        lanjut.setForeground(new java.awt.Color(255, 255, 255));
-        lanjut.setText("LANJUT");
-        lanjut.setBorder(null);
-        lanjut.setBorderPainted(false);
-        lanjut.setContentAreaFilled(false);
-        lanjut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lanjut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lanjutActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lanjut, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lanjut)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, 150, 30));
-
-        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jTabbedPane1.setForeground(new java.awt.Color(0, 66, 37));
-        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        no5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        no5.setForeground(new java.awt.Color(0, 66, 37));
-        no5.setText("5");
-        no5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(no5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, 30));
-
-        namaMember.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        namaMember.setForeground(new java.awt.Color(0, 66, 37));
-        namaMember.setText("NAMA MEMBER");
-        namaMember.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(namaMember, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, 40));
-
-        tanggalLahir.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        tanggalLahir.setForeground(new java.awt.Color(0, 66, 37));
-        tanggalLahir.setText("TANGGAL LAHIR");
-        tanggalLahir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(tanggalLahir, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, -1, 40));
-
-        poin.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        poin.setForeground(new java.awt.Color(0, 66, 37));
-        poin.setText("POIN");
-        poin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(poin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 40, -1, 40));
-
-        no1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        no1.setForeground(new java.awt.Color(0, 66, 37));
-        no1.setText("1");
-        no1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(no1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, 30));
-
-        no2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        no2.setForeground(new java.awt.Color(0, 66, 37));
-        no2.setText("2");
-        no2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(no2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, 30));
-
-        no3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        no3.setForeground(new java.awt.Color(0, 66, 37));
-        no3.setText("3");
-        no3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(no3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 241, -1, -1));
-
-        no4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        no4.setForeground(new java.awt.Color(0, 66, 37));
-        no4.setText("4");
-        no4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(no4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, 30));
-
-        jPanel6.setBackground(new java.awt.Color(245, 245, 220));
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        inputMember1.setBackground(new java.awt.Color(245, 245, 220));
-        inputMember1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputMember1.setText("Nama Member 1");
-        inputMember1.setBorder(null);
-        inputMember1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputMember1ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(inputMember1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 310, 30));
-
-        inputTanggal1.setBackground(new java.awt.Color(245, 245, 220));
-        inputTanggal1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputTanggal1.setText("Harga Barang 1");
-        inputTanggal1.setBorder(null);
-        inputTanggal1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputTanggal1ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(inputTanggal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 190, 30));
-
-        inputEmail1.setBackground(new java.awt.Color(245, 245, 220));
-        inputEmail1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputEmail1.setText("Email 1");
-        inputEmail1.setBorder(null);
-        inputEmail1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputEmail1ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(inputEmail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, 170, 30));
-
-        inputNotelp1.setBackground(new java.awt.Color(245, 245, 220));
-        inputNotelp1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputNotelp1.setText("No Telp 1");
-        inputNotelp1.setBorder(null);
-        inputNotelp1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNotelp1ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(inputNotelp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 0, 140, 30));
-
-        inputPoin1.setBackground(new java.awt.Color(245, 245, 220));
-        inputPoin1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputPoin1.setText("Poin 1");
-        inputPoin1.setBorder(null);
-        inputPoin1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputPoin1ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(inputPoin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, 90, 30));
-
-        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 1140, 30));
-
-        jPanel7.setBackground(new java.awt.Color(245, 245, 220));
-        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        inputMember2.setBackground(new java.awt.Color(245, 245, 220));
-        inputMember2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputMember2.setBorder(null);
-        inputMember2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputMember2ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(inputMember2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 310, 30));
-
-        inputTanggal2.setBackground(new java.awt.Color(245, 245, 220));
-        inputTanggal2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputTanggal2.setBorder(null);
-        inputTanggal2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputTanggal2ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(inputTanggal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 190, 30));
-
-        inputNotelp2.setBackground(new java.awt.Color(245, 245, 220));
-        inputNotelp2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputNotelp2.setBorder(null);
-        inputNotelp2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNotelp2ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(inputNotelp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 0, 140, 30));
-
-        inputEmail2.setBackground(new java.awt.Color(245, 245, 220));
-        inputEmail2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputEmail2.setBorder(null);
-        inputEmail2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputEmail2ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(inputEmail2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, 170, 30));
-
-        inputPoin2.setBackground(new java.awt.Color(245, 245, 220));
-        inputPoin2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputPoin2.setBorder(null);
-        inputPoin2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputPoin2ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(inputPoin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, 90, 30));
-
-        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 1140, 30));
-
-        jPanel8.setBackground(new java.awt.Color(245, 245, 220));
-        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        inputMember3.setBackground(new java.awt.Color(245, 245, 220));
-        inputMember3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputMember3.setBorder(null);
-        inputMember3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputMember3ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(inputMember3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 310, 30));
-
-        inputTanggal3.setBackground(new java.awt.Color(245, 245, 220));
-        inputTanggal3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputTanggal3.setBorder(null);
-        inputTanggal3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputTanggal3ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(inputTanggal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 190, 30));
-
-        inputNotelp3.setBackground(new java.awt.Color(245, 245, 220));
-        inputNotelp3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputNotelp3.setBorder(null);
-        inputNotelp3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNotelp3ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(inputNotelp3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 0, 140, 30));
-
-        inputEmail3.setBackground(new java.awt.Color(245, 245, 220));
-        inputEmail3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputEmail3.setBorder(null);
-        inputEmail3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputEmail3ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(inputEmail3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, 170, 30));
-
-        inputPoin3.setBackground(new java.awt.Color(245, 245, 220));
-        inputPoin3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputPoin3.setBorder(null);
-        inputPoin3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputPoin3ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(inputPoin3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, 90, 30));
-
-        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 1140, 30));
-
-        jPanel9.setBackground(new java.awt.Color(245, 245, 220));
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        inputMember4.setBackground(new java.awt.Color(245, 245, 220));
-        inputMember4.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputMember4.setBorder(null);
-        inputMember4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputMember4ActionPerformed(evt);
-            }
-        });
-        jPanel9.add(inputMember4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 310, 30));
-
-        inputTanggal4.setBackground(new java.awt.Color(245, 245, 220));
-        inputTanggal4.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputTanggal4.setBorder(null);
-        inputTanggal4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputTanggal4ActionPerformed(evt);
-            }
-        });
-        jPanel9.add(inputTanggal4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 190, 30));
-
-        inputNotelp4.setBackground(new java.awt.Color(245, 245, 220));
-        inputNotelp4.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputNotelp4.setBorder(null);
-        inputNotelp4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNotelp4ActionPerformed(evt);
-            }
-        });
-        jPanel9.add(inputNotelp4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 0, 140, 30));
-
-        inputEmail4.setBackground(new java.awt.Color(245, 245, 220));
-        inputEmail4.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputEmail4.setBorder(null);
-        inputEmail4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputEmail4ActionPerformed(evt);
-            }
-        });
-        jPanel9.add(inputEmail4, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, 170, 30));
-
-        inputPoin4.setBackground(new java.awt.Color(245, 245, 220));
-        inputPoin4.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputPoin4.setBorder(null);
-        inputPoin4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputPoin4ActionPerformed(evt);
-            }
-        });
-        jPanel9.add(inputPoin4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, 90, 30));
-
-        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 1140, 30));
-
-        jPanel10.setBackground(new java.awt.Color(245, 245, 220));
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        inputMember5.setBackground(new java.awt.Color(245, 245, 220));
-        inputMember5.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputMember5.setBorder(null);
-        inputMember5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputMember5ActionPerformed(evt);
-            }
-        });
-        jPanel10.add(inputMember5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 310, 30));
-
-        inputTanggal5.setBackground(new java.awt.Color(245, 245, 220));
-        inputTanggal5.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputTanggal5.setBorder(null);
-        inputTanggal5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputTanggal5ActionPerformed(evt);
-            }
-        });
-        jPanel10.add(inputTanggal5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 190, 30));
-
-        inputNotelp5.setBackground(new java.awt.Color(245, 245, 220));
-        inputNotelp5.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputNotelp5.setBorder(null);
-        inputNotelp5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNotelp5ActionPerformed(evt);
-            }
-        });
-        jPanel10.add(inputNotelp5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 0, 140, 30));
-
-        inputEmail5.setBackground(new java.awt.Color(245, 245, 220));
-        inputEmail5.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputEmail5.setBorder(null);
-        inputEmail5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputEmail5ActionPerformed(evt);
-            }
-        });
-        jPanel10.add(inputEmail5, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, 170, 30));
-
-        inputPoin5.setBackground(new java.awt.Color(245, 245, 220));
-        inputPoin5.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputPoin5.setBorder(null);
-        inputPoin5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputPoin5ActionPerformed(evt);
-            }
-        });
-        jPanel10.add(inputPoin5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, 90, 30));
-
-        jPanel2.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 1140, 30));
-
-        notelp.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        notelp.setForeground(new java.awt.Color(0, 66, 37));
-        notelp.setText("NO TELP");
-        notelp.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(notelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 40, -1, 40));
-
-        email.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        email.setForeground(new java.awt.Color(0, 66, 37));
-        email.setText("EMAIL");
-        email.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 40, -1, 40));
-
-        jTabbedPane1.addTab("Tambah Data", jPanel2);
-
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 66, 37));
-        jLabel1.setText("Masukkan ID Member :");
-        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, -1));
-
-        inputidm1.setBackground(new java.awt.Color(245, 245, 220));
-        inputidm1.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
-        inputidm1.setToolTipText("");
-        inputidm1.setBorder(null);
-        jPanel4.add(inputidm1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 430, 40));
-
-        jTabbedPane1.addTab("Update Data", jPanel4);
-
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 66, 37));
-        jLabel2.setText("Masukkan ID Member :");
-        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, -1));
-
-        inputidm2.setBackground(new java.awt.Color(245, 245, 220));
-        inputidm2.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
-        inputidm2.setToolTipText("");
-        inputidm2.setBorder(null);
-        jPanel5.add(inputidm2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 430, 40));
-
-        jTabbedPane1.addTab("Hapus Data", jPanel5);
-
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 1200, 520));
 
         transaksi.setBackground(new java.awt.Color(228, 228, 223));
         transaksi.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -589,7 +83,7 @@ public class memberpage extends javax.swing.JFrame {
                 transaksiActionPerformed(evt);
             }
         });
-        getContentPane().add(transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 590, -1, 30));
+        getContentPane().add(transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 8, -1, 40));
 
         riwayat.setBackground(new java.awt.Color(228, 228, 223));
         riwayat.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -604,10 +98,269 @@ public class memberpage extends javax.swing.JFrame {
                 riwayatActionPerformed(evt);
             }
         });
-        getContentPane().add(riwayat, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 590, -1, 30));
+        getContentPane().add(riwayat, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 8, -1, 40));
 
-        relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy.png")); // NOI18N
-        getContentPane().add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, -1, -1));
+        inventori.setBackground(new java.awt.Color(228, 228, 223));
+        inventori.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        inventori.setForeground(new java.awt.Color(0, 66, 37));
+        inventori.setText("Inventori");
+        inventori.setBorder(null);
+        inventori.setBorderPainted(false);
+        inventori.setContentAreaFilled(false);
+        inventori.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        inventori.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inventoriActionPerformed(evt);
+            }
+        });
+        getContentPane().add(inventori, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 8, 90, 40));
+
+        member.setBackground(new java.awt.Color(228, 228, 223));
+        member.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        member.setForeground(new java.awt.Color(255, 255, 255));
+        member.setText("Member");
+        member.setBorder(null);
+        member.setBorderPainted(false);
+        member.setContentAreaFilled(false);
+        member.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        member.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                memberActionPerformed(evt);
+            }
+        });
+        getContentPane().add(member, new org.netbeans.lib.awtextra.AbsoluteConstraints(954, 8, 90, 40));
+
+        jPanel1.setBackground(new java.awt.Color(255, 176, 0));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, 120, 40));
+
+        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 66, 37)));
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy2.png")); // NOI18N
+        jPanel11.add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 40)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 66, 37));
+        jLabel1.setText("DATA MEMBER");
+        jPanel11.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
+
+        inputidb1.setBackground(new java.awt.Color(245, 245, 220));
+        inputidb1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inputidb1.setToolTipText("");
+        inputidb1.setBorder(null);
+        jPanel11.add(inputidb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 310, 30));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 66, 37));
+        jLabel2.setText("Poin");
+        jPanel11.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 66, 37));
+        jLabel3.setText("ID Member");
+        jPanel11.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 66, 37));
+        jLabel4.setText("Nama Member");
+        jPanel11.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 66, 37));
+        jLabel5.setText("Tanggal Lahir");
+        jPanel11.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+
+        inputidb2.setBackground(new java.awt.Color(245, 245, 220));
+        inputidb2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inputidb2.setToolTipText("");
+        inputidb2.setBorder(null);
+        jPanel11.add(inputidb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 310, 30));
+
+        inputidb3.setBackground(new java.awt.Color(245, 245, 220));
+        inputidb3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inputidb3.setToolTipText("");
+        inputidb3.setBorder(null);
+        jPanel11.add(inputidb3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 310, 30));
+
+        inputidb4.setBackground(new java.awt.Color(245, 245, 220));
+        inputidb4.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inputidb4.setToolTipText("");
+        inputidb4.setBorder(null);
+        jPanel11.add(inputidb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 310, 30));
+
+        jPanel6.setBackground(new java.awt.Color(0, 66, 37));
+
+        add.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        add.setForeground(new java.awt.Color(255, 255, 255));
+        add.setText("ADD");
+        add.setBorder(null);
+        add.setBorderPainted(false);
+        add.setContentAreaFilled(false);
+        add.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(add, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(add)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel11.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, -1, 30));
+
+        jPanel7.setBackground(new java.awt.Color(0, 66, 37));
+
+        lanjut2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lanjut2.setForeground(new java.awt.Color(255, 255, 255));
+        lanjut2.setText("UPDATE");
+        lanjut2.setBorder(null);
+        lanjut2.setBorderPainted(false);
+        lanjut2.setContentAreaFilled(false);
+        lanjut2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lanjut2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lanjut2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lanjut2, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lanjut2, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        jPanel11.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 570, -1, 30));
+
+        jPanel8.setBackground(new java.awt.Color(0, 66, 37));
+
+        lanjut.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lanjut.setForeground(new java.awt.Color(255, 255, 255));
+        lanjut.setText("DELETE");
+        lanjut.setBorder(null);
+        lanjut.setBorderPainted(false);
+        lanjut.setContentAreaFilled(false);
+        lanjut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lanjut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lanjutActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lanjut, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lanjut)
+                .addContainerGap())
+        );
+
+        jPanel11.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 610, -1, 30));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 66, 37));
+        jLabel6.setText("No Telepon");
+        jPanel11.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
+
+        inputidb5.setBackground(new java.awt.Color(245, 245, 220));
+        inputidb5.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inputidb5.setToolTipText("");
+        inputidb5.setBorder(null);
+        jPanel11.add(inputidb5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 310, 30));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 66, 37));
+        jLabel7.setText("Email");
+        jPanel11.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
+
+        inputidb6.setBackground(new java.awt.Color(245, 245, 220));
+        inputidb6.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inputidb6.setToolTipText("");
+        inputidb6.setBorder(null);
+        jPanel11.add(inputidb6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 310, 30));
+
+        getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 660));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID MEMBER", "NAMA MEMBER", "TANGGAL LAHIR", "NO TELP", "EMAIL", "POIN", "CREATED_AT", "UPDATED_AT"
+            }
+        ));
+        jTable1.setGridColor(new java.awt.Color(0, 66, 37));
+        jTable1.setSelectionBackground(new java.awt.Color(245, 245, 220));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 860, 590));
+
+        jPanel2.setBackground(new java.awt.Color(246, 246, 246));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        search.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\search1.png")); // NOI18N
+        search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTextField1.setBackground(new java.awt.Color(246, 246, 246));
+        jTextField1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jTextField1.setText("Search");
+        jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 220, 20));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 250, 20));
 
         beranda.setBackground(new java.awt.Color(228, 228, 223));
         beranda.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -622,84 +375,10 @@ public class memberpage extends javax.swing.JFrame {
                 berandaActionPerformed(evt);
             }
         });
-        getContentPane().add(beranda, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 590, -1, 30));
-
-        jPanel1.setBackground(new java.awt.Color(245, 245, 220));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        member.setBackground(new java.awt.Color(245, 245, 220));
-        member.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        member.setText("Member");
-        member.setBorder(null);
-        member.setBorderPainted(false);
-        member.setContentAreaFilled(false);
-        member.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        member.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                memberActionPerformed(evt);
-            }
-        });
-        jPanel1.add(member, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, 30));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 590, 110, 30));
+        getContentPane().add(beranda, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 8, 80, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void inventoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventoriActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        new inventoripage().setVisible(true);
-    }//GEN-LAST:event_inventoriActionPerformed
-
-    private void lanjutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanjutActionPerformed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_lanjutActionPerformed
-
-    private void inputMember1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputMember1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputMember1ActionPerformed
-
-    private void inputTanggal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTanggal1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputTanggal1ActionPerformed
-
-    private void inputNotelp5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNotelp5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputNotelp5ActionPerformed
-
-    private void inputMember2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputMember2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputMember2ActionPerformed
-
-    private void inputTanggal2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTanggal2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputTanggal2ActionPerformed
-
-    private void inputMember3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputMember3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputMember3ActionPerformed
-
-    private void inputTanggal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTanggal3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputTanggal3ActionPerformed
-
-    private void inputMember4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputMember4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputMember4ActionPerformed
-
-    private void inputTanggal4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTanggal4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputTanggal4ActionPerformed
-
-    private void inputMember5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputMember5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputMember5ActionPerformed
-
-    private void inputTanggal5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTanggal5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputTanggal5ActionPerformed
 
     private void transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksiActionPerformed
         // TODO add your handling code here:
@@ -714,11 +393,11 @@ public class memberpage extends javax.swing.JFrame {
 
     }//GEN-LAST:event_riwayatActionPerformed
 
-    private void berandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_berandaActionPerformed
+    private void inventoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventoriActionPerformed
         // TODO add your handling code here:
         dispose();
         new homepage().setVisible(true);
-    }//GEN-LAST:event_berandaActionPerformed
+    }//GEN-LAST:event_inventoriActionPerformed
 
     private void memberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberActionPerformed
         // TODO add your handling code here:
@@ -726,61 +405,25 @@ public class memberpage extends javax.swing.JFrame {
         new memberpage().setVisible(true);
     }//GEN-LAST:event_memberActionPerformed
 
-    private void inputEmail5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEmail5ActionPerformed
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputEmail5ActionPerformed
+    }//GEN-LAST:event_addActionPerformed
 
-    private void inputNotelp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNotelp2ActionPerformed
+    private void lanjut2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanjut2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputNotelp2ActionPerformed
+    }//GEN-LAST:event_lanjut2ActionPerformed
 
-    private void inputNotelp3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNotelp3ActionPerformed
+    private void lanjutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanjutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputNotelp3ActionPerformed
+    }//GEN-LAST:event_lanjutActionPerformed
 
-    private void inputNotelp4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNotelp4ActionPerformed
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputNotelp4ActionPerformed
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void inputPoin5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPoin5ActionPerformed
+    private void berandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_berandaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputPoin5ActionPerformed
-
-    private void inputEmail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEmail1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputEmail1ActionPerformed
-
-    private void inputEmail2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEmail2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputEmail2ActionPerformed
-
-    private void inputEmail3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEmail3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputEmail3ActionPerformed
-
-    private void inputEmail4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEmail4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputEmail4ActionPerformed
-
-    private void inputNotelp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNotelp1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputNotelp1ActionPerformed
-
-    private void inputPoin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPoin1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputPoin1ActionPerformed
-
-    private void inputPoin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPoin2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputPoin2ActionPerformed
-
-    private void inputPoin3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPoin3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputPoin3ActionPerformed
-
-    private void inputPoin4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPoin4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputPoin4ActionPerformed
+    }//GEN-LAST:event_berandaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -818,64 +461,37 @@ public class memberpage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton add;
     private javax.swing.JButton beranda;
-    private javax.swing.JLabel email;
-    private javax.swing.JTextField inputEmail1;
-    private javax.swing.JTextField inputEmail2;
-    private javax.swing.JTextField inputEmail3;
-    private javax.swing.JTextField inputEmail4;
-    private javax.swing.JTextField inputEmail5;
-    private javax.swing.JTextField inputMember1;
-    private javax.swing.JTextField inputMember2;
-    private javax.swing.JTextField inputMember3;
-    private javax.swing.JTextField inputMember4;
-    private javax.swing.JTextField inputMember5;
-    private javax.swing.JTextField inputNotelp1;
-    private javax.swing.JTextField inputNotelp2;
-    private javax.swing.JTextField inputNotelp3;
-    private javax.swing.JTextField inputNotelp4;
-    private javax.swing.JTextField inputNotelp5;
-    private javax.swing.JTextField inputPoin1;
-    private javax.swing.JTextField inputPoin2;
-    private javax.swing.JTextField inputPoin3;
-    private javax.swing.JTextField inputPoin4;
-    private javax.swing.JTextField inputPoin5;
-    private javax.swing.JTextField inputTanggal1;
-    private javax.swing.JTextField inputTanggal2;
-    private javax.swing.JTextField inputTanggal3;
-    private javax.swing.JTextField inputTanggal4;
-    private javax.swing.JTextField inputTanggal5;
-    private javax.swing.JTextField inputidm1;
-    private javax.swing.JTextField inputidm2;
+    private javax.swing.JTextField inputidb1;
+    private javax.swing.JTextField inputidb2;
+    private javax.swing.JTextField inputidb3;
+    private javax.swing.JTextField inputidb4;
+    private javax.swing.JTextField inputidb5;
+    private javax.swing.JTextField inputidb6;
     private javax.swing.JButton inventori;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton lanjut;
+    private javax.swing.JButton lanjut2;
     private javax.swing.JButton member;
-    private javax.swing.JLabel namaMember;
-    private javax.swing.JLabel no1;
-    private javax.swing.JLabel no2;
-    private javax.swing.JLabel no3;
-    private javax.swing.JLabel no4;
-    private javax.swing.JLabel no5;
-    private javax.swing.JLabel notelp;
-    private javax.swing.JLabel poin;
     private javax.swing.JLabel relasijy;
     private javax.swing.JButton riwayat;
-    private javax.swing.JLabel tanggalLahir;
+    private javax.swing.JLabel search;
     private javax.swing.JButton transaksi;
     // End of variables declaration//GEN-END:variables
 }
