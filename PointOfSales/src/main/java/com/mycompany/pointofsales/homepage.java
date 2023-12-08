@@ -54,15 +54,15 @@ public class homepage extends javax.swing.JFrame {
         inventori = new javax.swing.JButton();
         member = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        hari = new javax.swing.JLabel();
         ilus5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        tanggal = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelInventori = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -187,11 +187,11 @@ public class homepage extends javax.swing.JFrame {
         jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 20, -1, -1));
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 66, 37));
-        jLabel12.setText("Kamis");
-        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, -1, -1));
+        hari.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        hari.setForeground(new java.awt.Color(0, 66, 37));
+        hari.setText("Kamis");
+        hari.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(hari, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, -1, -1));
 
         ilus5.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\ilus5.png")); // NOI18N
         getContentPane().add(ilus5, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, 410, 340));
@@ -219,13 +219,13 @@ public class homepage extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 910, 240));
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 66, 37));
-        jLabel14.setText("7 Desember 2023");
-        jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, -1, -1));
+        tanggal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        tanggal.setForeground(new java.awt.Color(0, 66, 37));
+        tanggal.setText("7 Desember 2023");
+        tanggal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(tanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelInventori.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -236,9 +236,9 @@ public class homepage extends javax.swing.JFrame {
                 "ID BARANG", "NAMA BARANG", "HARGA", "STOK", "CREATED_AT", "UPDATED_AT"
             }
         ));
-        jTable1.setGridColor(new java.awt.Color(0, 66, 37));
-        jTable1.setSelectionBackground(new java.awt.Color(0, 66, 37));
-        jScrollPane1.setViewportView(jTable1);
+        tabelInventori.setGridColor(new java.awt.Color(0, 66, 37));
+        tabelInventori.setSelectionBackground(new java.awt.Color(0, 66, 37));
+        jScrollPane1.setViewportView(tabelInventori);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, 910, 250));
 
@@ -346,6 +346,7 @@ public class homepage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel hari;
     private javax.swing.JLabel iconBeranda;
     private javax.swing.JLabel iconInventori;
     private javax.swing.JLabel iconKasir;
@@ -357,8 +358,6 @@ public class homepage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -367,11 +366,12 @@ public class homepage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton logout;
     private javax.swing.JButton member;
     private javax.swing.JLabel relasijy;
     private javax.swing.JButton riwayat;
+    private javax.swing.JTable tabelInventori;
+    private javax.swing.JLabel tanggal;
     private javax.swing.JButton transaksi;
     // End of variables declaration//GEN-END:variables
 }

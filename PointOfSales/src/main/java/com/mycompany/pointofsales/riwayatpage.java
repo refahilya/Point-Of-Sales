@@ -30,7 +30,7 @@ public class riwayatpage extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelRiwayat = new javax.swing.JTable();
         relasijy = new javax.swing.JLabel();
         transaksi = new javax.swing.JButton();
         riwayat = new javax.swing.JButton();
@@ -44,7 +44,7 @@ public class riwayatpage extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1274, 698));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelRiwayat.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -55,7 +55,7 @@ public class riwayatpage extends javax.swing.JFrame {
                 "ID BARANG", "ID TRANSAKSI", "NAMA BARANG", "JUMLAH", "HARGA SATUAN", "DISKON", "TOTAL HARGA"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabelRiwayat);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 1240, 630));
 
@@ -84,7 +84,7 @@ public class riwayatpage extends javax.swing.JFrame {
         riwayat.setBorder(null);
         riwayat.setBorderPainted(false);
         riwayat.setContentAreaFilled(false);
-        riwayat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        riwayat.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         riwayat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 riwayatActionPerformed(evt);
@@ -163,14 +163,12 @@ public class riwayatpage extends javax.swing.JFrame {
 
     private void riwayatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_riwayatActionPerformed
         // TODO add your handling code here:
-        dispose();
-        new riwayatpage().setVisible(true);
     }//GEN-LAST:event_riwayatActionPerformed
 
     private void inventoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventoriActionPerformed
         // TODO add your handling code here:
         dispose();
-        new homepage().setVisible(true);
+        new inventoripage().setVisible(true);
     }//GEN-LAST:event_inventoriActionPerformed
 
     private void memberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberActionPerformed
@@ -181,6 +179,8 @@ public class riwayatpage extends javax.swing.JFrame {
 
     private void berandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_berandaActionPerformed
         // TODO add your handling code here:
+        dispose();
+        new homepage().setVisible(true);
     }//GEN-LAST:event_berandaActionPerformed
 
     /**
@@ -223,10 +223,10 @@ public class riwayatpage extends javax.swing.JFrame {
     private javax.swing.JButton inventori;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton member;
     private javax.swing.JLabel relasijy;
     private javax.swing.JButton riwayat;
+    private javax.swing.JTable tabelRiwayat;
     private javax.swing.JButton transaksi;
     // End of variables declaration//GEN-END:variables
 }

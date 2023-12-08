@@ -38,30 +38,30 @@ public class memberpage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         relasijy = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        inputidb1 = new javax.swing.JTextField();
+        judul = new javax.swing.JLabel();
+        inputPoin = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        inputidb2 = new javax.swing.JTextField();
-        inputidb3 = new javax.swing.JTextField();
-        inputidb4 = new javax.swing.JTextField();
+        inputIDM = new javax.swing.JTextField();
+        inputNM = new javax.swing.JTextField();
+        inputTL = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         add = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
-        lanjut2 = new javax.swing.JButton();
+        update = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
-        lanjut = new javax.swing.JButton();
+        delete = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        inputidb5 = new javax.swing.JTextField();
+        inputNoTelp = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        inputidb6 = new javax.swing.JTextField();
+        inputEmail = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelMember = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         search = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        inputSearch = new javax.swing.JTextField();
         beranda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -122,7 +122,7 @@ public class memberpage extends javax.swing.JFrame {
         member.setBorder(null);
         member.setBorderPainted(false);
         member.setContentAreaFilled(false);
-        member.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        member.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         member.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 memberActionPerformed(evt);
@@ -152,17 +152,17 @@ public class memberpage extends javax.swing.JFrame {
         relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy2.png")); // NOI18N
         jPanel11.add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 40)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 66, 37));
-        jLabel1.setText("DATA MEMBER");
-        jPanel11.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
+        judul.setBackground(new java.awt.Color(255, 255, 255));
+        judul.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 40)); // NOI18N
+        judul.setForeground(new java.awt.Color(0, 66, 37));
+        judul.setText("DATA MEMBER");
+        jPanel11.add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
 
-        inputidb1.setBackground(new java.awt.Color(245, 245, 220));
-        inputidb1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputidb1.setToolTipText("");
-        inputidb1.setBorder(null);
-        jPanel11.add(inputidb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 310, 30));
+        inputPoin.setBackground(new java.awt.Color(245, 245, 220));
+        inputPoin.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inputPoin.setToolTipText("");
+        inputPoin.setBorder(null);
+        jPanel11.add(inputPoin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 310, 30));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 66, 37));
@@ -184,23 +184,23 @@ public class memberpage extends javax.swing.JFrame {
         jLabel5.setText("Tanggal Lahir");
         jPanel11.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
-        inputidb2.setBackground(new java.awt.Color(245, 245, 220));
-        inputidb2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputidb2.setToolTipText("");
-        inputidb2.setBorder(null);
-        jPanel11.add(inputidb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 310, 30));
+        inputIDM.setBackground(new java.awt.Color(245, 245, 220));
+        inputIDM.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inputIDM.setToolTipText("");
+        inputIDM.setBorder(null);
+        jPanel11.add(inputIDM, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 310, 30));
 
-        inputidb3.setBackground(new java.awt.Color(245, 245, 220));
-        inputidb3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputidb3.setToolTipText("");
-        inputidb3.setBorder(null);
-        jPanel11.add(inputidb3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 310, 30));
+        inputNM.setBackground(new java.awt.Color(245, 245, 220));
+        inputNM.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inputNM.setToolTipText("");
+        inputNM.setBorder(null);
+        jPanel11.add(inputNM, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 310, 30));
 
-        inputidb4.setBackground(new java.awt.Color(245, 245, 220));
-        inputidb4.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputidb4.setToolTipText("");
-        inputidb4.setBorder(null);
-        jPanel11.add(inputidb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 310, 30));
+        inputTL.setBackground(new java.awt.Color(245, 245, 220));
+        inputTL.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inputTL.setToolTipText("");
+        inputTL.setBorder(null);
+        jPanel11.add(inputTL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 310, 30));
 
         jPanel6.setBackground(new java.awt.Color(0, 66, 37));
 
@@ -238,16 +238,16 @@ public class memberpage extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(0, 66, 37));
 
-        lanjut2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        lanjut2.setForeground(new java.awt.Color(255, 255, 255));
-        lanjut2.setText("UPDATE");
-        lanjut2.setBorder(null);
-        lanjut2.setBorderPainted(false);
-        lanjut2.setContentAreaFilled(false);
-        lanjut2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lanjut2.addActionListener(new java.awt.event.ActionListener() {
+        update.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        update.setForeground(new java.awt.Color(255, 255, 255));
+        update.setText("UPDATE");
+        update.setBorder(null);
+        update.setBorderPainted(false);
+        update.setContentAreaFilled(false);
+        update.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lanjut2ActionPerformed(evt);
+                updateActionPerformed(evt);
             }
         });
 
@@ -257,28 +257,28 @@ public class memberpage extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lanjut2, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                .addComponent(update, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lanjut2, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addComponent(update, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         jPanel11.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 570, -1, 30));
 
         jPanel8.setBackground(new java.awt.Color(0, 66, 37));
 
-        lanjut.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        lanjut.setForeground(new java.awt.Color(255, 255, 255));
-        lanjut.setText("DELETE");
-        lanjut.setBorder(null);
-        lanjut.setBorderPainted(false);
-        lanjut.setContentAreaFilled(false);
-        lanjut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lanjut.addActionListener(new java.awt.event.ActionListener() {
+        delete.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        delete.setForeground(new java.awt.Color(255, 255, 255));
+        delete.setText("DELETE");
+        delete.setBorder(null);
+        delete.setBorderPainted(false);
+        delete.setContentAreaFilled(false);
+        delete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lanjutActionPerformed(evt);
+                deleteActionPerformed(evt);
             }
         });
 
@@ -288,14 +288,14 @@ public class memberpage extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lanjut, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lanjut)
+                .addComponent(delete)
                 .addContainerGap())
         );
 
@@ -306,26 +306,26 @@ public class memberpage extends javax.swing.JFrame {
         jLabel6.setText("No Telepon");
         jPanel11.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
 
-        inputidb5.setBackground(new java.awt.Color(245, 245, 220));
-        inputidb5.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputidb5.setToolTipText("");
-        inputidb5.setBorder(null);
-        jPanel11.add(inputidb5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 310, 30));
+        inputNoTelp.setBackground(new java.awt.Color(245, 245, 220));
+        inputNoTelp.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inputNoTelp.setToolTipText("");
+        inputNoTelp.setBorder(null);
+        jPanel11.add(inputNoTelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 310, 30));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 66, 37));
         jLabel7.setText("Email");
         jPanel11.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
 
-        inputidb6.setBackground(new java.awt.Color(245, 245, 220));
-        inputidb6.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputidb6.setToolTipText("");
-        inputidb6.setBorder(null);
-        jPanel11.add(inputidb6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 310, 30));
+        inputEmail.setBackground(new java.awt.Color(245, 245, 220));
+        inputEmail.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inputEmail.setToolTipText("");
+        inputEmail.setBorder(null);
+        jPanel11.add(inputEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 310, 30));
 
         getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 660));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelMember.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -336,9 +336,9 @@ public class memberpage extends javax.swing.JFrame {
                 "ID MEMBER", "NAMA MEMBER", "TANGGAL LAHIR", "NO TELP", "EMAIL", "POIN", "CREATED_AT", "UPDATED_AT"
             }
         ));
-        jTable1.setGridColor(new java.awt.Color(0, 66, 37));
-        jTable1.setSelectionBackground(new java.awt.Color(245, 245, 220));
-        jScrollPane1.setViewportView(jTable1);
+        tabelMember.setGridColor(new java.awt.Color(0, 66, 37));
+        tabelMember.setSelectionBackground(new java.awt.Color(245, 245, 220));
+        jScrollPane1.setViewportView(tabelMember);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 860, 590));
 
@@ -349,16 +349,16 @@ public class memberpage extends javax.swing.JFrame {
         search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jTextField1.setBackground(new java.awt.Color(246, 246, 246));
-        jTextField1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jTextField1.setText("Search");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        inputSearch.setBackground(new java.awt.Color(246, 246, 246));
+        inputSearch.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        inputSearch.setText("Search");
+        inputSearch.setBorder(null);
+        inputSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                inputSearchActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 220, 20));
+        jPanel2.add(inputSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 220, 20));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 250, 20));
 
@@ -390,39 +390,38 @@ public class memberpage extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
         new riwayatpage().setVisible(true);
-
     }//GEN-LAST:event_riwayatActionPerformed
 
     private void inventoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventoriActionPerformed
         // TODO add your handling code here:
         dispose();
-        new homepage().setVisible(true);
+        new inventoripage().setVisible(true);
     }//GEN-LAST:event_inventoriActionPerformed
 
     private void memberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberActionPerformed
         // TODO add your handling code here:
-        dispose();
-        new memberpage().setVisible(true);
     }//GEN-LAST:event_memberActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_addActionPerformed
 
-    private void lanjut2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanjut2ActionPerformed
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lanjut2ActionPerformed
+    }//GEN-LAST:event_updateActionPerformed
 
-    private void lanjutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanjutActionPerformed
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lanjutActionPerformed
+    }//GEN-LAST:event_deleteActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void inputSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_inputSearchActionPerformed
 
     private void berandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_berandaActionPerformed
         // TODO add your handling code here:
+        dispose();
+        new homepage().setVisible(true);
     }//GEN-LAST:event_berandaActionPerformed
 
     /**
@@ -463,14 +462,15 @@ public class memberpage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add;
     private javax.swing.JButton beranda;
-    private javax.swing.JTextField inputidb1;
-    private javax.swing.JTextField inputidb2;
-    private javax.swing.JTextField inputidb3;
-    private javax.swing.JTextField inputidb4;
-    private javax.swing.JTextField inputidb5;
-    private javax.swing.JTextField inputidb6;
+    private javax.swing.JButton delete;
+    private javax.swing.JTextField inputEmail;
+    private javax.swing.JTextField inputIDM;
+    private javax.swing.JTextField inputNM;
+    private javax.swing.JTextField inputNoTelp;
+    private javax.swing.JTextField inputPoin;
+    private javax.swing.JTextField inputSearch;
+    private javax.swing.JTextField inputTL;
     private javax.swing.JButton inventori;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -484,14 +484,13 @@ public class memberpage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JButton lanjut;
-    private javax.swing.JButton lanjut2;
+    private javax.swing.JLabel judul;
     private javax.swing.JButton member;
     private javax.swing.JLabel relasijy;
     private javax.swing.JButton riwayat;
     private javax.swing.JLabel search;
+    private javax.swing.JTable tabelMember;
     private javax.swing.JButton transaksi;
+    private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }
