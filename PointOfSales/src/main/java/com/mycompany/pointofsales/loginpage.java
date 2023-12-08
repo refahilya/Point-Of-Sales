@@ -132,9 +132,9 @@ public class loginpage extends javax.swing.JFrame {
         getContentPane().add(icon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, 30, 30));
 
         lupaPW.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        lupaPW.setText("Forgot Password?");
+        lupaPW.setText("*Khusus kasir");
         lupaPW.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(lupaPW, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 310, -1, -1));
+        getContentPane().add(lupaPW, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 310, 60, -1));
 
         login.setBackground(new java.awt.Color(0, 66, 37));
         login.setFont(new java.awt.Font("STHupo", 0, 18)); // NOI18N

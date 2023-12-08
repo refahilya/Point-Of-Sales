@@ -5,6 +5,9 @@
 package com.mycompany.pointofsales;
 
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.AffineTransform;
 
 /**
  *
@@ -17,8 +20,20 @@ public class homepage extends javax.swing.JFrame {
      */
     public homepage() {
         initComponents();
-        getContentPane().setBackground(Color.decode("0xE4E4DF"));
-        relasijy.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/relasijy.png")));
+        getContentPane().setBackground(Color.decode("0xFFFFFF"));
+        relasijy.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/relasijy3.png")));
+        ilus5.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/ilus5.png")));
+        iconBeranda.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/beranda.png")));
+        iconInventori.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/inventori.png")));
+        iconMember.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/member.png")));
+        iconRiwayat.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/riwayat.png")));
+        iconTransaksi.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/transaksi.png")));
+        iconKasir.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/kasir.png")));
+        
+        
+        /*Graphics2D g2d = (Graphics2D) qm.getGraphics();
+        g2d.rotate(Math.toRadians(90), qm.getWidth() / 2, qm.getHeight() / 2);
+        qm.paint(g2d);*/
     }
 
     /**
@@ -31,17 +46,32 @@ public class homepage extends javax.swing.JFrame {
     private void initComponents() {
 
         relasijy = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         logout = new javax.swing.JButton();
         transaksi = new javax.swing.JButton();
         riwayat = new javax.swing.JButton();
         inventori = new javax.swing.JButton();
         member = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        ilus5 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        iconBeranda = new javax.swing.JLabel();
+        iconInventori = new javax.swing.JLabel();
+        iconMember = new javax.swing.JLabel();
+        iconRiwayat = new javax.swing.JLabel();
+        iconTransaksi = new javax.swing.JLabel();
+        iconKasir = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1274, 698));
@@ -49,45 +79,13 @@ public class homepage extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1274, 698));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy.png")); // NOI18N
-        getContentPane().add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 176, 0));
-        jLabel8.setText("REFA");
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 66, 37));
-        jLabel9.setText("Welcome, ");
-        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, -1, -1));
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 1020, 620));
+        relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy3.png")); // NOI18N
+        getContentPane().add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setForeground(new java.awt.Color(0, 66, 37));
         jLabel7.setText("Beranda");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
-
-        jPanel1.setBackground(new java.awt.Color(0, 66, 37));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 210, 50));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(0, 66, 37));
 
@@ -121,7 +119,7 @@ public class homepage extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 210, 30));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 210, 30));
 
         transaksi.setBackground(new java.awt.Color(228, 228, 223));
         transaksi.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -136,7 +134,7 @@ public class homepage extends javax.swing.JFrame {
                 transaksiActionPerformed(evt);
             }
         });
-        getContentPane().add(transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
+        getContentPane().add(transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, -1, -1));
 
         riwayat.setBackground(new java.awt.Color(228, 228, 223));
         riwayat.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -151,7 +149,7 @@ public class homepage extends javax.swing.JFrame {
                 riwayatActionPerformed(evt);
             }
         });
-        getContentPane().add(riwayat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, -1));
+        getContentPane().add(riwayat, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, -1, -1));
 
         inventori.setBackground(new java.awt.Color(228, 228, 223));
         inventori.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -166,7 +164,7 @@ public class homepage extends javax.swing.JFrame {
                 inventoriActionPerformed(evt);
             }
         });
-        getContentPane().add(inventori, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+        getContentPane().add(inventori, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
 
         member.setBackground(new java.awt.Color(228, 228, 223));
         member.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -181,7 +179,102 @@ public class homepage extends javax.swing.JFrame {
                 memberActionPerformed(evt);
             }
         });
-        getContentPane().add(member, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
+        getContentPane().add(member, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, -1, 30));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 66, 37));
+        jLabel11.setText("Kasir ");
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 20, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 66, 37));
+        jLabel12.setText("Kamis");
+        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, -1, -1));
+
+        ilus5.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\ilus5.png")); // NOI18N
+        getContentPane().add(ilus5, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, 410, 340));
+
+        jPanel1.setBackground(new java.awt.Color(245, 245, 220));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 66, 37));
+        jLabel9.setText("Selamat dan terimakasih telah datang kembali!");
+        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 176, 0));
+        jLabel8.setText("REFA");
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, 70));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 66, 37));
+        jLabel10.setText("Welcome ");
+        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, 70));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 910, 240));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 66, 37));
+        jLabel14.setText("7 Desember 2023");
+        jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, -1, -1));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID BARANG", "NAMA BARANG", "HARGA", "STOK", "CREATED_AT", "UPDATED_AT"
+            }
+        ));
+        jTable1.setGridColor(new java.awt.Color(0, 66, 37));
+        jTable1.setSelectionBackground(new java.awt.Color(0, 66, 37));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, 910, 250));
+
+        jPanel2.setBackground(new java.awt.Color(255, 176, 0));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("QUICK MENU OF INVENTORY DATA");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, -1, 20));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 910, 20));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 66, 37));
+        jLabel15.setText("Beranda");
+        jLabel15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, -1, -1));
+
+        iconBeranda.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\beranda.png")); // NOI18N
+        getContentPane().add(iconBeranda, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+
+        iconInventori.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\inventori.png")); // NOI18N
+        getContentPane().add(iconInventori, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
+
+        iconMember.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\member.png")); // NOI18N
+        getContentPane().add(iconMember, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
+
+        iconRiwayat.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\riwayat.png")); // NOI18N
+        getContentPane().add(iconRiwayat, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+
+        iconTransaksi.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\transaksi.png")); // NOI18N
+        getContentPane().add(iconTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
+
+        iconKasir.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\kasir.png")); // NOI18N
+        getContentPane().add(iconKasir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 0, 50, 60));
 
         pack();
         setLocationRelativeTo(null);
@@ -253,13 +346,28 @@ public class homepage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel iconBeranda;
+    private javax.swing.JLabel iconInventori;
+    private javax.swing.JLabel iconKasir;
+    private javax.swing.JLabel iconMember;
+    private javax.swing.JLabel iconRiwayat;
+    private javax.swing.JLabel iconTransaksi;
+    private javax.swing.JLabel ilus5;
     private javax.swing.JButton inventori;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JButton logout;
     private javax.swing.JButton member;
     private javax.swing.JLabel relasijy;
