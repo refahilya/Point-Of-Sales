@@ -46,7 +46,7 @@ public class transaksipage extends javax.swing.JFrame {
         
         model = new DefaultTableModel(
                 new Object[][]{},
-                new String[]{"Nama Barang", "Harga Satuan", "Jumlah", "Hrga Jumlah"}
+                new String[]{"Nama Barang", "Harga Satuan", "Jumlah", "Harga Jumlah"}
         );
         tabelTransaksi.setModel(model);
     }
