@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
@@ -546,6 +547,27 @@ public class transaksipage extends javax.swing.JFrame {
         
         return hargaBarang;
     }
+    
+    public boolean cekId(String idMember) {
+        boolean value = false;
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+            
+            String checkQuery = "SELECT * FROM member WHERE id_member = ?";
+            PreparedStatement checkStatement = koneksi.prepareStatement(checkQuery);
+            checkStatement.setString(1, idMember);
+            ResultSet resultSet = checkStatement.executeQuery();
+
+            if (!resultSet.next()) {
+            } else {
+                return true;
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return value;
+    }
     private void inputSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputSearchActionPerformed
@@ -582,6 +604,27 @@ public class transaksipage extends javax.swing.JFrame {
 
     private void buttonCekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCekActionPerformed
         // TODO add your handling code here:
+        String idMember = inputIDM.getText();
+        if (cekId(idMember)) {
+            double diskon = 0.1;
+            int rowCount = model.getRowCount();
+            double total = 0;
+
+            for (int i = 0; i < rowCount; i++) {
+                double hargaJumlah = (double) model.getValueAt(i, 3);
+
+                total += hargaJumlah;
+            }
+            double jumlahDiskon = diskon * total;
+            double totalMember = total - jumlahDiskon;
+            diskon = diskon * 100;
+            int diskonDisplay = (int) diskon;
+                    
+            totalHargaMb.setText(String.valueOf(totalMember));
+            diskonMb.setText( diskonDisplay + "%");
+        } else {
+            //id tidak ditemukan terus apa
+        }
     }//GEN-LAST:event_buttonCekActionPerformed
 
     private void buttonTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTambahActionPerformed
@@ -623,8 +666,26 @@ public class transaksipage extends javax.swing.JFrame {
 
     private void buttonHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHitungActionPerformed
         // TODO add your handling code here:
+        String namaBarang = inputNB.getText();
+        if (!namaBarang.equals("")) {
+            int jumlah = Integer.parseInt(inputJumlah.getText());
+            double hargaBarang = this.ambilHarga(namaBarang);
+            double total = jumlah * hargaBarang;
+
+            model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
+        } else {
+        }
         
+        int rowCount = model.getRowCount();
+        double total = 0;
+
+        for (int i = 0; i < rowCount; i++) {
+            double hargaJumlah = (double) model.getValueAt(i, 3);
+
+            total += hargaJumlah;
+        }
         
+        totalHargaNonMb.setText(String.valueOf(total));
         inputJumlah.setText("");
         inputNB.setText("");
     }//GEN-LAST:event_buttonHitungActionPerformed
