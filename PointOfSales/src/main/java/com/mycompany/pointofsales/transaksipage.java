@@ -46,7 +46,7 @@ public class transaksipage extends javax.swing.JFrame {
         
         model = new DefaultTableModel(
                 new Object[][]{},
-                new String[]{"Nama Barang", "Harga", "Jumlah"}
+                new String[]{"Nama Barang", "Harga Satuan", "Jumlah", "Hrga Jumlah"}
         );
         tabelTransaksi.setModel(model);
     }
@@ -589,8 +589,9 @@ public class transaksipage extends javax.swing.JFrame {
         String namaBarang = inputNB.getText();
         int jumlah = Integer.parseInt(inputJumlah.getText());
         double hargaBarang = this.ambilHarga(namaBarang);
+        double total = jumlah * hargaBarang;
         
-        model.addRow(new Object[]{namaBarang, hargaBarang, jumlah});
+        model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
          
         inputJumlah.setText("");
         inputNB.setText("");
@@ -622,6 +623,8 @@ public class transaksipage extends javax.swing.JFrame {
 
     private void buttonHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHitungActionPerformed
         // TODO add your handling code here:
+        
+        
         inputJumlah.setText("");
         inputNB.setText("");
     }//GEN-LAST:event_buttonHitungActionPerformed
