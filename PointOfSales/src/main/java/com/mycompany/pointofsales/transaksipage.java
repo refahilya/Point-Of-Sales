@@ -6,12 +6,17 @@ package com.mycompany.pointofsales;
 
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -22,6 +27,7 @@ public class transaksipage extends javax.swing.JFrame {
     /**
      * Creates new form transaksipage
      */
+    DefaultTableModel model;
     public transaksipage() {
         initComponents();
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
@@ -37,6 +43,12 @@ public class transaksipage extends javax.swing.JFrame {
         inputJumlah.setHorizontalAlignment(JTextField.CENTER);
         inputIDM.setHorizontalAlignment(JTextField.CENTER);
         inputBayar.setHorizontalAlignment(JTextField.CENTER);
+        
+        model = new DefaultTableModel(
+                new Object[][]{},
+                new String[]{"Nama Barang", "Harga", "Jumlah"}
+        );
+        tabelTransaksi.setModel(model);
     }
 
     /**
@@ -509,6 +521,31 @@ public class transaksipage extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    public double ambilHarga(String namaBarang) {
+        double hargaBarang = 0;
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+
+            String ambilHarga = "SELECT harga FROM inventori WHERE nama_barang = ?";
+            PreparedStatement statement = koneksi.prepareStatement(ambilHarga);
+            statement.setString(1, namaBarang);
+
+            ResultSet result = statement.executeQuery();
+
+            while (result.next()) {
+                hargaBarang = result.getDouble("harga");
+            }
+
+            result.close();
+            statement.close();
+            koneksi.close();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());  
+        }
+        
+        return hargaBarang;
+    }
     private void inputSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputSearchActionPerformed
@@ -549,14 +586,26 @@ public class transaksipage extends javax.swing.JFrame {
 
     private void buttonTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTambahActionPerformed
         // TODO add your handling code here:
+        String namaBarang = inputNB.getText();
+        int jumlah = Integer.parseInt(inputJumlah.getText());
+        double hargaBarang = this.ambilHarga(namaBarang);
+        
+        model.addRow(new Object[]{namaBarang, hargaBarang, jumlah});
+         
+        inputJumlah.setText("");
+        inputNB.setText("");
     }//GEN-LAST:event_buttonTambahActionPerformed
 
     private void buttonHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHapusActionPerformed
         // TODO add your handling code here:
+        inputJumlah.setText("");
+        inputNB.setText("");
     }//GEN-LAST:event_buttonHapusActionPerformed
 
     private void buttonGantiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGantiActionPerformed
         // TODO add your handling code here:
+         inputJumlah.setText("");
+         inputNB.setText("");
     }//GEN-LAST:event_buttonGantiActionPerformed
 
     private void berandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_berandaActionPerformed
@@ -573,6 +622,8 @@ public class transaksipage extends javax.swing.JFrame {
 
     private void buttonHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHitungActionPerformed
         // TODO add your handling code here:
+        inputJumlah.setText("");
+        inputNB.setText("");
     }//GEN-LAST:event_buttonHitungActionPerformed
 
     private void searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseClicked
