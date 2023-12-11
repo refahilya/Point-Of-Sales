@@ -6,6 +6,7 @@ package com.mycompany.pointofsales;
 
 import java.awt.Color;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,6 +20,22 @@ public class memberpage extends javax.swing.JFrame {
     public memberpage() {
         initComponents();
         getContentPane().setBackground(Color.decode("0xE4E4DF"));
+        
+        inputIDM.setHorizontalAlignment(JTextField.CENTER);
+        inputNM.setHorizontalAlignment(JTextField.CENTER);
+        inputTL.setHorizontalAlignment(JTextField.CENTER);
+        inputNoTelp.setHorizontalAlignment(JTextField.CENTER);
+        inputEmail.setHorizontalAlignment(JTextField.CENTER);
+        inputPoin.setHorizontalAlignment(JTextField.CENTER);
+        
+        tabelMember.setModel(new javax.swing.table.DefaultTableModel(
+            new Object[][]{},
+            new String[]{"ID Member", "Nama Member", "Tanggal Lahir", "No Telepon", "Email", "Poin", "Created at", "Updated at"}
+        ));
+        CRUDMember CrudM = new CRUDMember();
+        DefaultTableModel model = CrudM.read();
+        tabelMember.setModel(model);
+        setDefaultCloseOperation(homepage.DISPOSE_ON_CLOSE);
 
     }
 
@@ -333,7 +350,7 @@ public class memberpage extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID MEMBER", "NAMA MEMBER", "TANGGAL LAHIR", "NO TELP", "EMAIL", "POIN", "CREATED_AT", "UPDATED_AT"
+                "ID Member", "Nama Member", "Tanggal Lahir", "No Telepon", "Email", "Poin", "Created at", "Updated at"
             }
         ) {
             boolean[] canEdit = new boolean [] {
