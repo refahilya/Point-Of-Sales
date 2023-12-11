@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -36,7 +38,8 @@ public class transaksipage extends javax.swing.JFrame {
         search.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/search1.png")));
         //iconadd.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/add2.png")));
         //refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/refresh2.png")));
-        
+        hasil.setDefaultCloseOperation(hasil.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(transaksipage.DISPOSE_ON_CLOSE);
         totalHarga.setHorizontalAlignment(JLabel.CENTER);
         kembalian.setHorizontalAlignment(JLabel.CENTER);
         
@@ -71,7 +74,7 @@ public class transaksipage extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         totalHarga = new javax.swing.JLabel();
         noTransaksi = new javax.swing.JLabel();
-        diskon = new javax.swing.JLabel();
+        diskonLabel = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         kembalian = new javax.swing.JLabel();
         transaksiBaru = new javax.swing.JButton();
@@ -123,16 +126,12 @@ public class transaksipage extends javax.swing.JFrame {
         inputSearch = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
 
-        hasil.setMaximumSize(new java.awt.Dimension(403, 605));
         hasil.setMinimumSize(new java.awt.Dimension(403, 605));
-        hasil.setPreferredSize(new java.awt.Dimension(403, 605));
         hasil.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 66, 37)));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        relasijy1.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy3.png")); // NOI18N
         jPanel7.add(relasijy1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jLabel3.setText("Nomor   :");
@@ -172,9 +171,9 @@ public class transaksipage extends javax.swing.JFrame {
         noTransaksi.setText("id_transaksi");
         jPanel7.add(noTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 90, 30));
 
-        diskon.setForeground(new java.awt.Color(204, 0, 0));
-        diskon.setText("Diskon");
-        jPanel7.add(diskon, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 470, 70, -1));
+        diskonLabel.setForeground(new java.awt.Color(204, 0, 0));
+        diskonLabel.setText("Diskon");
+        jPanel7.add(diskonLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 470, 70, -1));
 
         jLabel18.setForeground(new java.awt.Color(204, 0, 0));
         jLabel18.setText("Diskon  :");
@@ -485,14 +484,11 @@ public class transaksipage extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabelTransaksi);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 670, 600));
-
-        relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy3.png")); // NOI18N
         getContentPane().add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         bgSearch.setBackground(new java.awt.Color(246, 246, 246));
         bgSearch.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        search.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\search1.png")); // NOI18N
         search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         search.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -568,6 +564,18 @@ public class transaksipage extends javax.swing.JFrame {
         }
         return value;
     }
+    
+    public double hitungTotal() {
+        int rowCount = model.getRowCount();
+        double total = 0;
+
+            for (int i = 0; i < rowCount; i++) {
+                double hargaJumlah = (double) model.getValueAt(i, 3);
+
+                total += hargaJumlah;
+            }
+        return total;
+    }
     private void inputSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputSearchActionPerformed
@@ -580,6 +588,48 @@ public class transaksipage extends javax.swing.JFrame {
 
     private void selesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selesaiActionPerformed
         // TODO add your handling code here:
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDateTime = currentDateTime.format(formatter);
+        tanggal.setText(formattedDateTime);
+        
+        int tabAktifIndex = jTabbedPane1.getSelectedIndex();
+        int bayar = Integer.parseInt(inputBayar.getText());
+        double bayarDouble = (double) bayar;
+        double kembalian = 0;
+        if (tabAktifIndex == 0) {
+            //berarti non
+            double total = this.hitungTotal();
+            kembalian = bayar - total;
+            jLabel11.setText(String.valueOf(kembalian));
+            diskonLabel.setText("0");
+            totalHarga.setText(String.valueOf(total));
+        } else if (tabAktifIndex == 1) {
+            //berarti member
+            double total = this.hitungTotal();
+            double diskon = 0.1;
+            double jumlahDiskon = diskon * total;
+            double totalMember = total - jumlahDiskon;
+            kembalian = bayar - totalMember;
+            jLabel11.setText(String.valueOf(kembalian));
+            totalHarga.setText(String.valueOf(totalMember));
+            diskon = diskon * 100;
+            int diskonDisplay = (int) diskon;
+            diskonLabel.setText( diskonDisplay + "%");
+        }
+        
+        DefaultTableModel sourceModel = (DefaultTableModel) tabelTransaksi.getModel();
+        int rowCount = sourceModel.getRowCount();
+        
+        for (int i = 0; i < rowCount; i++) {
+            Object[] rowData = new Object[sourceModel.getColumnCount()];
+            for (int j = 0; j < sourceModel.getColumnCount(); j++) {
+                rowData[j] = sourceModel.getValueAt(i, j);
+            }
+            DefaultTableModel destinationModel = (DefaultTableModel) tabelTransaksi2.getModel();
+            destinationModel.addRow(rowData);
+        }
+        
         dispose();
         hasil.setSize(403, 605);
         hasil.getContentPane().setBackground(Color.decode("0xFFFFFF"));
@@ -607,14 +657,7 @@ public class transaksipage extends javax.swing.JFrame {
         String idMember = inputIDM.getText();
         if (cekId(idMember)) {
             double diskon = 0.1;
-            int rowCount = model.getRowCount();
-            double total = 0;
-
-            for (int i = 0; i < rowCount; i++) {
-                double hargaJumlah = (double) model.getValueAt(i, 3);
-
-                total += hargaJumlah;
-            }
+            double total = this.hitungTotal();
             double jumlahDiskon = diskon * total;
             double totalMember = total - jumlahDiskon;
             diskon = diskon * 100;
@@ -675,16 +718,7 @@ public class transaksipage extends javax.swing.JFrame {
             model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
         } else {
         }
-        
-        int rowCount = model.getRowCount();
-        double total = 0;
-
-        for (int i = 0; i < rowCount; i++) {
-            double hargaJumlah = (double) model.getValueAt(i, 3);
-
-            total += hargaJumlah;
-        }
-        
+        double total = this.hitungTotal();
         totalHargaNonMb.setText(String.valueOf(total));
         inputJumlah.setText("");
         inputNB.setText("");
@@ -751,7 +785,7 @@ public class transaksipage extends javax.swing.JFrame {
     private javax.swing.JButton buttonHapus;
     private javax.swing.JButton buttonHitung;
     private javax.swing.JButton buttonTambah;
-    private javax.swing.JLabel diskon;
+    private javax.swing.JLabel diskonLabel;
     private javax.swing.JLabel diskonMb;
     private javax.swing.JDialog hasil;
     private javax.swing.JTextField inputBayar;
