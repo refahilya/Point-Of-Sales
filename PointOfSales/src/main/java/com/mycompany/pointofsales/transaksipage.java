@@ -647,6 +647,8 @@ public class transaksipage extends javax.swing.JFrame {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
                 String formattedDateTime = currentDateTime.format(formatter);
                 tanggal.setText(formattedDateTime);
+                
+                //EH NO TRANSAKSINE ILANG? huhu monangsi
 
                 //ini baru ngurus struknya
                 Transaksi catat = new Transaksi();
@@ -748,7 +750,7 @@ public class transaksipage extends javax.swing.JFrame {
             } catch (SQLException ex) {
                 Logger.getLogger(transaksipage.class.getName()).log(Level.SEVERE, null, ex);
             }
-            String namaBarang = inputNB.getText();
+            /*String namaBarang = inputNB.getText();
             int jumlah = Integer.parseInt(inputJumlah.getText());
             double hargaBarang = this.ambilHarga(namaBarang);
             double total = jumlah * hargaBarang;
@@ -756,20 +758,71 @@ public class transaksipage extends javax.swing.JFrame {
             model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
 
             inputJumlah.setText("");
-            inputNB.setText("");
+            inputNB.setText("");*/
+            
+            // Pas mau nambahin data sama yang sebenernya dah ada di tabel
+            DefaultTableModel sourceModel = (DefaultTableModel) tabelTransaksi.getModel();
+
+            String newValueForColumn1 = inputNB.getText();
+            String newValueForColumn3 = inputJumlah.getText();
+
+            // Cek apakah data sudah ada dalam tabel
+            boolean isDataExist = false;
+            for (int i = 0; i < sourceModel.getRowCount(); i++) {
+                if (sourceModel.getValueAt(i, 0).equals(newValueForColumn1)) {
+                    isDataExist = true;
+                    break;
+                }
+            }
+
+            if (!isDataExist) {
+                //Object[] row = { /* Assign values here for each column */ };
+                //sourceModel.addRow(row);
+                String namaBarang = inputNB.getText();
+                int jumlah = Integer.parseInt(inputJumlah.getText());
+                double hargaBarang = this.ambilHarga(namaBarang);
+                double total = jumlah * hargaBarang;
+
+                model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
+
+                inputJumlah.setText("");
+                inputNB.setText("");
+            } else {
+                // Beri pesan bahwa data sudah ada dalam tabel
+                JOptionPane.showMessageDialog(this, "Data sudah ada dalam tabel", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_buttonTambahActionPerformed
 
     private void buttonHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHapusActionPerformed
         // TODO add your handling code here:
-        inputJumlah.setText("");
-        inputNB.setText("");
+        DefaultTableModel sourceModel = (DefaultTableModel) tabelTransaksi.getModel();
+        int selectedRowIndex = tabelTransaksi.getSelectedRow();
+        
+        if (selectedRowIndex != -1){
+            sourceModel.removeRow(selectedRowIndex);
+            inputJumlah.setText("");
+            inputNB.setText("");
+        } else {
+            JOptionPane.showMessageDialog(this, "Pilih data terlebih dahulu!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_buttonHapusActionPerformed
 
     private void buttonGantiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGantiActionPerformed
         // TODO add your handling code here:
-         inputJumlah.setText("");
-         inputNB.setText("");
+        DefaultTableModel sourceModel = (DefaultTableModel) tabelTransaksi.getModel();
+        int selectedRowIndex = tabelTransaksi.getSelectedRow();
+
+        if (selectedRowIndex != -1) {
+            String newValueForColumn1 = inputNB.getText();
+            String newValueForColumn3 = inputJumlah.getText();
+
+            sourceModel.setValueAt(newValueForColumn1, selectedRowIndex, 0);
+            sourceModel.setValueAt(newValueForColumn3, selectedRowIndex, 2);
+        } else {
+            // Beri pesan bahwa tidak ada baris yang dipilih
+            JOptionPane.showMessageDialog(this, "Pilih baris yang akan diubah", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_buttonGantiActionPerformed
 
     private void berandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_berandaActionPerformed
@@ -789,7 +842,7 @@ public class transaksipage extends javax.swing.JFrame {
         if (inputNB.getText().isEmpty() || inputJumlah.getText().isEmpty()){
             JOptionPane.showMessageDialog(this, "Data Masih Kosong!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
         } else {
-            String namaBarang = inputNB.getText();
+            /*String namaBarang = inputNB.getText();
             if (!namaBarang.equals("")) {
                 int jumlah = Integer.parseInt(inputJumlah.getText());
                 double hargaBarang = this.ambilHarga(namaBarang);
@@ -804,7 +857,45 @@ public class transaksipage extends javax.swing.JFrame {
             double total = this.hitungTotal();
             totalHargaNonMb.setText(String.valueOf(total));
             inputJumlah.setText("");
-            inputNB.setText("");
+            inputNB.setText("");*/
+            
+            DefaultTableModel sourceModel = (DefaultTableModel) tabelTransaksi.getModel();
+
+            String newValueForColumn1 = inputNB.getText();
+            String newValueForColumn3 = inputJumlah.getText();
+
+            // Cek apakah data sudah ada dalam tabel
+            boolean isDataExist = false;
+            for (int i = 0; i < sourceModel.getRowCount(); i++) {
+                if (sourceModel.getValueAt(i, 0).equals(newValueForColumn1)) {
+                    isDataExist = true;
+                    break;
+                }
+            }
+
+            if (!isDataExist) {
+                //Object[] row = { /* Assign values here for each column */ };
+                //sourceModel.addRow(row);
+                String namaBarang = inputNB.getText();
+                if (!namaBarang.equals("")) {
+                    int jumlah = Integer.parseInt(inputJumlah.getText());
+                    double hargaBarang = this.ambilHarga(namaBarang);
+                    double total = jumlah * hargaBarang;
+
+                    model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
+
+                    //Transaksi catat = new Transaksi();
+                    //catat.catatBarang(idTrans, namaBarang, jumlah, hargaBarang, total);
+                } else {
+                }
+                double total = this.hitungTotal();
+                totalHargaNonMb.setText(String.valueOf(total));
+                inputJumlah.setText("");
+                inputNB.setText("");
+            } else {
+                // Beri pesan bahwa data sudah ada dalam tabel
+                JOptionPane.showMessageDialog(this, "Data sudah ada dalam tabel", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_buttonHitungActionPerformed
 
