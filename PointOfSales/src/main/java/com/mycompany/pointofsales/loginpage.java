@@ -8,6 +8,7 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.*;
 import java.awt.*;
+import java.sql.SQLException;
 
 /**
  *
@@ -62,8 +63,8 @@ public class loginpage extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        inputPsw = new javax.swing.JTextField();
+        inputUsn = new javax.swing.JTextField();
         icon3 = new javax.swing.JLabel();
         lupaPW = new javax.swing.JLabel();
         login = new javax.swing.JButton();
@@ -106,27 +107,27 @@ public class loginpage extends javax.swing.JFrame {
         getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 240, 240, -1));
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, -1, 30));
 
-        jTextField1.setBackground(new java.awt.Color(245, 245, 220));
-        jTextField1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        jTextField1.setToolTipText("");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        inputPsw.setBackground(new java.awt.Color(245, 245, 220));
+        inputPsw.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inputPsw.setToolTipText("");
+        inputPsw.setBorder(null);
+        inputPsw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                inputPswActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 270, 210, 30));
+        getContentPane().add(inputPsw, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 270, 210, 30));
 
-        jTextField2.setBackground(new java.awt.Color(245, 245, 220));
-        jTextField2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        jTextField2.setToolTipText("");
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        inputUsn.setBackground(new java.awt.Color(245, 245, 220));
+        inputUsn.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        inputUsn.setToolTipText("");
+        inputUsn.setBorder(null);
+        inputUsn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                inputUsnActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 210, -1));
+        getContentPane().add(inputUsn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 210, -1));
 
         icon3.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\ilus3.png")); // NOI18N
         getContentPane().add(icon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, 30, 30));
@@ -159,18 +160,31 @@ public class loginpage extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void inputPswActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPswActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_inputPswActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void inputUsnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUsnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_inputUsnActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
-        dispose();
-        new homepage().setVisible(true);
+        try {
+            LoginClass tesLogin = new LoginClass();
+            String username = String.valueOf(inputUsn.getText());
+            String password = String.valueOf(inputPsw.getText());
+            
+            tesLogin.login(username, password);
+            if (tesLogin.login(username, password)){
+                dispose();
+                new homepage().setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Username atau Password salah!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_loginActionPerformed
 
     /**
@@ -214,6 +228,8 @@ public class loginpage extends javax.swing.JFrame {
     private javax.swing.JLabel icon2;
     private javax.swing.JLabel icon3;
     private javax.swing.JLabel icon4;
+    private javax.swing.JTextField inputPsw;
+    private javax.swing.JTextField inputUsn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -222,8 +238,6 @@ public class loginpage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JButton login;
     private javax.swing.JLabel lupaPW;
     // End of variables declaration//GEN-END:variables
