@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -30,10 +31,18 @@ public class homepage extends javax.swing.JFrame {
         iconTransaksi.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/transaksi.png")));
         iconKasir.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/kasir.png")));
         
-        
         /*Graphics2D g2d = (Graphics2D) qm.getGraphics();
         g2d.rotate(Math.toRadians(90), qm.getWidth() / 2, qm.getHeight() / 2);
         qm.paint(g2d);*/
+        
+        quickMenu.setModel(new javax.swing.table.DefaultTableModel(
+            new Object[][]{},
+            new String[]{"ID Barang", "Nama Barang", "Harga", "Stok", "Created at", "Updated at"}
+        ));
+        CRUDBarang CrudB = new CRUDBarang();
+        DefaultTableModel model = CrudB.read();
+        quickMenu.setModel(model);
+        setDefaultCloseOperation(homepage.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -62,7 +71,7 @@ public class homepage extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         tanggal = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelInventori = new javax.swing.JTable();
+        quickMenu = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -225,7 +234,7 @@ public class homepage extends javax.swing.JFrame {
         tanggal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(tanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, -1, -1));
 
-        tabelInventori.setModel(new javax.swing.table.DefaultTableModel(
+        quickMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -244,9 +253,9 @@ public class homepage extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tabelInventori.setGridColor(new java.awt.Color(0, 66, 37));
-        tabelInventori.setSelectionBackground(new java.awt.Color(0, 66, 37));
-        jScrollPane1.setViewportView(tabelInventori);
+        quickMenu.setGridColor(new java.awt.Color(0, 66, 37));
+        quickMenu.setSelectionBackground(new java.awt.Color(0, 66, 37));
+        jScrollPane1.setViewportView(quickMenu);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, 910, 250));
 
@@ -376,9 +385,9 @@ public class homepage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton logout;
     private javax.swing.JButton member;
+    private javax.swing.JTable quickMenu;
     private javax.swing.JLabel relasijy;
     private javax.swing.JButton riwayat;
-    private javax.swing.JTable tabelInventori;
     private javax.swing.JLabel tanggal;
     private javax.swing.JButton transaksi;
     // End of variables declaration//GEN-END:variables
