@@ -276,7 +276,6 @@ public class transaksipage extends javax.swing.JFrame {
         jPanel1.add(selesai, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 620, 160, 40));
 
         inputBayar.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputBayar.setText("Bayar");
         inputBayar.setToolTipText("");
         inputBayar.setBorder(null);
         inputBayar.addActionListener(new java.awt.event.ActionListener() {
@@ -394,7 +393,6 @@ public class transaksipage extends javax.swing.JFrame {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, 30));
 
         inputNB.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputNB.setText("Nama Barang");
         inputNB.setToolTipText("");
         inputNB.setBorder(null);
         inputNB.addActionListener(new java.awt.event.ActionListener() {
@@ -409,7 +407,6 @@ public class transaksipage extends javax.swing.JFrame {
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, 30));
 
         inputJumlah.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
-        inputJumlah.setText("Jumlah");
         inputJumlah.setToolTipText("");
         inputJumlah.setBorder(null);
         inputJumlah.addActionListener(new java.awt.event.ActionListener() {
@@ -630,62 +627,74 @@ public class transaksipage extends javax.swing.JFrame {
 
     private void selesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selesaiActionPerformed
         // TODO add your handling code here:
-        //ini ngurus tgl
-        LocalDateTime currentDateTime = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        String formattedDateTime = currentDateTime.format(formatter);
-        tanggal.setText(formattedDateTime);
-        
-        //ini baru ngurus struknya
-        Transaksi catat = new Transaksi();
-        int tabAktifIndex = jTabbedPane1.getSelectedIndex();
-        int bayar = Integer.parseInt(inputBayar.getText());
-        double bayarDouble = (double) bayar;
-        double kembalian = 0;
-        if (tabAktifIndex == 0) {
-            //berarti non
-            double total = this.hitungTotal();
-            kembalian = bayar - total;
-            kembalianHasil.setText(String.valueOf(kembalian));
-            diskonLabel.setText("0");
-            totalHarga.setText(String.valueOf(total));
-            member.setText("Non-Member");
-            String kategori = "Non-Member";
-            
-        } else if (tabAktifIndex == 1) {
-            //berarti member
-            double total = this.hitungTotal();
-            double diskon = 0.1;
-            double jumlahDiskon = diskon * total;
-            double totalMember = total - jumlahDiskon;
-            kembalian = bayar - totalMember;
-            kembalianHasil.setText(String.valueOf(kembalian));
-            totalHarga.setText(String.valueOf(totalMember));
-            diskon = diskon * 100;
-            int diskonDisplay = (int) diskon;
-            diskonLabel.setText( diskonDisplay + "%");
-            member.setText("Member");
-            String kategori = "Member";
-            
-        }
-        
         DefaultTableModel sourceModel = (DefaultTableModel) tabelTransaksi.getModel();
-        int rowCount = sourceModel.getRowCount();
         
-        for (int i = 0; i < rowCount; i++) {
-            Object[] rowData = new Object[sourceModel.getColumnCount()];
-            for (int j = 0; j < sourceModel.getColumnCount(); j++) {
-                rowData[j] = sourceModel.getValueAt(i, j);
+        //ini ngurus tgl
+        if (sourceModel.getRowCount() == 0){
+            JOptionPane.showMessageDialog(this, "Lakukan transaksi terlebih dahulu.", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+        } else if (inputBayar.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Masukkan nominal bayar!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+        } else {
+            try{
+                LocalDateTime currentDateTime = LocalDateTime.now();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                String formattedDateTime = currentDateTime.format(formatter);
+                tanggal.setText(formattedDateTime);
+
+                //ini baru ngurus struknya
+                Transaksi catat = new Transaksi();
+                int tabAktifIndex = jTabbedPane1.getSelectedIndex();
+                int bayar = Integer.parseInt(inputBayar.getText());
+                double bayarDouble = (double) bayar;
+                double kembalian = 0;
+                if (tabAktifIndex == 0) {
+                    //berarti non
+                    double total = this.hitungTotal();
+                    kembalian = bayar - total;
+                    kembalianHasil.setText(String.valueOf(kembalian));
+                    diskonLabel.setText("0");
+                    totalHarga.setText(String.valueOf(total));
+                    member.setText("Non-Member");
+                    String kategori = "Non-Member";
+
+                } else if (tabAktifIndex == 1) {
+                    //berarti member
+                    double total = this.hitungTotal();
+                    double diskon = 0.1;
+                    double jumlahDiskon = diskon * total;
+                    double totalMember = total - jumlahDiskon;
+                    kembalian = bayar - totalMember;
+                    kembalianHasil.setText(String.valueOf(kembalian));
+                    totalHarga.setText(String.valueOf(totalMember));
+                    diskon = diskon * 100;
+                    int diskonDisplay = (int) diskon;
+                    diskonLabel.setText( diskonDisplay + "%");
+                    member.setText("Member");
+                    String kategori = "Member";
+
+                }
+
+                //DefaultTableModel sourceModel = (DefaultTableModel) tabelTransaksi.getModel();
+                int rowCount = sourceModel.getRowCount();
+
+                for (int i = 0; i < rowCount; i++) {
+                    Object[] rowData = new Object[sourceModel.getColumnCount()];
+                    for (int j = 0; j < sourceModel.getColumnCount(); j++) {
+                        rowData[j] = sourceModel.getValueAt(i, j);
+                    }
+                    DefaultTableModel destinationModel = (DefaultTableModel) tabelTransaksi2.getModel();
+                    destinationModel.setRowCount(0);
+                    destinationModel.addRow(rowData);
+
+                dispose();
+                hasil.setSize(403, 605);
+                hasil.getContentPane().setBackground(Color.decode("0xFFFFFF"));
+                hasil.setVisible(true);
+                }
+            }catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(this, "Nominal bayar berupa integer!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
             }
-            DefaultTableModel destinationModel = (DefaultTableModel) tabelTransaksi2.getModel();
-            destinationModel.setRowCount(0);
-            destinationModel.addRow(rowData);
         }
-        
-        dispose();
-        hasil.setSize(403, 605);
-        hasil.getContentPane().setBackground(Color.decode("0xFFFFFF"));
-        hasil.setVisible(true);
     }//GEN-LAST:event_selesaiActionPerformed
 
     private void inputBayarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputBayarActionPerformed
@@ -719,24 +728,29 @@ public class transaksipage extends javax.swing.JFrame {
             diskonMb.setText( diskonDisplay + "%");
         } else {
             //id tidak ditemukan terus apa
+            JOptionPane.showMessageDialog(this, "ID Member tidak ditemukan!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_buttonCekActionPerformed
 
     private void buttonTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTambahActionPerformed
-        try {
+        if (inputNB.getText().isEmpty() || inputJumlah.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Data Masih Kosong!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+        } else {
+            try {
             noTransaksi.setText(getId());
-        } catch (SQLException ex) {
-            Logger.getLogger(transaksipage.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(transaksipage.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            String namaBarang = inputNB.getText();
+            int jumlah = Integer.parseInt(inputJumlah.getText());
+            double hargaBarang = this.ambilHarga(namaBarang);
+            double total = jumlah * hargaBarang;
+
+            model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
+
+            inputJumlah.setText("");
+            inputNB.setText("");
         }
-        String namaBarang = inputNB.getText();
-        int jumlah = Integer.parseInt(inputJumlah.getText());
-        double hargaBarang = this.ambilHarga(namaBarang);
-        double total = jumlah * hargaBarang;
-        
-        model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
-        
-        inputJumlah.setText("");
-        inputNB.setText("");
     }//GEN-LAST:event_buttonTambahActionPerformed
 
     private void buttonHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHapusActionPerformed
@@ -765,22 +779,26 @@ public class transaksipage extends javax.swing.JFrame {
 
     private void buttonHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHitungActionPerformed
         // TODO add your handling code here:
-        String namaBarang = inputNB.getText();
-        if (!namaBarang.equals("")) {
-            int jumlah = Integer.parseInt(inputJumlah.getText());
-            double hargaBarang = this.ambilHarga(namaBarang);
-            double total = jumlah * hargaBarang;
-
-            model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
-            
-            //Transaksi catat = new Transaksi();
-            //catat.catatBarang(idTrans, namaBarang, jumlah, hargaBarang, total);
+        if (inputNB.getText().isEmpty() || inputJumlah.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Data Masih Kosong!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
         } else {
+            String namaBarang = inputNB.getText();
+            if (!namaBarang.equals("")) {
+                int jumlah = Integer.parseInt(inputJumlah.getText());
+                double hargaBarang = this.ambilHarga(namaBarang);
+                double total = jumlah * hargaBarang;
+
+                model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
+
+                //Transaksi catat = new Transaksi();
+                //catat.catatBarang(idTrans, namaBarang, jumlah, hargaBarang, total);
+            } else {
+            }
+            double total = this.hitungTotal();
+            totalHargaNonMb.setText(String.valueOf(total));
+            inputJumlah.setText("");
+            inputNB.setText("");
         }
-        double total = this.hitungTotal();
-        totalHargaNonMb.setText(String.valueOf(total));
-        inputJumlah.setText("");
-        inputNB.setText("");
     }//GEN-LAST:event_buttonHitungActionPerformed
 
     private void searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseClicked
