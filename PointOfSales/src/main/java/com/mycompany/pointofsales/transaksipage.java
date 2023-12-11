@@ -610,6 +610,11 @@ public class transaksipage extends javax.swing.JFrame {
         }
         return lastId;
     }
+    
+    public String simpanId(String id) {
+        String idTrans = id;
+        return idTrans;
+    }
 
     private void inputSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSearchActionPerformed
         // TODO add your handling code here:
@@ -623,6 +628,8 @@ public class transaksipage extends javax.swing.JFrame {
 
     private void selesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selesaiActionPerformed
         // TODO add your handling code here:
+        
+        /*
         //ini ngurus tgl
         LocalDateTime currentDateTime = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -674,6 +681,7 @@ public class transaksipage extends javax.swing.JFrame {
             destinationModel.setRowCount(0);
             destinationModel.addRow(rowData);
         }
+        */
         
         dispose();
         hasil.setSize(403, 605);
@@ -699,6 +707,8 @@ public class transaksipage extends javax.swing.JFrame {
 
     private void buttonCekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCekActionPerformed
         // TODO add your handling code here:
+        
+        /*
         String idMember = inputIDM.getText();
         if (cekId(idMember)) {
             double diskon = 0.1;
@@ -713,14 +723,44 @@ public class transaksipage extends javax.swing.JFrame {
         } else {
             //id tidak ditemukan terus apa
         }
+        */
     }//GEN-LAST:event_buttonCekActionPerformed
 
     private void buttonTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTambahActionPerformed
-        try {
-            noTransaksi.setText(getId());
-        } catch (SQLException ex) {
-            Logger.getLogger(transaksipage.class.getName()).log(Level.SEVERE, null, ex);
+        
+        String id = "";
+        
+        if (id.isEmpty()) {
+            GeneratorId generate = new GeneratorId();
+            String kolom = "id_transaksi";
+            String query = "SELECT id_transaksi FROM transaksi ORDER BY id_transaksi DESC LIMIT 1";
+            id = generate.idGenerator(kolom, query);
+            
+            Transaksi catat = new Transaksi();
+            catat.catatId(id);
+            
+            String namaBarang = inputNB.getText();
+            int jumlah = Integer.parseInt(inputJumlah.getText());
+            double hargaBarang = this.ambilHarga(namaBarang);
+            double total = jumlah * hargaBarang;
+
+            model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
+
+            inputJumlah.setText("");
+            inputNB.setText("");
+        } else {
+            String namaBarang = inputNB.getText();
+            int jumlah = Integer.parseInt(inputJumlah.getText());
+            double hargaBarang = this.ambilHarga(namaBarang);
+            double total = jumlah * hargaBarang;
+
+            model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
+
+            inputJumlah.setText("");
+            inputNB.setText("");
         }
+        
+        /*
         String namaBarang = inputNB.getText();
         int jumlah = Integer.parseInt(inputJumlah.getText());
         double hargaBarang = this.ambilHarga(namaBarang);
@@ -730,6 +770,7 @@ public class transaksipage extends javax.swing.JFrame {
         
         inputJumlah.setText("");
         inputNB.setText("");
+        */
     }//GEN-LAST:event_buttonTambahActionPerformed
 
     private void buttonHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHapusActionPerformed
@@ -758,6 +799,8 @@ public class transaksipage extends javax.swing.JFrame {
 
     private void buttonHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHitungActionPerformed
         // TODO add your handling code here:
+        
+        /*
         String namaBarang = inputNB.getText();
         if (!namaBarang.equals("")) {
             int jumlah = Integer.parseInt(inputJumlah.getText());
@@ -774,6 +817,7 @@ public class transaksipage extends javax.swing.JFrame {
         totalHargaNonMb.setText(String.valueOf(total));
         inputJumlah.setText("");
         inputNB.setText("");
+        */
     }//GEN-LAST:event_buttonHitungActionPerformed
 
     private void searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseClicked
