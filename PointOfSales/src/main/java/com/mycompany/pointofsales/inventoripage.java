@@ -6,6 +6,7 @@ package com.mycompany.pointofsales;
 
 import java.awt.Color;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -26,6 +27,15 @@ public class inventoripage extends javax.swing.JFrame {
         inputHarga.setHorizontalAlignment(JTextField.CENTER);
         inputStok.setHorizontalAlignment(JTextField.CENTER);
         inputIDB.setHorizontalAlignment(JTextField.CENTER);
+        
+        tabelInventori.setModel(new javax.swing.table.DefaultTableModel(
+            new Object[][]{},
+            new String[]{"ID Barang", "Nama Barang", "Harga", "Stok", "Created at", "Updated at"}
+        ));
+        CRUDBarang CrudB = new CRUDBarang();
+        DefaultTableModel model = CrudB.read();
+        tabelInventori.setModel(model);
+        setDefaultCloseOperation(homepage.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -321,7 +331,7 @@ public class inventoripage extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ID BARANG", "NAMA BARANG", "HARGA", "STOK", "CREATED_AT", "UPDATED_AT"
+                "ID Barang", "Nama Barang", "Harga", "Stok", "Created at", "Updated at"
             }
         ) {
             boolean[] canEdit = new boolean [] {
