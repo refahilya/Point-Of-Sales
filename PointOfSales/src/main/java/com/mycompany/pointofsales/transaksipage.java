@@ -12,6 +12,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -53,6 +55,7 @@ public class transaksipage extends javax.swing.JFrame {
                 new String[]{"Nama Barang", "Harga Satuan", "Jumlah", "Harga Jumlah"}
         );
         tabelTransaksi.setModel(model);
+        
     }
 
     /**
@@ -584,6 +587,30 @@ public class transaksipage extends javax.swing.JFrame {
             }
         return total;
     }
+    
+    public String getId() throws SQLException {
+        String lastId = "";
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+
+            String query = "SELECT MAX(id_transaksi) FROM transaksi";
+            PreparedStatement ps = koneksi.prepareStatement(query);
+
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                lastId = rs.getString(1);
+            }
+
+            rs.close();
+            ps.close();
+            koneksi.close();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return lastId;
+    }
+
     private void inputSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputSearchActionPerformed
@@ -603,6 +630,7 @@ public class transaksipage extends javax.swing.JFrame {
         tanggal.setText(formattedDateTime);
         
         //ini baru ngurus struknya
+        Transaksi catat = new Transaksi();
         int tabAktifIndex = jTabbedPane1.getSelectedIndex();
         int bayar = Integer.parseInt(inputBayar.getText());
         double bayarDouble = (double) bayar;
@@ -616,6 +644,7 @@ public class transaksipage extends javax.swing.JFrame {
             totalHarga.setText(String.valueOf(total));
             member.setText("Non-Member");
             String kategori = "Non-Member";
+            
         } else if (tabAktifIndex == 1) {
             //berarti member
             double total = this.hitungTotal();
@@ -630,6 +659,7 @@ public class transaksipage extends javax.swing.JFrame {
             diskonLabel.setText( diskonDisplay + "%");
             member.setText("Member");
             String kategori = "Member";
+            
         }
         
         DefaultTableModel sourceModel = (DefaultTableModel) tabelTransaksi.getModel();
@@ -686,19 +716,18 @@ public class transaksipage extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonCekActionPerformed
 
     private void buttonTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTambahActionPerformed
-        // TODO add your handling code here:
-        GeneratorId generate = new GeneratorId();
-        String kolom = "id_transaksi";
-        String query = "SELECT id_transaksi FROM transaksi ORDER BY id_transaksi DESC LIMIT 1";
-        String idTrans = generate.idGenerator(kolom, query);
-        noTransaksi.setText(idTrans);
+        try {
+            noTransaksi.setText(getId());
+        } catch (SQLException ex) {
+            Logger.getLogger(transaksipage.class.getName()).log(Level.SEVERE, null, ex);
+        }
         String namaBarang = inputNB.getText();
         int jumlah = Integer.parseInt(inputJumlah.getText());
         double hargaBarang = this.ambilHarga(namaBarang);
         double total = jumlah * hargaBarang;
         
         model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
-         
+        
         inputJumlah.setText("");
         inputNB.setText("");
     }//GEN-LAST:event_buttonTambahActionPerformed
@@ -736,6 +765,9 @@ public class transaksipage extends javax.swing.JFrame {
             double total = jumlah * hargaBarang;
 
             model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
+            
+            //Transaksi catat = new Transaksi();
+            //catat.catatBarang(idTrans, namaBarang, jumlah, hargaBarang, total);
         } else {
         }
         double total = this.hitungTotal();

@@ -60,7 +60,7 @@ public class Transaksi {
         }
     }
     
-    public void catatDuit(String idTrans, int total, int pembayaran, int kembalian) {
+    public void catatDuit(String idTrans, double total, double pembayaran, double kembalian) {
         try {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
