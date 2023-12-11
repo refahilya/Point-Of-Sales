@@ -54,7 +54,15 @@ public class riwayatpage extends javax.swing.JFrame {
             new String [] {
                 "ID BARANG", "ID TRANSAKSI", "NAMA BARANG", "JUMLAH", "HARGA SATUAN", "DISKON", "TOTAL HARGA"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tabelRiwayat);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 1240, 630));

@@ -480,7 +480,15 @@ public class transaksipage extends javax.swing.JFrame {
             new String [] {
                 "Nama Barang", "Harga", "Jumlah"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tabelTransaksi);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 670, 600));
@@ -743,7 +751,7 @@ public class transaksipage extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void transaksi(String args[]) {
+    public static void transaksi (String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

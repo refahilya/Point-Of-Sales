@@ -335,7 +335,15 @@ public class memberpage extends javax.swing.JFrame {
             new String [] {
                 "ID MEMBER", "NAMA MEMBER", "TANGGAL LAHIR", "NO TELP", "EMAIL", "POIN", "CREATED_AT", "UPDATED_AT"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tabelMember.setGridColor(new java.awt.Color(0, 66, 37));
         tabelMember.setSelectionBackground(new java.awt.Color(245, 245, 220));
         jScrollPane1.setViewportView(tabelMember);

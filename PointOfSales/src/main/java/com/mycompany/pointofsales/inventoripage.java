@@ -323,7 +323,15 @@ public class inventoripage extends javax.swing.JFrame {
             new String [] {
                 "ID BARANG", "NAMA BARANG", "HARGA", "STOK", "CREATED_AT", "UPDATED_AT"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tabelInventori.setGridColor(new java.awt.Color(0, 66, 37));
         tabelInventori.setSelectionBackground(new java.awt.Color(245, 245, 220));
         jScrollPane1.setViewportView(tabelInventori);

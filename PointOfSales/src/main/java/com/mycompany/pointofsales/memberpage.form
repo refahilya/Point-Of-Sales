@@ -628,14 +628,14 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="8" rowCount="4">
-                <Column editable="true" title="ID MEMBER" type="java.lang.Object"/>
-                <Column editable="true" title="NAMA MEMBER" type="java.lang.Object"/>
-                <Column editable="true" title="TANGGAL LAHIR" type="java.lang.Object"/>
-                <Column editable="true" title="NO TELP" type="java.lang.Object"/>
-                <Column editable="true" title="EMAIL" type="java.lang.Object"/>
-                <Column editable="true" title="POIN" type="java.lang.Object"/>
-                <Column editable="true" title="CREATED_AT" type="java.lang.Object"/>
-                <Column editable="true" title="UPDATED_AT" type="java.lang.Object"/>
+                <Column editable="false" title="ID MEMBER" type="java.lang.Object"/>
+                <Column editable="false" title="NAMA MEMBER" type="java.lang.Object"/>
+                <Column editable="false" title="TANGGAL LAHIR" type="java.lang.Object"/>
+                <Column editable="false" title="NO TELP" type="java.lang.Object"/>
+                <Column editable="false" title="EMAIL" type="java.lang.Object"/>
+                <Column editable="false" title="POIN" type="java.lang.Object"/>
+                <Column editable="false" title="CREATED_AT" type="java.lang.Object"/>
+                <Column editable="false" title="UPDATED_AT" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
