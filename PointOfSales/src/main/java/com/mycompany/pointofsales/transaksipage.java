@@ -588,11 +588,20 @@ public class transaksipage extends javax.swing.JFrame {
 
     private void selesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selesaiActionPerformed
         // TODO add your handling code here:
+        //ini ngurus tgl
         LocalDateTime currentDateTime = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String formattedDateTime = currentDateTime.format(formatter);
         tanggal.setText(formattedDateTime);
         
+        //ini ngurus id/nomor transaksi
+        GeneratorId tes = new GeneratorId();
+        String kolom = "id_transaksi";
+        String query = "SELECT id_transaksi FROM transaksi ORDER BY id_transaksi DESC LIMIT 1";
+        String idTrans = tes.idGenerator(kolom, query);
+        noTransaksi.setText(idTrans);
+        
+        //ini baru ngurus struknya
         int tabAktifIndex = jTabbedPane1.getSelectedIndex();
         int bayar = Integer.parseInt(inputBayar.getText());
         double bayarDouble = (double) bayar;
@@ -604,6 +613,8 @@ public class transaksipage extends javax.swing.JFrame {
             jLabel11.setText(String.valueOf(kembalian));
             diskonLabel.setText("0");
             totalHarga.setText(String.valueOf(total));
+            member.setText("Non-Member");
+            String kategori = "Non-Member";
         } else if (tabAktifIndex == 1) {
             //berarti member
             double total = this.hitungTotal();
@@ -616,6 +627,8 @@ public class transaksipage extends javax.swing.JFrame {
             diskon = diskon * 100;
             int diskonDisplay = (int) diskon;
             diskonLabel.setText( diskonDisplay + "%");
+            member.setText("Member");
+            String kategori = "Member";
         }
         
         DefaultTableModel sourceModel = (DefaultTableModel) tabelTransaksi.getModel();
@@ -627,6 +640,7 @@ public class transaksipage extends javax.swing.JFrame {
                 rowData[j] = sourceModel.getValueAt(i, j);
             }
             DefaultTableModel destinationModel = (DefaultTableModel) tabelTransaksi2.getModel();
+            destinationModel.setRowCount(0);
             destinationModel.addRow(rowData);
         }
         
