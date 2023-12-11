@@ -594,13 +594,6 @@ public class transaksipage extends javax.swing.JFrame {
         String formattedDateTime = currentDateTime.format(formatter);
         tanggal.setText(formattedDateTime);
         
-        //ini ngurus id/nomor transaksi
-        GeneratorId tes = new GeneratorId();
-        String kolom = "id_transaksi";
-        String query = "SELECT id_transaksi FROM transaksi ORDER BY id_transaksi DESC LIMIT 1";
-        String idTrans = tes.idGenerator(kolom, query);
-        noTransaksi.setText(idTrans);
-        
         //ini baru ngurus struknya
         int tabAktifIndex = jTabbedPane1.getSelectedIndex();
         int bayar = Integer.parseInt(inputBayar.getText());
@@ -686,6 +679,11 @@ public class transaksipage extends javax.swing.JFrame {
 
     private void buttonTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTambahActionPerformed
         // TODO add your handling code here:
+        GeneratorId generate = new GeneratorId();
+        String kolom = "id_transaksi";
+        String query = "SELECT id_transaksi FROM transaksi ORDER BY id_transaksi DESC LIMIT 1";
+        String idTrans = generate.idGenerator(kolom, query);
+        noTransaksi.setText(idTrans);
         String namaBarang = inputNB.getText();
         int jumlah = Integer.parseInt(inputJumlah.getText());
         double hargaBarang = this.ambilHarga(namaBarang);
