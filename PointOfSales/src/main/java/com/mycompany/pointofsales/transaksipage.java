@@ -476,22 +476,29 @@ public class transaksipage extends javax.swing.JFrame {
 
         tabelTransaksi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Nama Barang", "Harga", "Jumlah"
+                "Nama Barang", "Harga Satuan", "Jumlah", "Harga Jumlah"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        tabelTransaksi.setSelectionBackground(new java.awt.Color(0, 66, 37));
+        tabelTransaksi.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        tabelTransaksi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelTransaksiMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(tabelTransaksi);
@@ -804,6 +811,39 @@ public class transaksipage extends javax.swing.JFrame {
     private void searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_searchMouseClicked
+
+    int Key = 0;
+    private void tabelTransaksiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelTransaksiMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel sourceModel = (DefaultTableModel) tabelTransaksi.getModel();
+        int MyIndex = tabelTransaksi.getSelectedRow();
+        
+        /*Key = Integer.valueOf(model.getValueAt(MyIndex, 0).toString());
+        inputNB.setText(model.getValueAt(MyIndex, 1).toString());
+        inputJumlah.setText(model.getValueAt(MyIndex, 3).toString());*/
+
+        /*String valueAtColumnZero = model.getValueAt(myIndex, 0).toString();
+        String valueAtColumnThree = model.getValueAt(myIndex, 3).toString();
+
+        try {
+            Key = Integer.parseInt(valueAtColumnZero);
+            inputNB.setText(model.getValueAt(myIndex, 1).toString());
+            inputJumlah.setText(valueAtColumnThree);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Gagal menampilkan data", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+
+        }*/
+
+        //if (MyIndex != -1) { // Pastikan baris yang dipilih bukan baris kosong atau tak valid
+        // Kolom 1
+        String valueAtColumnOne = sourceModel.getValueAt(MyIndex, 0).toString();
+        inputNB.setText(valueAtColumnOne);
+
+        // Kolom 3
+        String valueAtColumnThree = sourceModel.getValueAt(MyIndex, 2).toString();
+        inputJumlah.setText(valueAtColumnThree);
+    
+    }//GEN-LAST:event_tabelTransaksiMouseClicked
 
     /**
      * @param args the command line arguments
