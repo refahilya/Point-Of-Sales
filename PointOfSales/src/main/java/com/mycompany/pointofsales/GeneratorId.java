@@ -20,7 +20,10 @@ public class GeneratorId {
         try {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
-
+            
+            //querynya kira2 kek gini
+            //String query = "SELECT id_transaksi FROM transaksi ORDER BY id_transaksi DESC LIMIT 1";
+            
             Statement statement = koneksi.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 

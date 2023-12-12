@@ -8,6 +8,9 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -293,9 +296,19 @@ public class homepage extends javax.swing.JFrame {
 
     private void transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksiActionPerformed
         // TODO add your handling code here:
+        GeneratorId generate = new GeneratorId();
+        String kolom = "id_transaksi";
+        String query = "SELECT id_transaksi FROM transaksi ORDER BY id_transaksi DESC LIMIT 1";
+        String idTrans = generate.idGenerator(kolom, query);
+        Transaksi catat = new Transaksi();
+        catat.catatId(idTrans);
         
         dispose();
-        new transaksipage().setVisible(true);
+        try {
+            new transaksipage().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(homepage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_transaksiActionPerformed
 
     private void inventoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventoriActionPerformed

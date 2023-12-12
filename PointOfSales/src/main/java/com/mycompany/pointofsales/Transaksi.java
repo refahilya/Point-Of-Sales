@@ -14,7 +14,7 @@ import java.sql.SQLException;
  */
 public class Transaksi {
     
-    //INI TO GES SEBENARNYA BUAT YG NYATET AJA SI
+    //INI TO GES SEBENARNYA BUAT YG NYATET DI DB AJA SI
     //SOALNYA ITUNGAN UDAH SEMUA DIKERJAIN DI SOURCE NYA TRANSAKSIPAGE
     //OKEYAHJHJHJHJ
     
@@ -43,6 +43,23 @@ public class Transaksi {
             System.out.println(ex.getMessage());  
         }
         
+    }
+    
+    public void hapusBarang(String idDetail) {
+        //INI BUAT NGEHAPUS DATA YANG UDAH KEBURU DICATET DI DB PAS LAGI TRANSAKSI
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+
+            String query = "DELETE FROM detail_belanjaan WHERE id_detail = ?";
+            PreparedStatement ps = koneksi.prepareStatement(query);
+            ps.setString(1, idDetail);
+            ps.executeUpdate();
+            ps.close();
+            koneksi.close();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());  
+        }
     }
     
     public void catatId(String idTrans) {
@@ -86,6 +103,21 @@ public class Transaksi {
             PreparedStatement ps = koneksi.prepareStatement(query);
             ps.setString(1, kategori);
             ps.setString(2, idTrans);
+            ps.executeUpdate();
+            ps.close();
+            koneksi.close();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());  
+        }
+    }
+    
+    public void catatTanggal(String idTrans) {
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+            String query = "UPDATE transaksi SET tanggal = CURRENT_TIMESTAMP WHERE id_transaksi = ?";
+            PreparedStatement ps = koneksi.prepareStatement(query);
+            ps.setString(1, idTrans);
             ps.executeUpdate();
             ps.close();
             koneksi.close();

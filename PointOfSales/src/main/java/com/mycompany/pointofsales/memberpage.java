@@ -411,8 +411,19 @@ public class memberpage extends javax.swing.JFrame {
 
     private void transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksiActionPerformed
         // TODO add your handling code here:
+        GeneratorId generate = new GeneratorId();
+        String kolom = "id_transaksi";
+        String query = "SELECT id_transaksi FROM transaksi ORDER BY id_transaksi DESC LIMIT 1";
+        String idTrans = generate.idGenerator(kolom, query);
+        Transaksi catat = new Transaksi();
+        catat.catatId(idTrans);
+        
         dispose();
-        new transaksipage().setVisible(true);
+        try {
+            new transaksipage().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(memberpage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_transaksiActionPerformed
 
     private void riwayatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_riwayatActionPerformed

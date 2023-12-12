@@ -29,11 +29,12 @@ import javax.swing.table.DefaultTableModel;
  */
 public class transaksipage extends javax.swing.JFrame {
 
+    String currentId;
     /**
      * Creates new form transaksipage
      */
     DefaultTableModel model;
-    public transaksipage() {
+    public transaksipage() throws SQLException {
         initComponents();
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
         relasijy.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/relasijy3.png")));
@@ -57,6 +58,7 @@ public class transaksipage extends javax.swing.JFrame {
         );
         tabelTransaksi.setModel(model);
         
+        currentId = this.getId();
     }
 
     /**
@@ -649,9 +651,13 @@ public class transaksipage extends javax.swing.JFrame {
                 tanggal.setText(formattedDateTime);
                 
                 //EH NO TRANSAKSINE ILANG? huhu monangsi
+                //ni wir tak kasih lagi muach ngikngok
+                
+                noTransaksi.setText(currentId);
 
                 //ini baru ngurus struknya
                 Transaksi catat = new Transaksi();
+                catat.catatTanggal(currentId);
                 int tabAktifIndex = jTabbedPane1.getSelectedIndex();
                 int bayar = Integer.parseInt(inputBayar.getText());
                 double bayarDouble = (double) bayar;
@@ -663,9 +669,10 @@ public class transaksipage extends javax.swing.JFrame {
                     kembalianHasil.setText(String.valueOf(kembalian));
                     diskonLabel.setText("0");
                     totalHarga.setText(String.valueOf(total));
-                    member.setText("Non-Member");
                     String kategori = "Non-Member";
-
+                    member.setText(kategori);
+                    catat.catatKategori(currentId, kategori);
+                    catat.catatDuit(currentId, total, bayar, kembalian);
                 } else if (tabAktifIndex == 1) {
                     //berarti member
                     double total = this.hitungTotal();
@@ -678,9 +685,10 @@ public class transaksipage extends javax.swing.JFrame {
                     diskon = diskon * 100;
                     int diskonDisplay = (int) diskon;
                     diskonLabel.setText( diskonDisplay + "%");
-                    member.setText("Member");
                     String kategori = "Member";
-
+                    member.setText(kategori);
+                    catat.catatKategori(currentId, kategori);
+                    catat.catatDuit(currentId, totalMember, bayar, kembalian);
                 }
 
                 //DefaultTableModel sourceModel = (DefaultTableModel) tabelTransaksi.getModel();
@@ -745,20 +753,7 @@ public class transaksipage extends javax.swing.JFrame {
         if (inputNB.getText().isEmpty() || inputJumlah.getText().isEmpty()){
             JOptionPane.showMessageDialog(this, "Data Masih Kosong!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
         } else {
-            try {
-            noTransaksi.setText(getId());
-            } catch (SQLException ex) {
-                Logger.getLogger(transaksipage.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            /*String namaBarang = inputNB.getText();
-            int jumlah = Integer.parseInt(inputJumlah.getText());
-            double hargaBarang = this.ambilHarga(namaBarang);
-            double total = jumlah * hargaBarang;
-
-            model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
-
-            inputJumlah.setText("");
-            inputNB.setText("");*/
+            noTransaksi.setText(currentId);
             
             // Pas mau nambahin data sama yang sebenernya dah ada di tabel
             DefaultTableModel sourceModel = (DefaultTableModel) tabelTransaksi.getModel();
@@ -784,6 +779,9 @@ public class transaksipage extends javax.swing.JFrame {
                 double total = jumlah * hargaBarang;
 
                 model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
+                
+                Transaksi catat = new Transaksi();
+                catat.catatBarang(currentId, namaBarang, jumlah, hargaBarang, total);
 
                 inputJumlah.setText("");
                 inputNB.setText("");
@@ -819,6 +817,15 @@ public class transaksipage extends javax.swing.JFrame {
 
             sourceModel.setValueAt(newValueForColumn1, selectedRowIndex, 0);
             sourceModel.setValueAt(newValueForColumn3, selectedRowIndex, 2);
+            
+            /*YANG INI AGAK TROUBLE HEHE HUHUHU MENGSTRES
+            
+            
+            Transaksi catat = new Transaksi();
+            double total = newValueForColumn3 * ambilHarga(newValueForColumn1);
+            catat.catatBarang(currentId, newValueForColumn1, newValueForColumn3, ambilHarga(newValueForColumn1), total);
+            */
+            
         } else {
             // Beri pesan bahwa tidak ada baris yang dipilih
             JOptionPane.showMessageDialog(this, "Pilih baris yang akan diubah", "Kesalahan", JOptionPane.ERROR_MESSAGE);
@@ -833,31 +840,28 @@ public class transaksipage extends javax.swing.JFrame {
 
     private void transaksiBaruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksiBaruActionPerformed
         // TODO add your handling code here:
+        GeneratorId generate = new GeneratorId();
+        String kolom = "id_transaksi";
+        String query = "SELECT id_transaksi FROM transaksi ORDER BY id_transaksi DESC LIMIT 1";
+        String idTrans = generate.idGenerator(kolom, query);
+        Transaksi catat = new Transaksi();
+        catat.catatId(idTrans);
+        
         hasil.dispose();
-        new transaksipage().setVisible(true);
+        try {
+            new transaksipage().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(transaksipage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_transaksiBaruActionPerformed
 
     private void buttonHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHitungActionPerformed
         // TODO add your handling code here:
         if (inputNB.getText().isEmpty() || inputJumlah.getText().isEmpty()){
-            JOptionPane.showMessageDialog(this, "Data Masih Kosong!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
-        } else {
-            /*String namaBarang = inputNB.getText();
-            if (!namaBarang.equals("")) {
-                int jumlah = Integer.parseInt(inputJumlah.getText());
-                double hargaBarang = this.ambilHarga(namaBarang);
-                double total = jumlah * hargaBarang;
-
-                model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
-
-                //Transaksi catat = new Transaksi();
-                //catat.catatBarang(idTrans, namaBarang, jumlah, hargaBarang, total);
-            } else {
-            }
-            double total = this.hitungTotal();
+            double total = hitungTotal();
             totalHargaNonMb.setText(String.valueOf(total));
-            inputJumlah.setText("");
-            inputNB.setText("");*/
+            //JOptionPane.showMessageDialog(this, "Data Masih Kosong!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+        } else {
             
             DefaultTableModel sourceModel = (DefaultTableModel) tabelTransaksi.getModel();
 
@@ -883,6 +887,8 @@ public class transaksipage extends javax.swing.JFrame {
                     double total = jumlah * hargaBarang;
 
                     model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
+                    Transaksi catat = new Transaksi();
+                    catat.catatBarang(currentId, namaBarang, jumlah, hargaBarang, total);
 
                     //Transaksi catat = new Transaksi();
                     //catat.catatBarang(idTrans, namaBarang, jumlah, hargaBarang, total);
@@ -979,7 +985,11 @@ public class transaksipage extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new transaksipage().setVisible(true);
+                try {
+                    new transaksipage().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(transaksipage.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
