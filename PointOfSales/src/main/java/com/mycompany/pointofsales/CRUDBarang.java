@@ -62,7 +62,7 @@ public class CRUDBarang {
 
             while (resultSet.next()) {
                 Object[] rowData = {
-                        resultSet.getInt("id_barang"),
+                        resultSet.getString("id_barang"),
                         resultSet.getString("nama_barang"),
                         resultSet.getString("harga"),
                         resultSet.getInt("stok"),

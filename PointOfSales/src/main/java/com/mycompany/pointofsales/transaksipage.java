@@ -37,13 +37,14 @@ public class transaksipage extends javax.swing.JFrame {
         initComponents();
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
         relasijy.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/relasijy3.png")));
+        relasijy1.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/relasijy3.png")));
         search.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/search1.png")));
         //iconadd.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/add2.png")));
         //refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/refresh2.png")));
         hasil.setDefaultCloseOperation(hasil.DISPOSE_ON_CLOSE);
         setDefaultCloseOperation(transaksipage.DISPOSE_ON_CLOSE);
         totalHarga.setHorizontalAlignment(JLabel.CENTER);
-        kembalian.setHorizontalAlignment(JLabel.CENTER);
+        kembalianHasil.setHorizontalAlignment(JLabel.CENTER);
         
         inputNB.setHorizontalAlignment(JTextField.CENTER);
         inputJumlah.setHorizontalAlignment(JTextField.CENTER);
@@ -79,7 +80,7 @@ public class transaksipage extends javax.swing.JFrame {
         noTransaksi = new javax.swing.JLabel();
         diskonLabel = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        kembalian = new javax.swing.JLabel();
+        kembalianHasil = new javax.swing.JLabel();
         transaksiBaru = new javax.swing.JButton();
         beranda = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
@@ -135,6 +136,8 @@ public class transaksipage extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 66, 37)));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        relasijy1.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy3.png")); // NOI18N
         jPanel7.add(relasijy1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jLabel3.setText("Nomor   :");
@@ -171,8 +174,9 @@ public class transaksipage extends javax.swing.JFrame {
         totalHarga.setOpaque(true);
         jPanel7.add(totalHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, 110, 30));
 
+        noTransaksi.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         noTransaksi.setText("id_transaksi");
-        jPanel7.add(noTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 90, 30));
+        jPanel7.add(noTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 100, 30));
 
         diskonLabel.setForeground(new java.awt.Color(204, 0, 0));
         diskonLabel.setText("Diskon");
@@ -182,10 +186,10 @@ public class transaksipage extends javax.swing.JFrame {
         jLabel18.setText("Diskon  :");
         jPanel7.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 470, -1, -1));
 
-        kembalian.setBackground(new java.awt.Color(245, 245, 220));
-        kembalian.setText("kembalian");
-        kembalian.setOpaque(true);
-        jPanel7.add(kembalian, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 526, 120, 20));
+        kembalianHasil.setBackground(new java.awt.Color(245, 245, 220));
+        kembalianHasil.setText("kembalian");
+        kembalianHasil.setOpaque(true);
+        jPanel7.add(kembalianHasil, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 526, 120, 20));
 
         transaksiBaru.setBackground(new java.awt.Color(0, 66, 37));
         transaksiBaru.setForeground(new java.awt.Color(255, 255, 255));
@@ -223,8 +227,9 @@ public class transaksipage extends javax.swing.JFrame {
         jLabel20.setText("Tanggal :");
         jPanel7.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 16, 60, 20));
 
+        tanggal.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         tanggal.setText("dd/mm/yy");
-        jPanel7.add(tanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 14, 90, -1));
+        jPanel7.add(tanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 8, 100, 30));
 
         jLabel19.setText("Status   :");
         jPanel7.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 450, -1, -1));
@@ -232,7 +237,7 @@ public class transaksipage extends javax.swing.JFrame {
         member.setText("Member");
         jPanel7.add(member, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 450, 70, -1));
 
-        hasil.getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 570));
+        hasil.getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 580));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1274, 702));
@@ -495,6 +500,8 @@ public class transaksipage extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabelTransaksi);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 670, 600));
+
+        relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy3.png")); // NOI18N
         getContentPane().add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         bgSearch.setBackground(new java.awt.Color(246, 246, 246));
@@ -646,7 +653,7 @@ public class transaksipage extends javax.swing.JFrame {
             //berarti non
             double total = this.hitungTotal();
             kembalian = bayar - total;
-            jLabel11.setText(String.valueOf(kembalian));
+            kembalianHasil.setText(String.valueOf(kembalian));
             diskonLabel.setText("0");
             totalHarga.setText(String.valueOf(total));
             member.setText("Non-Member");
@@ -659,7 +666,7 @@ public class transaksipage extends javax.swing.JFrame {
             double jumlahDiskon = diskon * total;
             double totalMember = total - jumlahDiskon;
             kembalian = bayar - totalMember;
-            jLabel11.setText(String.valueOf(kembalian));
+            kembalianHasil.setText(String.valueOf(kembalian));
             totalHarga.setText(String.valueOf(totalMember));
             diskon = diskon * 100;
             int diskonDisplay = (int) diskon;
@@ -918,7 +925,7 @@ public class transaksipage extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel judul;
-    private javax.swing.JLabel kembalian;
+    private javax.swing.JLabel kembalianHasil;
     private javax.swing.JLabel member;
     private javax.swing.JLabel noTransaksi;
     private javax.swing.JPanel panelMember;

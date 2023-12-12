@@ -83,12 +83,8 @@ public class homepage extends javax.swing.JFrame {
         iconKasir = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1274, 698));
         setMinimumSize(new java.awt.Dimension(1274, 698));
-        setPreferredSize(new java.awt.Dimension(1274, 698));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy3.png")); // NOI18N
         getContentPane().add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -201,8 +197,6 @@ public class homepage extends javax.swing.JFrame {
         hari.setText("Kamis");
         hari.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(hari, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, -1, -1));
-
-        ilus5.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\ilus5.png")); // NOI18N
         getContentPane().add(ilus5, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, 410, 340));
 
         jPanel1.setBackground(new java.awt.Color(245, 245, 220));
@@ -242,7 +236,7 @@ public class homepage extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ID BARANG", "NAMA BARANG", "HARGA", "STOK", "CREATED_AT", "UPDATED_AT"
+                "ID Barang", "Nama Barang", "Harga", "Stok", "Created at", "Updated at"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -274,23 +268,11 @@ public class homepage extends javax.swing.JFrame {
         jLabel15.setText("Beranda");
         jLabel15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, -1, -1));
-
-        iconBeranda.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\beranda.png")); // NOI18N
         getContentPane().add(iconBeranda, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
-
-        iconInventori.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\inventori.png")); // NOI18N
         getContentPane().add(iconInventori, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
-
-        iconMember.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\member.png")); // NOI18N
         getContentPane().add(iconMember, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
-
-        iconRiwayat.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\riwayat.png")); // NOI18N
         getContentPane().add(iconRiwayat, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
-
-        iconTransaksi.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\transaksi.png")); // NOI18N
         getContentPane().add(iconTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
-
-        iconKasir.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\kasir.png")); // NOI18N
         getContentPane().add(iconKasir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 0, 50, 60));
 
         pack();

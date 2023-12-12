@@ -66,7 +66,7 @@ public class CRUDMember {
 
             while (resultSet.next()) {
                 Object[] rowData = {
-                        resultSet.getInt("id_member"),
+                        resultSet.getString("id_member"),
                         resultSet.getString("nama_member"),
                         resultSet.getString("tanggal_lahir"),
                         resultSet.getInt("no_telp"),
