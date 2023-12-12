@@ -5,6 +5,10 @@
 package com.mycompany.pointofsales;
 
 import java.awt.Color;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
@@ -429,6 +433,27 @@ public class memberpage extends javax.swing.JFrame {
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         // TODO add your handling code here:
+        if (inputIDM.getText().isEmpty() || inputNM.getText().isEmpty() || inputTL.getText().isEmpty() || inputNoTelp.getText().isEmpty() || inputEmail.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Data Masih Kosong!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+        } else {
+            try {
+                String id_member = String.valueOf(inputIDM.getText());
+                String nama = String.valueOf(inputNM.getText());
+                String tl = String.valueOf(inputTL.getText());
+                int notelp = Integer.parseInt(inputNoTelp.getText());
+                String email = String.valueOf(inputEmail.getText());
+                CRUDMember CrudM = new CRUDMember();
+                CrudM.create(id_member, nama, tl, notelp, email);
+                
+                JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan!", "Informasi", JOptionPane.INFORMATION_MESSAGE);
+                
+                //Otomatis nambah ke tabel belum
+                
+            } catch (NumberFormatException Ex) {
+                JOptionPane.showMessageDialog(this, "Gagal membuat data", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+            }
+            
+        }
     }//GEN-LAST:event_addActionPerformed
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
