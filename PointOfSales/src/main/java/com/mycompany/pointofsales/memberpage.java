@@ -32,6 +32,13 @@ public class memberpage extends javax.swing.JFrame {
         inputEmail.setHorizontalAlignment(JTextField.CENTER);
         inputPoin.setHorizontalAlignment(JTextField.CENTER);
         
+        readToTable();
+        
+        setDefaultCloseOperation(homepage.DISPOSE_ON_CLOSE);
+
+    }
+
+    public void readToTable() {
         tabelMember.setModel(new javax.swing.table.DefaultTableModel(
             new Object[][]{},
             new String[]{"ID Member", "Nama Member", "Tanggal Lahir", "No Telepon", "Email", "Poin", "Created at", "Updated at"}
@@ -39,10 +46,7 @@ public class memberpage extends javax.swing.JFrame {
         CRUDMember CrudM = new CRUDMember();
         DefaultTableModel model = CrudM.read();
         tabelMember.setModel(model);
-        setDefaultCloseOperation(homepage.DISPOSE_ON_CLOSE);
-
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -451,7 +455,7 @@ public class memberpage extends javax.swing.JFrame {
                 String id_member = String.valueOf(inputIDM.getText());
                 String nama = String.valueOf(inputNM.getText());
                 String tl = String.valueOf(inputTL.getText());
-                int notelp = Integer.parseInt(inputNoTelp.getText());
+                String notelp = String.valueOf(inputNoTelp.getText());
                 String email = String.valueOf(inputEmail.getText());
                 CRUDMember CrudM = new CRUDMember();
                 CrudM.create(id_member, nama, tl, notelp, email);
@@ -465,15 +469,72 @@ public class memberpage extends javax.swing.JFrame {
             }
             
         }
+        readToTable();
     }//GEN-LAST:event_addActionPerformed
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
         // TODO add your handling code here:
-        
+        DefaultTableModel sourceModel = (DefaultTableModel) tabelMember.getModel();
+        int selectedRowIndex = tabelMember.getSelectedRow();
+
+        if (selectedRowIndex != -1) {
+            String id = inputIDM.getText();
+            String namaBaru = inputNM.getText();
+            String TLBaru = inputTL.getText();
+            String noTelpBaru = inputNoTelp.getText();
+            String emailBaru = inputEmail.getText();
+            String poinBaru = inputPoin.getText();
+            
+            sourceModel.setValueAt(id, selectedRowIndex, 0);
+            sourceModel.setValueAt(namaBaru, selectedRowIndex, 1);
+            sourceModel.setValueAt(TLBaru, selectedRowIndex, 2);
+            sourceModel.setValueAt(noTelpBaru, selectedRowIndex, 3);
+            sourceModel.setValueAt(emailBaru, selectedRowIndex, 4);
+            sourceModel.setValueAt(poinBaru, selectedRowIndex, 5);
+            
+            CRUDMember CrudM = new CRUDMember();
+            CrudM.update(id, namaBaru, TLBaru, noTelpBaru, emailBaru);
+        } else {
+            // Beri pesan bahwa tidak ada baris yang dipilih
+            JOptionPane.showMessageDialog(this, "Pilih baris yang akan diubah", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+        }
+        readToTable();
     }//GEN-LAST:event_updateActionPerformed
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel sourceModel = (DefaultTableModel) tabelMember.getModel();
+        int selectedRowIndex = tabelMember.getSelectedRow();
+        
+        if (selectedRowIndex != -1) {
+            String id = inputIDM.getText();
+            String namaBaru = inputNM.getText();
+            String TLBaru = inputTL.getText();
+            String noTelpBaru = inputNoTelp.getText();
+            String emailBaru = inputEmail.getText();
+            String poinBaru = inputPoin.getText();
+            
+            sourceModel.setValueAt(id, selectedRowIndex, 0);
+            sourceModel.setValueAt(namaBaru, selectedRowIndex, 1);
+            sourceModel.setValueAt(TLBaru, selectedRowIndex, 2);
+            sourceModel.setValueAt(noTelpBaru, selectedRowIndex, 3);
+            sourceModel.setValueAt(emailBaru, selectedRowIndex, 4);
+            sourceModel.setValueAt(poinBaru, selectedRowIndex, 5);
+            
+            CRUDMember CrudM = new CRUDMember();
+            CrudM.delete(id);
+            
+            inputIDM.setText("");
+            inputNM.setText("");
+            inputTL.setText("");
+            inputNoTelp.setText("");
+            inputEmail.setText("");
+            inputPoin.setText("");
+        } else {
+            // Beri pesan bahwa tidak ada baris yang dipilih
+            JOptionPane.showMessageDialog(this, "Pilih baris yang akan diubah", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+        }
+        readToTable();
     }//GEN-LAST:event_deleteActionPerformed
 
     private void inputSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSearchActionPerformed

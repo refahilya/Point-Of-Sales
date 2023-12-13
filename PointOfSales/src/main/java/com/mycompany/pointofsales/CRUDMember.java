@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class CRUDMember {
     
-    public void create(String id_member, String nama_member, String tanggal_lahir, int no_telp, String email){
+    public void create(String id_member, String nama_member, String tanggal_lahir, String no_telp, String email){
         try {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
@@ -27,7 +27,7 @@ public class CRUDMember {
             ps.setString(1, id_member);
             ps.setString(2, nama_member);
             ps.setString(3, tanggal_lahir);
-            ps.setInt(4, no_telp);
+            ps.setString(4, no_telp);
             ps.setString(5, email);
             ps.setInt(6, 0);
 
@@ -85,7 +85,7 @@ public class CRUDMember {
         return tableModel;
     }
     
-    public void update(String id_member, String nama_member, String tanggal_lahir, int no_telp, String email) {
+    public void update(String id_member, String nama_member, String tanggal_lahir, String no_telp, String email) {
         try {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
@@ -94,7 +94,7 @@ public class CRUDMember {
             PreparedStatement updateStatement = koneksi.prepareStatement(updateQuery);
             updateStatement.setString(1, nama_member);
             updateStatement.setString(2, tanggal_lahir);
-            updateStatement.setInt(3, no_telp);
+            updateStatement.setString(3, no_telp);
             updateStatement.setString(4, email);
             updateStatement.setString(5, id_member);
             int rowsAffected = updateStatement.executeUpdate();
