@@ -5,9 +5,15 @@
 package com.mycompany.pointofsales;
 
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -23,6 +29,95 @@ public class riwayatpage extends javax.swing.JFrame {
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
     }
 
+    public DefaultTableModel read(){
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.addColumn("ID Member");
+        tableModel.addColumn("Nama");
+        tableModel.addColumn("Tanggal Lahir");
+        tableModel.addColumn("No Telepon");
+        tableModel.addColumn("Email");
+        tableModel.addColumn("Poin");
+        tableModel.addColumn("Created at");
+        tableModel.addColumn("Updated at");
+
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+
+            String query = "SELECT * FROM member";
+
+            Statement statement = koneksi.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                Object[] rowData = {
+                        resultSet.getString("id_member"),
+                        resultSet.getString("nama_member"),
+                        resultSet.getString("tanggal_lahir"),
+                        resultSet.getInt("no_telp"),
+                        resultSet.getString("email"),
+                        resultSet.getInt("poin"),
+                        resultSet.getString("created_at"),
+                        resultSet.getString("updated_at")
+                };
+                tableModel.addRow(rowData);
+            }
+            resultSet.close();
+            statement.close();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return tableModel;
+    }
+    
+    public ArrayList<String> ambilDetail(String id_transaksi) {
+        ArrayList<String> detailList = new ArrayList<>();
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+            String query = "SELECT id_detail FROM detail_belanjaan WHERE id_transaksi = ?";
+            PreparedStatement ps = koneksi.prepareStatement(query);
+            ps.setString(1, id_transaksi);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                String id_detail = rs.getString("id_detail");
+                detailList.add(id_detail);
+            }
+
+            rs.close();
+            ps.close();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return detailList;
+    }
+    
+    public void catatRiwayatTransaksi(String idRiwayat, String currentId, double total, double bayar, double kembalian, String kategori, ArrayList<String> detail) {
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+            String query = "INSERT INTO riwayat (id_riwayat, id_transaksi, tanggal, total_transaksi, pembayaran, kembalian, kategori, detail) VALUES (?, ?, CURRENT_TIMESTAMP, ?, ?, ?, ?, ?)";
+
+            String detailString = String.join(",", detail);
+
+            PreparedStatement ps = koneksi.prepareStatement(query);
+
+            ps.setString(1, idRiwayat);
+            ps.setString(2, currentId);
+            ps.setDouble(3, total);
+            ps.setDouble(4, bayar);
+            ps.setDouble(5, kembalian);
+            ps.setString(6, kategori);
+            ps.setString(7, detailString);
+
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

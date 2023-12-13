@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -673,6 +674,16 @@ public class transaksipage extends javax.swing.JFrame {
                     member.setText(kategori);
                     catat.catatKategori(currentId, kategori);
                     catat.catatDuit(currentId, total, bayar, kembalian);
+                    
+                    GeneratorId generate = new GeneratorId();
+                    String kolom = "id_riwayat";
+                    String query = "SELECT id_riwayat FROM riwayat ORDER BY id_riwayat DESC LIMIT 1";
+                    String idRiwayat = generate.idGenerator(kolom, query);
+                    
+                    riwayatpage riwayat = new riwayatpage();
+                    ArrayList<String> detail = riwayat.ambilDetail(currentId);
+                    riwayat.catatRiwayatTransaksi(idRiwayat, currentId, total, bayar, kembalian, kategori, detail);
+                    
                 } else if (tabAktifIndex == 1) {
                     //berarti member
                     double total = this.hitungTotal();
@@ -689,6 +700,15 @@ public class transaksipage extends javax.swing.JFrame {
                     member.setText(kategori);
                     catat.catatKategori(currentId, kategori);
                     catat.catatDuit(currentId, totalMember, bayar, kembalian);
+                    
+                    GeneratorId generate = new GeneratorId();
+                    String kolom = "id_riwayat";
+                    String query = "SELECT id_riwayat FROM riwayat ORDER BY id_riwayat DESC LIMIT 1";
+                    String idRiwayat = generate.idGenerator(kolom, query);
+                    
+                    riwayatpage riwayat = new riwayatpage();
+                    ArrayList<String> detail = riwayat.ambilDetail(currentId);
+                    riwayat.catatRiwayatTransaksi(idRiwayat, currentId, totalMember, bayar, kembalian, kategori, detail);
                 }
 
                 //DefaultTableModel sourceModel = (DefaultTableModel) tabelTransaksi.getModel();
@@ -712,6 +732,7 @@ public class transaksipage extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Nominal bayar berupa integer!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
             }
         }
+        
     }//GEN-LAST:event_selesaiActionPerformed
 
     private void inputBayarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputBayarActionPerformed
