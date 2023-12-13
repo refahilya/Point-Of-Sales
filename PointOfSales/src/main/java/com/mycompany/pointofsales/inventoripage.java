@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
@@ -31,6 +32,12 @@ public class inventoripage extends javax.swing.JFrame {
         inputStok.setHorizontalAlignment(JTextField.CENTER);
         inputIDB.setHorizontalAlignment(JTextField.CENTER);
         
+        readToTable();
+        
+        setDefaultCloseOperation(homepage.DISPOSE_ON_CLOSE);
+    }
+
+    public void readToTable() {
         tabelInventori.setModel(new javax.swing.table.DefaultTableModel(
             new Object[][]{},
             new String[]{"ID Barang", "Nama Barang", "Harga", "Stok", "Created at", "Updated at"}
@@ -38,9 +45,8 @@ public class inventoripage extends javax.swing.JFrame {
         CRUDBarang CrudB = new CRUDBarang();
         DefaultTableModel model = CrudB.read();
         tabelInventori.setModel(model);
-        setDefaultCloseOperation(homepage.DISPOSE_ON_CLOSE);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -424,6 +430,28 @@ public class inventoripage extends javax.swing.JFrame {
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         // TODO add your handling code here:
+        if (inputIDB.getText().isEmpty() || inputNB.getText().isEmpty() || inputHarga.getText().isEmpty() || inputStok.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Data Masih Kosong!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+        } else {
+            try {
+                String id_barang = String.valueOf(inputIDB.getText());
+                String nama = String.valueOf(inputNB.getText());
+                String harga = String.valueOf(inputHarga.getText());
+                String stok = String.valueOf(inputStok.getText());
+                CRUDBarang CrudB = new CRUDBarang();
+                JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan!", "Informasi", JOptionPane.INFORMATION_MESSAGE);
+                
+                inputIDB.setText("");
+                inputNB.setText("");
+                inputHarga.setText("");
+                inputStok.setText("");
+                
+            } catch (NumberFormatException Ex) {
+                JOptionPane.showMessageDialog(this, "Gagal membuat data", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+            }
+            
+        }
+        readToTable();
     }//GEN-LAST:event_addActionPerformed
 
     private void inputSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSearchActionPerformed

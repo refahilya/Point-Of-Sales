@@ -462,7 +462,12 @@ public class memberpage extends javax.swing.JFrame {
                 
                 JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan!", "Informasi", JOptionPane.INFORMATION_MESSAGE);
                 
-                //Otomatis nambah ke tabel belum
+                inputIDM.setText("");
+                inputNM.setText("");
+                inputTL.setText("");
+                inputNoTelp.setText("");
+                inputEmail.setText("");
+                inputPoin.setText("");
                 
             } catch (NumberFormatException Ex) {
                 JOptionPane.showMessageDialog(this, "Gagal membuat data", "Kesalahan", JOptionPane.ERROR_MESSAGE);
