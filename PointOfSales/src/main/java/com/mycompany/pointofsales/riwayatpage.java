@@ -27,6 +27,8 @@ public class riwayatpage extends javax.swing.JFrame {
     public riwayatpage() {
         initComponents();
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
+        
+        relasijy.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/relasijy3.png")));
     }
 
     public DefaultTableModel read(){
@@ -164,7 +166,9 @@ public class riwayatpage extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabelRiwayat);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 1240, 260));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 1240, 410));
+
+        relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\target\\classes\\com\\mycompany\\pointofsales\\resources\\relasijy3.png")); // NOI18N
         getContentPane().add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         transaksi.setBackground(new java.awt.Color(228, 228, 223));
@@ -270,7 +274,7 @@ public class riwayatpage extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 1240, -1));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 477, 1240, 280));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

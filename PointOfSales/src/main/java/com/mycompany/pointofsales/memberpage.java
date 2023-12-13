@@ -25,6 +25,8 @@ public class memberpage extends javax.swing.JFrame {
         initComponents();
         getContentPane().setBackground(Color.decode("0xE4E4DF"));
         
+        relasijy.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/relasijy2.png")));
+        
         inputIDM.setHorizontalAlignment(JTextField.CENTER);
         inputNM.setHorizontalAlignment(JTextField.CENTER);
         inputTL.setHorizontalAlignment(JTextField.CENTER);
@@ -171,6 +173,8 @@ public class memberpage extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
         jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 66, 37)));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\target\\classes\\com\\mycompany\\pointofsales\\resources\\relasijy2.png")); // NOI18N
         jPanel11.add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
 
         judul.setBackground(new java.awt.Color(255, 255, 255));
@@ -244,15 +248,12 @@ public class memberpage extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(add, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(add)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(add, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         jPanel11.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, -1, 30));
@@ -309,15 +310,12 @@ public class memberpage extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addComponent(delete, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(delete)
-                .addContainerGap())
+            .addComponent(delete, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         jPanel11.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 610, -1, 30));
