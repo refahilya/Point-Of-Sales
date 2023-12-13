@@ -41,25 +41,26 @@ public class riwayatpage extends javax.swing.JFrame {
         member = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         beranda = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1274, 698));
         setMinimumSize(new java.awt.Dimension(1274, 698));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tabelRiwayat.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID BARANG", "ID TRANSAKSI", "NAMA BARANG", "JUMLAH", "HARGA SATUAN", "DISKON", "TOTAL HARGA"
+                "ID Riwayat", "ID Barang", "ID Transaksi", "Nama Barang", "Jumlah", "Harga Satuan", "Diskon", "Total Harga", "Detail Belanjaan"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -68,9 +69,7 @@ public class riwayatpage extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabelRiwayat);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 1240, 630));
-
-        relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy3.png")); // NOI18N
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 1240, 260));
         getContentPane().add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         transaksi.setBackground(new java.awt.Color(228, 228, 223));
@@ -163,6 +162,21 @@ public class riwayatpage extends javax.swing.JFrame {
         });
         getContentPane().add(beranda, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 8, 90, 40));
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID Transaksi", "Barang", "Jumlah", "Harga Satuan", "Diskon", "Harga", "ID Detail"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 1240, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -245,6 +259,8 @@ public class riwayatpage extends javax.swing.JFrame {
     private javax.swing.JButton inventori;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JButton member;
     private javax.swing.JLabel relasijy;
     private javax.swing.JButton riwayat;
