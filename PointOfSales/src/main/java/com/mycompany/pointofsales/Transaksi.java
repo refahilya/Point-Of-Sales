@@ -6,6 +6,7 @@ package com.mycompany.pointofsales;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -54,6 +55,24 @@ public class Transaksi {
             String query = "DELETE FROM detail_belanjaan WHERE id_detail = ?";
             PreparedStatement ps = koneksi.prepareStatement(query);
             ps.setString(1, idDetail);
+            ps.executeUpdate();
+            ps.close();
+            koneksi.close();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());  
+        }
+    }
+    
+    public void hapusBarang(String namaBarang, String currentId) {
+        //INI BUAT NGEHAPUS DATA YANG UDAH KEBURU DICATET DI DB PAS LAGI TRANSAKSI
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+
+            String query = "DELETE FROM detail_belanjaan WHERE barang = ? AND id_transaksi = ?";
+            PreparedStatement ps = koneksi.prepareStatement(query);
+            ps.setString(1, namaBarang);
+            ps.setString(2, currentId);
             ps.executeUpdate();
             ps.close();
             koneksi.close();
@@ -118,6 +137,49 @@ public class Transaksi {
             String query = "UPDATE transaksi SET tanggal = CURRENT_TIMESTAMP WHERE id_transaksi = ?";
             PreparedStatement ps = koneksi.prepareStatement(query);
             ps.setString(1, idTrans);
+            ps.executeUpdate();
+            ps.close();
+            koneksi.close();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());  
+        }
+    }
+    
+    public void ambilStok(String namaBarang, int jumlah) {
+        
+        int stok = 0;
+        
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+
+            String query = "SELECT stok FROM inventori WHERE nama_barang = ?";
+            PreparedStatement ps = koneksi.prepareStatement(query);
+            ps.setString(1, namaBarang);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                stok = rs.getInt("stok") - jumlah;
+            } else {
+                System.out.println("Barang dengan nama " + namaBarang + " tidak ditemukan.");
+            }
+
+            rs.close();
+            ps.close();
+            koneksi.close();
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());  
+        }
+        
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+            String query = "UPDATE inventori SET stok = ? WHERE nama_barang = ?";
+            PreparedStatement ps = koneksi.prepareStatement(query);
+            ps.setInt(1, stok);
+            ps.setString(2, namaBarang);
             ps.executeUpdate();
             ps.close();
             koneksi.close();

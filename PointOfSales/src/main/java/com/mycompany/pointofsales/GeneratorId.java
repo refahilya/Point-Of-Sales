@@ -37,13 +37,9 @@ public class GeneratorId {
 
                 if (Character.isLetter(firstChar)) {
                     id = firstChar + String.valueOf(lastIdInt + 1);
-                } else {
-                    // Ini jane gak perlu soale kan huruf e mesti enek
-                    id = 'M' + String.valueOf(lastIdInt + 1);
                 }
             } else {
-                // Ini jane yo gak perlu soale kan initial id wes enek, dilebokne manual
-                id = "M0001";
+                id = "1";
             }
 
             resultSet.close();

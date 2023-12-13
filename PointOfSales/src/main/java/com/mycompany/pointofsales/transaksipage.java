@@ -666,7 +666,7 @@ public class transaksipage extends javax.swing.JFrame {
                     kembalianHasil.setText(String.valueOf(kembalian));
                     diskonLabel.setText("0");
                     totalHarga.setText(String.valueOf(total));
-                    String kategori = "Non-Member";
+                    String kategori = "NonMember";
                     member.setText(kategori);
                     catat.catatKategori(currentId, kategori);
                     catat.catatDuit(currentId, total, bayar, kembalian);
@@ -798,6 +798,7 @@ public class transaksipage extends javax.swing.JFrame {
                 model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
                 
                 Transaksi catat = new Transaksi();
+                catat.ambilStok(namaBarang, jumlah);
                 catat.catatBarang(currentId, namaBarang, jumlah, hargaBarang, total);
 
                 inputJumlah.setText("");
@@ -816,6 +817,10 @@ public class transaksipage extends javax.swing.JFrame {
         
         if (selectedRowIndex != -1){
             sourceModel.removeRow(selectedRowIndex);
+            String namaBarang = inputNB.getText();
+            
+            Transaksi catat = new Transaksi();
+            catat.hapusBarang(namaBarang, currentId);
             inputJumlah.setText("");
             inputNB.setText("");
         } else {
@@ -829,23 +834,23 @@ public class transaksipage extends javax.swing.JFrame {
         int selectedRowIndex = tabelTransaksi.getSelectedRow();
 
         if (selectedRowIndex != -1) {
-            String newValueForColumn1 = inputNB.getText();
-            int newValueForColumn3 = Integer.parseInt(inputJumlah.getText());
+            String namaBarangBaru = inputNB.getText();
+            int jumlahBaru = Integer.parseInt(inputJumlah.getText());
             
-            double newTotal = newValueForColumn3 * ambilHarga(newValueForColumn1);
-            sourceModel.setValueAt(newValueForColumn1, selectedRowIndex, 0);
-            sourceModel.setValueAt(newValueForColumn3, selectedRowIndex, 2);
+            double newTotal = jumlahBaru * ambilHarga(namaBarangBaru);
+            sourceModel.setValueAt(namaBarangBaru, selectedRowIndex, 0);
+            sourceModel.setValueAt(jumlahBaru, selectedRowIndex, 2);
             sourceModel.setValueAt(newTotal, selectedRowIndex, 3);
             
             inputJumlah.setText("");
             inputNB.setText("");
-            /*YANG INI AGAK TROUBLE HEHE HUHUHU MENGSTRES
-            
-            
+            //RUTHH IKI NEK DIHAPUS WAE PIE HUEHUE
             Transaksi catat = new Transaksi();
-            double total = newValueForColumn3 * ambilHarga(newValueForColumn1);
-            catat.catatBarang(currentId, newValueForColumn1, newValueForColumn3, ambilHarga(newValueForColumn1), total);
-            */
+            //catat.hapusBarang(idDetail);
+            catat.ambilStok(namaBarangBaru, jumlahBaru);
+            double total = jumlahBaru * ambilHarga(namaBarangBaru);
+            catat.catatBarang(currentId, namaBarangBaru, jumlahBaru, ambilHarga(namaBarangBaru), total);
+            
             
         } else {
             // Beri pesan bahwa tidak ada baris yang dipilih
@@ -909,6 +914,7 @@ public class transaksipage extends javax.swing.JFrame {
 
                     model.addRow(new Object[]{namaBarang, hargaBarang, jumlah, total});
                     Transaksi catat = new Transaksi();
+                    catat.ambilStok(namaBarang, jumlah);
                     catat.catatBarang(currentId, namaBarang, jumlah, hargaBarang, total);
 
                     //Transaksi catat = new Transaksi();
