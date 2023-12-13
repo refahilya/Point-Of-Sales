@@ -499,6 +499,13 @@ public class memberpage extends javax.swing.JFrame {
             
             CRUDMember CrudM = new CRUDMember();
             CrudM.update(id, namaBaru, TLBaru, noTelpBaru, emailBaru);
+            
+            inputIDM.setText("");
+            inputNM.setText("");
+            inputTL.setText("");
+            inputNoTelp.setText("");
+            inputEmail.setText("");
+            inputPoin.setText("");
         } else {
             // Beri pesan bahwa tidak ada baris yang dipilih
             JOptionPane.showMessageDialog(this, "Pilih baris yang akan diubah", "Kesalahan", JOptionPane.ERROR_MESSAGE);
