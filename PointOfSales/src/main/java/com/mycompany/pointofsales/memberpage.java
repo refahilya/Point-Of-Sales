@@ -86,9 +86,7 @@ public class memberpage extends javax.swing.JFrame {
         beranda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1274, 689));
         setMinimumSize(new java.awt.Dimension(1274, 689));
-        setPreferredSize(new java.awt.Dimension(1274, 698));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         transaksi.setBackground(new java.awt.Color(228, 228, 223));
@@ -169,8 +167,6 @@ public class memberpage extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
         jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 66, 37)));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy2.png")); // NOI18N
         jPanel11.add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
 
         judul.setBackground(new java.awt.Color(255, 255, 255));
@@ -367,6 +363,11 @@ public class memberpage extends javax.swing.JFrame {
         });
         tabelMember.setGridColor(new java.awt.Color(0, 66, 37));
         tabelMember.setSelectionBackground(new java.awt.Color(245, 245, 220));
+        tabelMember.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelMemberMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tabelMember);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 860, 590));
@@ -374,7 +375,6 @@ public class memberpage extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(246, 246, 246));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        search.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\search1.png")); // NOI18N
         search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -469,6 +469,7 @@ public class memberpage extends javax.swing.JFrame {
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_updateActionPerformed
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
@@ -484,6 +485,24 @@ public class memberpage extends javax.swing.JFrame {
         dispose();
         new homepage().setVisible(true);
     }//GEN-LAST:event_berandaActionPerformed
+
+    private void tabelMemberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelMemberMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel sourceModel = (DefaultTableModel) tabelMember.getModel();
+        int MyIndex = tabelMember.getSelectedRow();
+        String idLama = sourceModel.getValueAt(MyIndex, 0).toString();
+        inputIDM.setText(idLama);
+        String namaLama = sourceModel.getValueAt(MyIndex, 1).toString();
+        inputNM.setText(namaLama);
+        String TLLama = sourceModel.getValueAt(MyIndex, 2).toString();
+        inputTL.setText(TLLama);
+        String notelpLama = sourceModel.getValueAt(MyIndex, 3).toString();
+        inputNoTelp.setText(notelpLama);
+        String emailLama = sourceModel.getValueAt(MyIndex, 4).toString();
+        inputEmail.setText(emailLama);
+        String poinLama = sourceModel.getValueAt(MyIndex, 5).toString();
+        inputPoin.setText(poinLama);
+    }//GEN-LAST:event_tabelMemberMouseClicked
 
     /**
      * @param args the command line arguments
