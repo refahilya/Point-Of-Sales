@@ -20,26 +20,24 @@ public class GeneratorId {
         try {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
-            
-            //querynya kira2 kek gini
-            //String query = "SELECT id_transaksi FROM transaksi ORDER BY id_transaksi DESC LIMIT 1";
-            
+
             Statement statement = koneksi.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             if (resultSet.next()) {
                 String lastId = resultSet.getString(kolom);
-                
+
                 char firstChar = lastId.charAt(0);
 
                 String numericPart = lastId.substring(1);
                 int lastIdInt = Integer.parseInt(numericPart);
 
                 if (Character.isLetter(firstChar)) {
-                    id = firstChar + String.valueOf(lastIdInt + 1);
+                    id = firstChar + String.format("%03d", lastIdInt + 1);
+                } else {
                 }
             } else {
-                id = "1";
+                id = "M001";
             }
 
             resultSet.close();
@@ -51,5 +49,4 @@ public class GeneratorId {
 
         return id;
     }
-
 }
