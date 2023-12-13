@@ -87,7 +87,6 @@ public class inventoripage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(245, 245, 220));
-        setMaximumSize(new java.awt.Dimension(1274, 698));
         setMinimumSize(new java.awt.Dimension(1274, 698));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -184,8 +183,6 @@ public class inventoripage extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
         jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 66, 37)));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\relasijy2.png")); // NOI18N
         jPanel11.add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
         judul.setBackground(new java.awt.Color(255, 255, 255));
@@ -352,7 +349,8 @@ public class inventoripage extends javax.swing.JFrame {
             }
         });
         tabelInventori.setGridColor(new java.awt.Color(0, 66, 37));
-        tabelInventori.setSelectionBackground(new java.awt.Color(245, 245, 220));
+        tabelInventori.setSelectionBackground(new java.awt.Color(0, 66, 37));
+        tabelInventori.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(tabelInventori);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 860, 590));
@@ -360,7 +358,6 @@ public class inventoripage extends javax.swing.JFrame {
         bgSearch.setBackground(new java.awt.Color(246, 246, 246));
         bgSearch.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        search.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\src\\main\\java\\resources\\search1.png")); // NOI18N
         search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bgSearch.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
