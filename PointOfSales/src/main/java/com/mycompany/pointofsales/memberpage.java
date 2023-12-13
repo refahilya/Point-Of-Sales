@@ -366,7 +366,8 @@ public class memberpage extends javax.swing.JFrame {
             }
         });
         tabelMember.setGridColor(new java.awt.Color(0, 66, 37));
-        tabelMember.setSelectionBackground(new java.awt.Color(245, 245, 220));
+        tabelMember.setSelectionBackground(new java.awt.Color(0, 66, 37));
+        tabelMember.setSelectionForeground(new java.awt.Color(255, 255, 255));
         tabelMember.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tabelMemberMouseClicked(evt);
