@@ -351,6 +351,11 @@ public class inventoripage extends javax.swing.JFrame {
         tabelInventori.setGridColor(new java.awt.Color(0, 66, 37));
         tabelInventori.setSelectionBackground(new java.awt.Color(0, 66, 37));
         tabelInventori.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        tabelInventori.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelInventoriMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tabelInventori);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 860, 590));
@@ -419,10 +424,57 @@ public class inventoripage extends javax.swing.JFrame {
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel sourceModel = (DefaultTableModel) tabelInventori.getModel();
+        int selectedRowIndex = tabelInventori.getSelectedRow();
+        
+        if (selectedRowIndex != -1) {
+            String id = inputIDB.getText();
+            String namaBaru = inputNB.getText();
+            String hargaBaru = inputHarga.getText();
+            String stokBaru = inputStok.getText();
+            
+            sourceModel.setValueAt(id, selectedRowIndex, 0);
+            sourceModel.setValueAt(namaBaru, selectedRowIndex, 1);
+            sourceModel.setValueAt(hargaBaru, selectedRowIndex, 2);
+            sourceModel.setValueAt(stokBaru, selectedRowIndex, 3);
+            
+            CRUDBarang CrudB = new CRUDBarang();
+            CrudB.delete(id);
+            
+            inputIDB.setText("");
+            inputNB.setText("");
+            inputHarga.setText("");
+            inputStok.setText("");
+        } else {
+            // Beri pesan bahwa tidak ada baris yang dipilih
+            JOptionPane.showMessageDialog(this, "Pilih baris yang akan diubah", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+        }
+        readToTable();
     }//GEN-LAST:event_deleteActionPerformed
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel sourceModel = (DefaultTableModel) tabelInventori.getModel();
+        int selectedRowIndex = tabelInventori.getSelectedRow();
+        
+        if (selectedRowIndex != -1) {
+            String id = inputIDB.getText();
+            String namaBaru = inputNB.getText();
+            int hargaBaru = Integer.parseInt(inputHarga.getText());
+            int stokBaru = Integer.parseInt(inputStok.getText());
+            
+            sourceModel.setValueAt(id, selectedRowIndex, 0);
+            sourceModel.setValueAt(namaBaru, selectedRowIndex, 1);
+            sourceModel.setValueAt(hargaBaru, selectedRowIndex, 2);
+            sourceModel.setValueAt(stokBaru, selectedRowIndex, 3);
+            
+            CRUDBarang CrudB = new CRUDBarang();
+            CrudB.update(id, namaBaru, hargaBaru, stokBaru);
+        } else {
+            // Beri pesan bahwa tidak ada baris yang dipilih
+            JOptionPane.showMessageDialog(this, "Pilih baris yang akan diubah", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+        }
+        readToTable();
     }//GEN-LAST:event_updateActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
@@ -433,9 +485,12 @@ public class inventoripage extends javax.swing.JFrame {
             try {
                 String id_barang = String.valueOf(inputIDB.getText());
                 String nama = String.valueOf(inputNB.getText());
-                String harga = String.valueOf(inputHarga.getText());
-                String stok = String.valueOf(inputStok.getText());
+                int harga = Integer.parseInt(inputHarga.getText());
+                int stok = Integer.parseInt(inputStok.getText());
+                
                 CRUDBarang CrudB = new CRUDBarang();
+                CrudB.create(id_barang, nama, harga, stok);
+                
                 JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan!", "Informasi", JOptionPane.INFORMATION_MESSAGE);
                 
                 inputIDB.setText("");
@@ -454,6 +509,20 @@ public class inventoripage extends javax.swing.JFrame {
     private void inputSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputSearchActionPerformed
+
+    private void tabelInventoriMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelInventoriMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel sourceModel = (DefaultTableModel) tabelInventori.getModel();
+        int MyIndex = tabelInventori.getSelectedRow();
+        String idLama = sourceModel.getValueAt(MyIndex, 0).toString();
+        inputIDB.setText(idLama);
+        String namaLama = sourceModel.getValueAt(MyIndex, 1).toString();
+        inputNB.setText(namaLama);
+        String hargaLama = sourceModel.getValueAt(MyIndex, 2).toString();
+        inputHarga.setText(hargaLama);
+        String stokLama = sourceModel.getValueAt(MyIndex, 3).toString();
+        inputStok.setText(stokLama);
+    }//GEN-LAST:event_tabelInventoriMouseClicked
 
     /**
      * @param args the command line arguments

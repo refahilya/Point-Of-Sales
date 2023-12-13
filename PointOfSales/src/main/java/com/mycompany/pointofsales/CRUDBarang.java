@@ -84,7 +84,7 @@ public class CRUDBarang {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
             
-            String updateQuery = "UPDATE inventori SET nama_barang = ?, harga = ?, stok = ?, updated_at = CURRENT_TIMESTAMP WHERE id_member = ?";
+            String updateQuery = "UPDATE inventori SET nama_barang = ?, harga = ?, stok = ?, updated_at = CURRENT_TIMESTAMP WHERE id_barang = ?";
             PreparedStatement updateStatement = koneksi.prepareStatement(updateQuery);
             updateStatement.setString(1, nama_barang);
             updateStatement.setInt(2, harga);

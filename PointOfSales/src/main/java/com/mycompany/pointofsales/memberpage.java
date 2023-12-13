@@ -458,6 +458,7 @@ public class memberpage extends javax.swing.JFrame {
                 String tl = String.valueOf(inputTL.getText());
                 String notelp = String.valueOf(inputNoTelp.getText());
                 String email = String.valueOf(inputEmail.getText());
+                
                 CRUDMember CrudM = new CRUDMember();
                 CrudM.create(id_member, nama, tl, notelp, email);
                 
