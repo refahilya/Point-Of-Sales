@@ -813,11 +813,15 @@ public class transaksipage extends javax.swing.JFrame {
 
         if (selectedRowIndex != -1) {
             String newValueForColumn1 = inputNB.getText();
-            String newValueForColumn3 = inputJumlah.getText();
-
+            int newValueForColumn3 = Integer.parseInt(inputJumlah.getText());
+            
+            double newTotal = newValueForColumn3 * ambilHarga(newValueForColumn1);
             sourceModel.setValueAt(newValueForColumn1, selectedRowIndex, 0);
             sourceModel.setValueAt(newValueForColumn3, selectedRowIndex, 2);
+            sourceModel.setValueAt(newTotal, selectedRowIndex, 3);
             
+            inputJumlah.setText("");
+            inputNB.setText("");
             /*YANG INI AGAK TROUBLE HEHE HUHUHU MENGSTRES
             
             
