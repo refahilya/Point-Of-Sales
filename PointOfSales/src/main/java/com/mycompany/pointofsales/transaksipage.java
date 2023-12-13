@@ -715,10 +715,10 @@ public class transaksipage extends javax.swing.JFrame {
                     for (int j = 0; j < sourceModel.getColumnCount(); j++) {
                         rowData[j] = sourceModel.getValueAt(i, j);
                     }
+                    
                     DefaultTableModel destinationModel = (DefaultTableModel) tabelTransaksi2.getModel();
-                    destinationModel.setRowCount(0);
                     destinationModel.addRow(rowData);
-
+                
                 dispose();
                 hasil.setSize(403, 605);
                 hasil.getContentPane().setBackground(Color.decode("0xFFFFFF"));
