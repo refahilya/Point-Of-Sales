@@ -52,8 +52,8 @@ public class CRUDMember {
         tableModel.addColumn("No Telepon");
         tableModel.addColumn("Email");
         tableModel.addColumn("Poin");
-        tableModel.addColumn("Updated at");
         tableModel.addColumn("Created at");
+        tableModel.addColumn("Updated at");
 
         try {
             Koneksi konek = new Koneksi();

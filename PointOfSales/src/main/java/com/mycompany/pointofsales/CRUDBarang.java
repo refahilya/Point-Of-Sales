@@ -48,8 +48,8 @@ public class CRUDBarang {
         tableModel.addColumn("Nama Barang");
         tableModel.addColumn("Harga");
         tableModel.addColumn("Stok");
-        tableModel.addColumn("Updated at");
         tableModel.addColumn("Created at");
+        tableModel.addColumn("Updated at");
 
         try {
             Koneksi konek = new Koneksi();
