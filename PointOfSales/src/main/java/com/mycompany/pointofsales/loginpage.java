@@ -25,6 +25,7 @@ public class loginpage extends javax.swing.JFrame {
     public static final String ICON_PATH2 = "D:/Netbeans/Point-Of-Sales/PointOfSales/src/main/java/com/mycompany/pointofsales/resources/ilus1.png";
 */
 
+    String username;
     
     public loginpage() {
         initComponents();
@@ -39,8 +40,8 @@ public class loginpage extends javax.swing.JFrame {
         icon4.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/ilus4.png")));
 
 
-        
-
+        username = String.valueOf(inputUsn.getText());
+        setDefaultCloseOperation(loginpage.DISPOSE_ON_CLOSE);
     }
 
 
@@ -172,7 +173,7 @@ public class loginpage extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             LoginClass tesLogin = new LoginClass();
-            String username = String.valueOf(inputUsn.getText());
+            username = String.valueOf(inputUsn.getText());
             String password = String.valueOf(inputPsw.getText());
             
             tesLogin.login(username, password);

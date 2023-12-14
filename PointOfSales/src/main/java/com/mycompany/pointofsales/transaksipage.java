@@ -31,6 +31,7 @@ import javax.swing.table.DefaultTableModel;
 public class transaksipage extends javax.swing.JFrame {
 
     String currentId;
+    String idMember;
     /**
      * Creates new form transaksipage
      */
@@ -701,7 +702,7 @@ public class transaksipage extends javax.swing.JFrame {
                     
                     catat.catatKategori(currentId, kategori);
                     catat.catatDuit(currentId, totalMember, bayar, kembalian);
-                    catat.catatPoin(currentId, total);
+                    catat.catatPoin(idMember, currentId, total);
                     
                     GeneratorId generate = new GeneratorId();
                     String kolom = "id_riwayat";
@@ -755,7 +756,7 @@ public class transaksipage extends javax.swing.JFrame {
 
     private void buttonCekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCekActionPerformed
         // TODO add your handling code here:
-        String idMember = inputIDM.getText();
+        idMember = inputIDM.getText();
         if (cekId(idMember)) {
             double diskon = 0.1;
             double total = this.hitungTotal();

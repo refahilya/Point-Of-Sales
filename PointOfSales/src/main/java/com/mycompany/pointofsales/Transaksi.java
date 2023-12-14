@@ -145,16 +145,16 @@ public class Transaksi {
         }
     }
     
-    public void catatPoin(String idTrans, double total) {
+    public void catatPoin(String idMember, String idTrans, double total) {
         
         int poin = 0;
-        if (total >= 20000) {
+        if (total >= 20000 && total < 40000) {
             poin = 5;
-        } else if (total >= 40000) {
+        } else if (total >= 40000 && total < 60000) {
             poin = 12;
-        } else if (total >= 60000) {
+        } else if (total >= 60000 && total < 80000) {
             poin = 20;
-        } else if (total >= 80000) {
+        } else if (total >= 80000 && total < 100000) {
             poin = 30;
         } else if (total >= 100000) {
             poin = 50;
@@ -164,10 +164,10 @@ public class Transaksi {
         try {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
-            String query = "UPDATE transaksi SET poin = ? WHERE id_transaksi = ?";
+            String query = "UPDATE member SET poin = ? WHERE id_member = ?";
             PreparedStatement ps = koneksi.prepareStatement(query);
             ps.setInt(1, poin);
-            ps.setString(2, idTrans);
+            ps.setString(2, idMember);
             ps.executeUpdate();
             ps.close();
             koneksi.close();
