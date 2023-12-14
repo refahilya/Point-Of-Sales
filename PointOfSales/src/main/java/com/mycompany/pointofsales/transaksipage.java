@@ -141,7 +141,7 @@ public class transaksipage extends javax.swing.JFrame {
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel7.add(relasijy1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        jLabel3.setText("Nomor   :");
+        jLabel3.setText("Nomor :");
         jPanel7.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 50, 30));
 
         jLabel11.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
@@ -150,10 +150,7 @@ public class transaksipage extends javax.swing.JFrame {
 
         tabelTransaksi2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Nama Barang", "Harga Satuan", "Jumlah", "Harga"
