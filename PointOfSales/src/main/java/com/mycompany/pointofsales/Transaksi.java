@@ -145,6 +145,37 @@ public class Transaksi {
         }
     }
     
+    public void catatPoin(String idTrans, double total) {
+        
+        int poin = 0;
+        if (total >= 20000) {
+            poin = 5;
+        } else if (total >= 40000) {
+            poin = 12;
+        } else if (total >= 60000) {
+            poin = 20;
+        } else if (total >= 80000) {
+            poin = 30;
+        } else if (total >= 100000) {
+            poin = 50;
+        } else {
+        }
+        
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+            String query = "UPDATE transaksi SET poin = ? WHERE id_transaksi = ?";
+            PreparedStatement ps = koneksi.prepareStatement(query);
+            ps.setInt(1, poin);
+            ps.setString(2, idTrans);
+            ps.executeUpdate();
+            ps.close();
+            koneksi.close();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());  
+        }
+    }
+    
     public void ambilStok(String namaBarang, int jumlah) {
         
         int stok = 0;

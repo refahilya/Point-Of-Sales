@@ -655,19 +655,24 @@ public class transaksipage extends javax.swing.JFrame {
                 //ini baru ngurus struknya
                 Transaksi catat = new Transaksi();
                 catat.catatTanggal(currentId);
+                
                 int tabAktifIndex = jTabbedPane1.getSelectedIndex();
                 int bayar = Integer.parseInt(inputBayar.getText());
                 double bayarDouble = (double) bayar;
                 double kembalian = 0;
+                
                 if (tabAktifIndex == 0) {
-                    //berarti non
+                    //berarti nonmember
+                    String kategori = "NonMember";
+                    
                     double total = this.hitungTotal();
                     kembalian = bayar - total;
+                    
                     kembalianHasil.setText(String.valueOf(kembalian));
                     diskonLabel.setText("0");
                     totalHarga.setText(String.valueOf(total));
-                    String kategori = "NonMember";
                     member.setText(kategori);
+                    
                     catat.catatKategori(currentId, kategori);
                     catat.catatDuit(currentId, total, bayar, kembalian);
                     
@@ -682,20 +687,24 @@ public class transaksipage extends javax.swing.JFrame {
                     
                 } else if (tabAktifIndex == 1) {
                     //berarti member
+                    String kategori = "Member";
+                    
                     double total = this.hitungTotal();
                     double diskon = 0.1;
                     double jumlahDiskon = diskon * total;
                     double totalMember = total - jumlahDiskon;
                     kembalian = bayar - totalMember;
-                    kembalianHasil.setText(String.valueOf(kembalian));
-                    totalHarga.setText(String.valueOf(totalMember));
                     diskon = diskon * 100;
                     int diskonDisplay = (int) diskon;
+                    
+                    kembalianHasil.setText(String.valueOf(kembalian));
+                    totalHarga.setText(String.valueOf(totalMember));
                     diskonLabel.setText( diskonDisplay + "%");
-                    String kategori = "Member";
                     member.setText(kategori);
+                    
                     catat.catatKategori(currentId, kategori);
                     catat.catatDuit(currentId, totalMember, bayar, kembalian);
+                    catat.catatPoin(currentId, total);
                     
                     GeneratorId generate = new GeneratorId();
                     String kolom = "id_riwayat";
