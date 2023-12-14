@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+import java.time.LocalDate;
+import java.text.DateFormatSymbols;
 
 /**
  *
@@ -38,6 +40,8 @@ public class homepage extends javax.swing.JFrame {
         g2d.rotate(Math.toRadians(90), qm.getWidth() / 2, qm.getHeight() / 2);
         qm.paint(g2d);*/
         
+        tampilTanggal();
+        
         quickMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object[][]{},
             new String[]{"ID Barang", "Nama Barang", "Harga", "Stok", "Created at", "Updated at"}
@@ -48,6 +52,14 @@ public class homepage extends javax.swing.JFrame {
         setDefaultCloseOperation(homepage.DISPOSE_ON_CLOSE);
     }
 
+    public void tampilTanggal() {
+        LocalDate today = LocalDate.now();
+        DateFormatSymbols dfs = new DateFormatSymbols();
+        String namaBulan = dfs.getMonths()[today.getMonthValue() - 1];
+        String formattedDate = String.format("%02d %s %04d", today.getDayOfMonth(), namaBulan, today.getYear());
+        tanggal.setText(formattedDate);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
