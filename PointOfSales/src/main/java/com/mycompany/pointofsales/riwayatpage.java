@@ -21,9 +21,13 @@ import javax.swing.table.DefaultTableModel;
  */
 public class riwayatpage extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form riwayatpage
      */
+    
+    public String idTransaksi;
+    
     public riwayatpage() {
         initComponents();
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
@@ -34,8 +38,9 @@ public class riwayatpage extends javax.swing.JFrame {
             new Object[][]{},
             new String[]{"ID Barang", "Nama Barang", "Harga", "Stok", "Created at", "Updated at"}
         ));
-        DefaultTableModel model = readDatabase();
+        DefaultTableModel model = readDatabaseRiwayat();
         tabelRiwayat.setModel(model);
+        
     }
     
     public ArrayList<String> ambilDetail(String id_transaksi) {
@@ -86,7 +91,7 @@ public class riwayatpage extends javax.swing.JFrame {
         }
     }
     
-    public DefaultTableModel readDatabase(){
+    public DefaultTableModel readDatabaseRiwayat(){
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.addColumn("ID Riwayat");
         tableModel.addColumn("ID Transaksi");
@@ -127,6 +132,46 @@ public class riwayatpage extends javax.swing.JFrame {
         return tableModel;
     }
     
+    public DefaultTableModel readDatabaseDetail(String idTransaksi) {
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.addColumn("ID Detail");
+        tableModel.addColumn("Nama Barang");
+        tableModel.addColumn("Jumlah");
+        tableModel.addColumn("Harga Satuan");
+        tableModel.addColumn("Diskon");
+        tableModel.addColumn("Harga");
+
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+
+            String query = "SELECT * FROM detail_belanjaan WHERE id_transaksi = ?";
+            PreparedStatement ps = koneksi.prepareStatement(query);
+            ps.setString(1, idTransaksi);
+
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                Object[] rowData = {
+                        resultSet.getString("id_detail"),
+                        resultSet.getString("barang"),
+                        resultSet.getInt("jumlah"),
+                        resultSet.getInt("harga_satuan"),
+                        resultSet.getInt("diskon"),
+                        resultSet.getInt("total_harga")
+                };
+                tableModel.addRow(rowData);
+            }
+
+            resultSet.close();
+            ps.close();
+            koneksi.close();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return tableModel;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -146,7 +191,8 @@ public class riwayatpage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         beranda = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelDetail = new javax.swing.JTable();
+        idTransaksiTerpilih = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1274, 698));
@@ -171,11 +217,14 @@ public class riwayatpage extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tabelRiwayat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelRiwayatMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tabelRiwayat);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 1240, 410));
-
-        relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\target\\classes\\com\\mycompany\\pointofsales\\resources\\relasijy3.png")); // NOI18N
         getContentPane().add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         transaksi.setBackground(new java.awt.Color(228, 228, 223));
@@ -268,7 +317,7 @@ public class riwayatpage extends javax.swing.JFrame {
         });
         getContentPane().add(beranda, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 8, 90, 40));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelDetail.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -279,9 +328,12 @@ public class riwayatpage extends javax.swing.JFrame {
                 "ID Transaksi", "Barang", "Jumlah", "Harga Satuan", "Diskon", "Harga", "ID Detail"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tabelDetail);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 477, 1240, 280));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 527, 1240, 230));
+
+        idTransaksiTerpilih.setText("jLabel1");
+        getContentPane().add(idTransaksiTerpilih, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -325,6 +377,22 @@ public class riwayatpage extends javax.swing.JFrame {
         new homepage().setVisible(true);
     }//GEN-LAST:event_berandaActionPerformed
 
+    private void tabelRiwayatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelRiwayatMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel sourceModel = (DefaultTableModel) tabelRiwayat.getModel();
+        int MyIndex = tabelRiwayat.getSelectedRow();
+        idTransaksi = sourceModel.getValueAt(MyIndex, 1).toString();
+        idTransaksiTerpilih.setText(idTransaksi);
+        
+        tabelDetail.setModel(new javax.swing.table.DefaultTableModel(
+            new Object[][]{},
+            new String[]{"ID Detail", "Nama Barang", "Harga Satuan", "Jumlah", "Diskon", "Harga"}
+        ));
+        
+        DefaultTableModel model2 = readDatabaseDetail(idTransaksi);
+        tabelDetail.setModel(model2);
+    }//GEN-LAST:event_tabelRiwayatMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -362,14 +430,15 @@ public class riwayatpage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton beranda;
+    private javax.swing.JLabel idTransaksiTerpilih;
     private javax.swing.JButton inventori;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton member;
     private javax.swing.JLabel relasijy;
     private javax.swing.JButton riwayat;
+    private javax.swing.JTable tabelDetail;
     private javax.swing.JTable tabelRiwayat;
     private javax.swing.JButton transaksi;
     // End of variables declaration//GEN-END:variables
