@@ -45,9 +45,11 @@ public class homepage extends javax.swing.JFrame {
         
         tampilTanggal();
         
+        
         loginpage kasir = new loginpage();
         System.out.println(kasir.username);
-        namaKasir.setText("RUTH");
+        String usn = kasir.getUsername();
+        //namaKasir.setText(usn);
         
         quickMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object[][]{},
@@ -59,6 +61,7 @@ public class homepage extends javax.swing.JFrame {
         setDefaultCloseOperation(homepage.DISPOSE_ON_CLOSE);
     }
 
+    
     public void tampilTanggal() {
         LocalDate today = LocalDate.now();
         DateFormatSymbols dfs = new DateFormatSymbols();
@@ -233,7 +236,7 @@ public class homepage extends javax.swing.JFrame {
 
         namaKasir.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         namaKasir.setForeground(new java.awt.Color(255, 176, 0));
-        namaKasir.setText("REFA");
+        namaKasir.setText("Back");
         namaKasir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(namaKasir, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, 70));
 

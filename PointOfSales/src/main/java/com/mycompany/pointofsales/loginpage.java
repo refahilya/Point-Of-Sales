@@ -42,9 +42,16 @@ public class loginpage extends javax.swing.JFrame {
 
         username = String.valueOf(inputUsn.getText());
         setDefaultCloseOperation(loginpage.DISPOSE_ON_CLOSE);
+        
     }
 
-
+    public String getUsername() {
+        return username;
+    }
+    
+    public void setUsername(String username) {
+        this.username = username; // Mengatur nilai dari variabel username
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -175,10 +182,12 @@ public class loginpage extends javax.swing.JFrame {
             LoginClass tesLogin = new LoginClass();
             username = String.valueOf(inputUsn.getText());
             String password = String.valueOf(inputPsw.getText());
+            this.username = username;
             
             tesLogin.login(username, password);
             if (tesLogin.login(username, password)){
                 dispose();
+                setUsername(username);
                 new homepage().setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(this, "Username atau Password salah!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
