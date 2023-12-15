@@ -193,6 +193,7 @@ public class riwayatpage extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tabelDetail = new javax.swing.JTable();
         idTransaksiTerpilih = new javax.swing.JLabel();
+        idTransaksiTerpilih1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1274, 698));
@@ -217,6 +218,8 @@ public class riwayatpage extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tabelRiwayat.setSelectionBackground(new java.awt.Color(0, 66, 37));
+        tabelRiwayat.setSelectionForeground(new java.awt.Color(255, 255, 255));
         tabelRiwayat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tabelRiwayatMouseClicked(evt);
@@ -332,8 +335,15 @@ public class riwayatpage extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 527, 1240, 230));
 
-        idTransaksiTerpilih.setText("jLabel1");
-        getContentPane().add(idTransaksiTerpilih, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, -1, -1));
+        idTransaksiTerpilih.setFont(new java.awt.Font("Tahoma", 1, 28)); // NOI18N
+        idTransaksiTerpilih.setForeground(new java.awt.Color(0, 66, 37));
+        idTransaksiTerpilih.setText("Klik baris");
+        getContentPane().add(idTransaksiTerpilih, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 480, -1, -1));
+
+        idTransaksiTerpilih1.setFont(new java.awt.Font("Tahoma", 1, 28)); // NOI18N
+        idTransaksiTerpilih1.setForeground(new java.awt.Color(0, 66, 37));
+        idTransaksiTerpilih1.setText("Transaksi :");
+        getContentPane().add(idTransaksiTerpilih1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -431,6 +441,7 @@ public class riwayatpage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton beranda;
     private javax.swing.JLabel idTransaksiTerpilih;
+    private javax.swing.JLabel idTransaksiTerpilih1;
     private javax.swing.JButton inventori;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
