@@ -86,9 +86,6 @@ public class memberpage extends javax.swing.JFrame {
         inputEmail = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelMember = new javax.swing.JTable();
-        jPanel2 = new javax.swing.JPanel();
-        search = new javax.swing.JLabel();
-        inputSearch = new javax.swing.JTextField();
         beranda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -173,8 +170,6 @@ public class memberpage extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
         jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 66, 37)));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        relasijy.setIcon(new javax.swing.ImageIcon("D:\\Netbeans\\Point-Of-Sales\\PointOfSales\\target\\classes\\com\\mycompany\\pointofsales\\resources\\relasijy2.png")); // NOI18N
         jPanel11.add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
 
         judul.setBackground(new java.awt.Color(255, 255, 255));
@@ -375,25 +370,6 @@ public class memberpage extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 860, 590));
 
-        jPanel2.setBackground(new java.awt.Color(246, 246, 246));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        inputSearch.setBackground(new java.awt.Color(246, 246, 246));
-        inputSearch.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        inputSearch.setText("Search");
-        inputSearch.setBorder(null);
-        inputSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputSearchActionPerformed(evt);
-            }
-        });
-        jPanel2.add(inputSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 220, 20));
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 250, 20));
-
         beranda.setBackground(new java.awt.Color(228, 228, 223));
         beranda.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         beranda.setForeground(new java.awt.Color(0, 66, 37));
@@ -549,10 +525,6 @@ public class memberpage extends javax.swing.JFrame {
         readToTable();
     }//GEN-LAST:event_deleteActionPerformed
 
-    private void inputSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSearchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputSearchActionPerformed
-
     private void berandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_berandaActionPerformed
         // TODO add your handling code here:
         dispose();
@@ -621,7 +593,6 @@ public class memberpage extends javax.swing.JFrame {
     private javax.swing.JTextField inputNM;
     private javax.swing.JTextField inputNoTelp;
     private javax.swing.JTextField inputPoin;
-    private javax.swing.JTextField inputSearch;
     private javax.swing.JTextField inputTL;
     private javax.swing.JButton inventori;
     private javax.swing.JLabel jLabel2;
@@ -632,7 +603,6 @@ public class memberpage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -641,7 +611,6 @@ public class memberpage extends javax.swing.JFrame {
     private javax.swing.JButton member;
     private javax.swing.JLabel relasijy;
     private javax.swing.JButton riwayat;
-    private javax.swing.JLabel search;
     private javax.swing.JTable tabelMember;
     private javax.swing.JButton transaksi;
     private javax.swing.JButton update;

@@ -41,7 +41,7 @@ public class transaksipage extends javax.swing.JFrame {
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
         relasijy.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/relasijy3.png")));
         relasijy1.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/relasijy3.png")));
-        search.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/search1.png")));
+        //search.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/search1.png")));
         //iconadd.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/add2.png")));
         //refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/refresh2.png")));
         hasil.setDefaultCloseOperation(hasil.DISPOSE_ON_CLOSE);
@@ -129,9 +129,6 @@ public class transaksipage extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelTransaksi = new javax.swing.JTable();
         relasijy = new javax.swing.JLabel();
-        bgSearch = new javax.swing.JPanel();
-        search = new javax.swing.JLabel();
-        inputSearch = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
 
         hasil.setMinimumSize(new java.awt.Dimension(403, 605));
@@ -505,30 +502,6 @@ public class transaksipage extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 670, 600));
         getContentPane().add(relasijy, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        bgSearch.setBackground(new java.awt.Color(246, 246, 246));
-        bgSearch.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        search.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                searchMouseClicked(evt);
-            }
-        });
-        bgSearch.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        inputSearch.setBackground(new java.awt.Color(246, 246, 246));
-        inputSearch.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        inputSearch.setText("Search");
-        inputSearch.setBorder(null);
-        inputSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputSearchActionPerformed(evt);
-            }
-        });
-        bgSearch.add(inputSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 220, 20));
-
-        getContentPane().add(bgSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, 250, 20));
-
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 66, 37)));
         getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 690));
@@ -618,10 +591,6 @@ public class transaksipage extends javax.swing.JFrame {
         }
         return lastId;
     }
-
-    private void inputSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSearchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputSearchActionPerformed
 
     private void beranda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beranda1ActionPerformed
         // TODO add your handling code here:
@@ -939,10 +908,6 @@ public class transaksipage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_buttonHitungActionPerformed
 
-    private void searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchMouseClicked
-
     int Key = 0;
     private void tabelTransaksiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelTransaksiMouseClicked
         // TODO add your handling code here:
@@ -1031,7 +996,6 @@ public class transaksipage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton beranda;
     private javax.swing.JButton beranda1;
-    private javax.swing.JPanel bgSearch;
     private javax.swing.JButton buttonCek;
     private javax.swing.JButton buttonGanti;
     private javax.swing.JButton buttonHapus;
@@ -1044,7 +1008,6 @@ public class transaksipage extends javax.swing.JFrame {
     private javax.swing.JTextField inputIDM;
     private javax.swing.JTextField inputJumlah;
     private javax.swing.JTextField inputNB;
-    private javax.swing.JTextField inputSearch;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1081,7 +1044,6 @@ public class transaksipage extends javax.swing.JFrame {
     private javax.swing.JPanel panelNonMember;
     private javax.swing.JLabel relasijy;
     private javax.swing.JLabel relasijy1;
-    private javax.swing.JLabel search;
     private javax.swing.JButton selesai;
     private javax.swing.JTable tabelTransaksi;
     private javax.swing.JTable tabelTransaksi2;

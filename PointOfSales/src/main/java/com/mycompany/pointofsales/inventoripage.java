@@ -81,9 +81,6 @@ public class inventoripage extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelInventori = new javax.swing.JTable();
-        bgSearch = new javax.swing.JPanel();
-        search = new javax.swing.JLabel();
-        inputSearch = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(245, 245, 220));
@@ -357,25 +354,6 @@ public class inventoripage extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 860, 590));
 
-        bgSearch.setBackground(new java.awt.Color(246, 246, 246));
-        bgSearch.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        bgSearch.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        inputSearch.setBackground(new java.awt.Color(246, 246, 246));
-        inputSearch.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        inputSearch.setText("Search");
-        inputSearch.setBorder(null);
-        inputSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputSearchActionPerformed(evt);
-            }
-        });
-        bgSearch.add(inputSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 220, 20));
-
-        getContentPane().add(bgSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 250, 20));
-
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -503,10 +481,6 @@ public class inventoripage extends javax.swing.JFrame {
         readToTable();
     }//GEN-LAST:event_addActionPerformed
 
-    private void inputSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSearchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputSearchActionPerformed
-
     private void tabelInventoriMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelInventoriMouseClicked
         // TODO add your handling code here:
         DefaultTableModel sourceModel = (DefaultTableModel) tabelInventori.getModel();
@@ -559,12 +533,10 @@ public class inventoripage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add;
     private javax.swing.JButton beranda;
-    private javax.swing.JPanel bgSearch;
     private javax.swing.JButton delete;
     private javax.swing.JTextField inputHarga;
     private javax.swing.JTextField inputIDB;
     private javax.swing.JTextField inputNB;
-    private javax.swing.JTextField inputSearch;
     private javax.swing.JTextField inputStok;
     private javax.swing.JButton inventori;
     private javax.swing.JLabel jLabel2;
@@ -581,7 +553,6 @@ public class inventoripage extends javax.swing.JFrame {
     private javax.swing.JButton member;
     private javax.swing.JLabel relasijy;
     private javax.swing.JButton riwayat;
-    private javax.swing.JLabel search;
     private javax.swing.JTable tabelInventori;
     private javax.swing.JButton transaksi;
     private javax.swing.JButton update;
