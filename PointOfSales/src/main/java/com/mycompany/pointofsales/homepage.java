@@ -14,6 +14,9 @@ import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import java.time.LocalDate;
 import java.text.DateFormatSymbols;
+import java.time.DayOfWeek;
+import java.time.format.TextStyle;
+import java.util.Locale;
 
 /**
  *
@@ -62,6 +65,10 @@ public class homepage extends javax.swing.JFrame {
         String namaBulan = dfs.getMonths()[today.getMonthValue() - 1];
         String formattedDate = String.format("%02d %s %04d", today.getDayOfMonth(), namaBulan, today.getYear());
         tanggal.setText(formattedDate);
+        
+        DayOfWeek dayOfWeek = today.getDayOfWeek();
+        String namaHari = dayOfWeek.getDisplayName(TextStyle.FULL, Locale.getDefault());
+        hari.setText(namaHari);
     }
     
     /**
@@ -236,7 +243,7 @@ public class homepage extends javax.swing.JFrame {
         jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, 70));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 910, 240));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 960, 240));
 
         tanggal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tanggal.setForeground(new java.awt.Color(0, 66, 37));
@@ -265,9 +272,10 @@ public class homepage extends javax.swing.JFrame {
         });
         quickMenu.setGridColor(new java.awt.Color(0, 66, 37));
         quickMenu.setSelectionBackground(new java.awt.Color(0, 66, 37));
+        quickMenu.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(quickMenu);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, 910, 250));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, 960, 250));
 
         jPanel2.setBackground(new java.awt.Color(255, 176, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -277,7 +285,7 @@ public class homepage extends javax.swing.JFrame {
         jLabel1.setText("QUICK MENU OF INVENTORY DATA");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, -1, 20));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 910, 20));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 960, 20));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 66, 37));
